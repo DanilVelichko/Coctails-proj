@@ -1,2 +1,17 @@
+@import './utils/mixin';
+@import './utils/variables';
+
+@import './components/reset';
+@import './components/base';
+
 @import './common';
-@import './example';
+@import './header';
+@import './hero';
+@import './gallery';
+@import './favourite';
+
+@import './modal-mobile';
+@import './modal-favourite';
+@import './modal-ingredients';
+
+
