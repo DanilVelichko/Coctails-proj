@@ -1,0 +1,41 @@
+h1,
+h2,
+h3,
+h4,
+p,
+a,
+ul,
+li,
+span {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    
+}
+
+li {
+    line-height: initial;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border: none;
+}
+
+address {
+    font-style: normal;
+}
+
