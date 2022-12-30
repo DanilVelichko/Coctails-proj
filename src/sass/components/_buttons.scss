@@ -3,8 +3,10 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
-
+//**             COMPONENTS DESKTOP                    //
 .div__desktop_learn-button {
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +23,7 @@
   width: 182px;
   height: 48px;
   font-size: 20px;
+
   border: 0px solid transparent;
   border-radius: 4px;
   border-color: #f5f5f5;
@@ -44,7 +47,7 @@
   justify-content: center;
   align-content: space-around;
   width: 181px;
-  height: 300px;
+  height: 218px;
   border: 1px dashed #9747ff;
   border-radius: 4px;
   background-color: #fcfcfc;
@@ -136,6 +139,188 @@
   &:hover {
     background-color: #f5f5f5;
     color: #fe7031;
+  }
+
+  &-pressed {
+    background: #fd5103;
+  }
+}
+
+//REMOVE  buttons //
+
+.div__desktop_remove-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 226px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__remove_desktop {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 141px;
+  height: 48px;
+  font-size: 20px;
+
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+
+  &:hover {
+    background-color: #f5f5f5;
+    border: 1px solid #ff8650;
+  }
+
+  &-pressed {
+    background: #fd5103;
+  }
+}
+
+//**             COMPONENTS TABLET                    //
+.div__tablet_add-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 181px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+}
+
+.button__add_tablet {
+  // position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 123px;
+  height: 48px;
+  font-size: 20px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+
+  &:hover {
+    background-color: #f5f5f5;
+    border: 1px solid #fd5103;
+  }
+
+  &-pressed {
+    background: #fd5103;
+  }
+}
+//REMOVE  buttons //
+
+.div__tablet_remove-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 226px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__remove_tablet {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 123px;
+  height: 48px;
+  font-size: 20px;
+
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+
+  &:hover {
+    background-color: #f5f5f5;
+    border: 1px solid #ff8650;
+  }
+
+  &-pressed {
+    background: #fd5103;
+  }
+}
+
+//**             COMPONENTS MOBILE                    //
+.div__mobile_add-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 150px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+}
+
+.button__add_mobile {
+  // position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 110px;
+  height: 39px;
+  font-size: 14px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+
+  &:hover {
+    background-color: #f5f5f5;
+    // border: 1px solid #fd5103;
+  }
+
+  &-pressed {
+    background: #fd5103;
+  }
+}
+//REMOVE  buttons //
+
+.div__mobile_remove-button {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-around;
+  width: 180px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__remove_mobile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 110px;
+  height: 39px;
+  font-size: 14px;
+
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+
+  &:hover {
+    background-color: #f5f5f5;
+    // border: 2px solid #ff8650;
   }
 
   &-pressed {

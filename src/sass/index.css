@@ -104,6 +104,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 
 .div__desktop_learn-button {
@@ -142,7 +144,7 @@ body {
   justify-content: center;
   align-content: space-around;
   width: 181px;
-  height: 300px;
+  height: 218px;
   border: 1px dashed #9747ff;
   border-radius: 4px;
   background-color: #fcfcfc;
@@ -225,6 +227,165 @@ body {
   color: #fe7031;
 }
 .button__remove_favorite_desktop-pressed {
+  background: #fd5103;
+}
+
+.div__desktop_remove-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 226px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__remove_desktop {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 141px;
+  height: 48px;
+  font-size: 20px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+}
+.button__remove_desktop:hover {
+  background-color: #f5f5f5;
+  border: 1px solid #ff8650;
+}
+.button__remove_desktop-pressed {
+  background: #fd5103;
+}
+
+.div__tablet_add-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 181px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+}
+
+.button__add_tablet {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 123px;
+  height: 48px;
+  font-size: 20px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+}
+.button__add_tablet:hover {
+  background-color: #f5f5f5;
+  border: 1px solid #fd5103;
+}
+.button__add_tablet-pressed {
+  background: #fd5103;
+}
+
+.div__tablet_remove-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 226px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__remove_tablet {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 123px;
+  height: 48px;
+  font-size: 20px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+}
+.button__remove_tablet:hover {
+  background-color: #f5f5f5;
+  border: 1px solid #ff8650;
+}
+.button__remove_tablet-pressed {
+  background: #fd5103;
+}
+
+.div__mobile_add-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 150px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+}
+
+.button__add_mobile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 110px;
+  height: 39px;
+  font-size: 14px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+}
+.button__add_mobile:hover {
+  background-color: #f5f5f5;
+}
+.button__add_mobile-pressed {
+  background: #fd5103;
+}
+
+.div__mobile_remove-button {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-content: space-around;
+  width: 180px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__remove_mobile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 110px;
+  height: 39px;
+  font-size: 14px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+}
+.button__remove_mobile:hover {
+  background-color: #f5f5f5;
+}
+.button__remove_mobile-pressed {
   background: #fd5103;
 }
 
