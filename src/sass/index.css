@@ -230,6 +230,7 @@ body {
 
 .hero__overlay {
   width: 93px;
+  border-radius: 4px;
   position: relative;
   overflow: hidden;
 }
