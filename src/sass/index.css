@@ -49,6 +49,10 @@ address {
   overflow: hidden;
 }
 
+body {
+  background: #FCFCFC;
+}
+
 .list {
   padding: 0;
   margin: 0;
@@ -79,4 +83,71 @@ address {
     padding-right: 16px;
     padding-left: 16px;
   }
+}
+
+.test_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.div__desktop_learn-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 222px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__learn_desktop {
+  width: 182px;
+  height: 48px;
+  font-size: 20px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  border-color: #f5f5f5;
+  background: #fe7031;
+  color: #ffffff;
+}
+.button__learn_desktop:hover {
+  background-color: #f5f5f5;
+  color: #fe7031;
+}
+.button__learn_desktop-pressed {
+  background: #fd5103;
+}
+
+.div__desktop_add-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 222px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__add_desktop {
+  width: 181px;
+  height: 300px;
+  font-size: 20px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  border-color: #f5f5f5;
+  background: #fe7031;
+  color: #ffffff;
+}
+.button__add_desktop:hover {
+  background-color: #f5f5f5;
+  color: #fe7031;
+}
+.button__add_desktop-pressed {
+  background: #fd5103;
 }/*# sourceMappingURL=index.css.map */
