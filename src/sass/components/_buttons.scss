@@ -53,7 +53,7 @@
 .button__add_desktop {
   // position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 141px;
   height: 48px;
@@ -110,7 +110,6 @@
 }
 
 //REMOVE from favorite buttons //
-
 
 .div__desktop_remove_favorite-button {
   display: flex;
