@@ -150,4 +150,41 @@ body {
 }
 .button__add_desktop-pressed {
   background: #fd5103;
+}
+
+.favorite {
+  text-align: center;
+}
+
+.favorite_title {
+  margin-bottom: 60px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.9090909091;
+  color: #202025;
+}
+
+.favorite_text {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 122px;
+  width: 239px;
+  height: 120px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 3;
+  color: #202025;
+}
+
+.footer {
+  width: 768px;
+  height: 110px;
+  left: 0px;
+  top: 830px;
+  background: #fd5103;
+  border-radius: 0px;
 }/*# sourceMappingURL=index.css.map */
