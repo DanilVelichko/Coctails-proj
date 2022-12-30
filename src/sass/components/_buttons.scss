@@ -37,8 +37,47 @@
   }
 }
 
-// ADD buttons //
+// ADD heart buttons //
 .div__desktop_add-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 181px;
+  height: 300px;
+  border: 1px dashed #9747ff;
+  border-radius: 4px;
+  background-color: #fcfcfc;
+}
+
+.button__add_desktop {
+  // position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 141px;
+  height: 48px;
+  font-size: 20px;
+  border: 2px solid #fd5103;
+  border-radius: 4px;
+  background: transparent;
+  color: #fd5103;
+
+  &:hover {
+    background-color: #f5f5f5;
+    border: 1px solid #fd5103;
+  }
+
+  &-pressed {
+    background: #fd5103;
+  }
+}
+
+.heart__button {
+}
+// ADD to favorite buttons//
+
+.div__desktop_favorite-button {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -50,9 +89,44 @@
   background-color: #fcfcfc;
 }
 
-.button__add_desktop {
-  width: 181px;
-  height: 300px;
+.button__favorite_desktop {
+  width: 185px;
+  height: 48px;
+  font-size: 20px;
+  border: 0px solid transparent;
+  border-radius: 4px;
+  border-color: #f5f5f5;
+  background: #fe7031;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #f5f5f5;
+    color: #fe7031;
+  }
+
+  &-pressed {
+    background: #fd5103;
+  }
+}
+
+//REMOVE from favorite buttons //
+
+
+.div__desktop_remove_favorite-button {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+  width: 288px;
+  height: 218px;
+  border: 1px dashed #9747ff;
+  border-radius: 5px;
+  background-color: #fcfcfc;
+}
+
+.button__remove_favorite_desktop {
+  width: 248px;
+  height: 48px;
   font-size: 20px;
   border: 0px solid transparent;
   border-radius: 4px;
