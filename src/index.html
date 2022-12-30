@@ -12,30 +12,38 @@
     />
     <script type="module" src="./index.js"></script>
   </head>
+
   <body>
-    <!-- Header -->
-    <include src="./partials/header.html"></include>
+    <div class="wrapper">
+      <!-- Header -->
+      <include src="./partials/header.html"></include>
 
-    <main>
-      <!-- ❗️❗️❗️ Add partials like so for every page -->
-      <include src="./partials/hero.html"></include>
+      <main>
+        <!-- ❗️❗️❗️ Add partials like so for every page -->
 
-      <include src="./partials/gallery.html"></include>
+        <!-- Hero -->
+        <include src="./partials/hero.html"></include>
 
-      <include src="./partials/favourite.html"></include>
+        <!-- Gallery -->
+        <include src="./partials/gallery.html"></include>
 
-      <a href="./favorite-coctails.html"><h3>>>>Favorite-coctails page</h3></a>
+        <!-- Links to pages -->
 
-      <a href="./favorite-ingredients.html"
-        ><h3>>>>Favorite-ingredients page</h3></a
-      >
+        <a href="./favorite-coctails.html"
+          ><h3>Link to >>>Favorite-coctails page</h3></a
+        >
 
-      <a href="./partials/test.html"><h3>>>>Components page</h3></a>
-    </main>
-    <!-- Footer -->
-    <include src="./partials/footer.html"></include>
+        <a href="./favorite-ingredients.html"
+          ><h3>Link to >>>Favorite-ingredients page</h3></a
+        >
 
-    <!-- Модальне вікно -->
-    <include src="./partials/modal-mobile.html"></include>
+        <a href="./partials/test.html"><h3>Link to >>>Components page</h3></a>
+      </main>
+      <!-- Footer -->
+      <include src="./partials/footer.html"></include>
+
+      <!-- Модальне вікно -->
+      <include src="./partials/modal-mobile.html"></include>
+    </div>
   </body>
 </html>
