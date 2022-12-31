@@ -1,0 +1,88 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  @include mobile {
+  }
+  @include tablet {
+  }
+  @include desktop {
+  }
+  &__title {
+    margin-bottom: 60px;
+    @include tablet {
+    }
+    @include desktop {
+    }
+  }
+  &__coctail {
+    &_box {
+      width: 280px;
+      height: 449px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      border: 1px solid #fd5103;
+      border-radius: 4px;
+      margin-bottom: 20px;
+
+      @include mobile {
+        width: 335px;
+        height: 541px;
+      }
+      @include tablet {
+      }
+
+      @include desktop {
+        width: 395px;
+        height: 395px;
+      }
+    }
+    &_box-name {
+      margin-bottom: 16px;
+      font-size: 32px;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      font-family: 'Roboto';
+      line-height: 1.62;
+      font-weight: 900;
+      @include mobile {
+        margin-bottom: 25px;
+        font-size: 28px;
+        text-shadow: none;
+      }
+      @include tablet {
+      }
+      @include desktop {
+        margin-bottom: 20px;
+      }
+    }
+
+    &_box-buttons {
+      display: flex;
+      gap: 17px;
+      @include mobile {
+        gap: 12px;
+      }
+      @include tablet {
+      }
+      @include desktop {
+        margin-bottom: 20px;
+      }
+    }
+
+    &_img {
+      margin-bottom: 48px;
+      @include mobile {
+        width: 335px;
+        margin-bottom: 20px;
+      }
+      @include tablet {
+      }
+      @include desktop {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

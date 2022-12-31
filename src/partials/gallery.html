@@ -1,3 +1,55 @@
 <section>
-  <div class="container">There is a Gallery</div>
+  <div class="container gallery">
+    <h2 class="gallery__title">Cocktails</h2>
+
+    <ul class="gallery__render-box">
+      <div class="gallery__coctail_box">
+        <picture class="gallery__coctail_img">
+          <source
+            srcset="
+              ./images/gallery/negroni-desk-x1.png 1x,
+              ./images/gallery/negroni-desk-x2.png 2x
+            "
+            media="(max-width: 1280px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ./images/gallery/negroni-tablet-x1.png 1x,
+              ./images/gallery/negroni-tablet-x2.png 2x
+            "
+            media="(max-width: 768px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ./images/gallery/negroni-mobile-x1.png 1x,
+              ./images/gallery/negroni-mobile-x2.png 2x
+            "
+            media="(max-width: 480px)"
+            type="image/png"
+          />
+
+          <img
+            src="./images/gallery/negroni-desk-x1.png"
+            alt="cocktail negroni"
+          />
+        </picture>
+
+        <h3 class="gallery__coctail_box-name">Negroni</h3>
+        <div class="gallery__coctail_box-buttons">
+          <button class="button__learn">Learn More</button>
+
+          <button class="button__add">
+            Add to
+            <img
+              class="heart__button"
+              src="/src/images/Heart-white.svg"
+              alt="Heart red and white"
+            />
+          </button>
+        </div>
+      </div>
+    </ul>
+  </div>
 </section>
