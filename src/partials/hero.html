@@ -1,12 +1,47 @@
 <section class="hero">
   <div class="container">
-    <h1>A party without cocktails is not like a party</h1>
+    <h1 class="hero__title">A party without cocktails is not like a party</h1>
+    
+    <div class="hero-coctail">
+      <picture class="hero-coctail__picture">
+      <source
+        srcset="
+          ./images/hero/hero-desk-x1.png 1x,
+          ./images/hero/hero-desk-x2.png 2x
+        "
+        media="(min-width: 1200px)"
+        type="image/png"
+      />
+      <source
+        srcset="
+          ./images/hero/hero-tablet-x1.png 1x,
+          ./images/hero/hero-tablet-x2.png 2x
+        "
+        media="(min-width: 768px)"
+        type="image/png"
+      />
+      <source
+        srcset="
+          ./images/hero/hero-mobile-x1.png 1x,
+          ./images/hero/hero-mobile-x2.png 2x
+        "
+        media="(max-width: 768px)"
+        type="image/png"
+      />
 
-    <p>Search your favorite cocktail by ABC</p>
+      <img src="./images/hero/hero-desk-x1.png" alt="cocktail" />
+    </picture>
+    </div>
+    
+
+    <p class="hero__text">Search your favorite cocktail by ABC</p>
+
     <div class="hero__overlay">
-      <button class="hero-btn__search">1<span class=""></span></button>
+      <button class="hero-btn">1<span class="hero-btn--arrow"></span>
+      </button>
+
       <div class="hero-abc__search">
-        <ul class="hero-abc__list">
+        <ul class="hero-abc__list list">
           <li><button class="hero-abc__btn" type="button">A</button></li>
           <li><button class="hero-abc__btn" type="button">B</button></li>
           <li><button class="hero-abc__btn" type="button">C</button></li>
