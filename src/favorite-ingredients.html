@@ -12,14 +12,23 @@
     />
     <script type="module" src="./index.js"></script>
   </head>
-  <include src="./partials/header.html"></include>
-  <body>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/favourite-ingredients.html"></include>
-    <include src="./partials/modal-ingredients.html"></include>
 
-    <!-- Модальне вікно  -->
-    <include src="./partials/modal-mobile.html"></include>
+  <body>
+    <div class="wrapper">
+      <!-- Header -->
+      <include src="./partials/header.html"></include>
+
+      <!-- Main -->
+      <main>
+        <!-- ❗️❗️❗️ Add partials like so for every page -->
+        <include src="./partials/favourite-ingredients.html"></include>
+        <include src="./partials/modal-ingredients.html"></include>
+
+        <!-- Модальне вікно  -->
+        <include src="./partials/modal-mobile.html"></include>
+      </main>
+      <!-- Footer -->
+      <include src="./partials/footer.html"></include>
+    </div>
   </body>
-  <include src="./partials/footer.html"></include>
 </html>
