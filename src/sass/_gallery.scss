@@ -1,0 +1,45 @@
+.gallery {
+  &__coctail {
+    &_box {
+      width: 280px;
+      height: 449px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-color: red;
+
+      @include tablet {
+      }
+      @include desktop {
+        width: 395px;
+        height: 395px;
+      }
+    }
+    &__box-name {
+      @include tablet {
+      }
+      @include desktop {
+        margin-bottom: 20px;
+      }
+      font-size: 32px;
+      margin-bottom: 27px;
+    }
+
+    &_box-buttons {
+      @include tablet {
+      }
+      @include desktop {
+        margin-bottom: 20px;
+      }
+    }
+
+    &_img {
+      margin-bottom: 48px;
+      @include tablet {
+      }
+      @include desktop {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

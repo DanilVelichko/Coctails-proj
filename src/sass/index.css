@@ -565,6 +565,43 @@ body {
   border: none;
 }
 
+.gallery__coctail_box {
+  width: 280px;
+  height: 449px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-color: red;
+}
+@media screen and (min-width: 1200px) {
+  .gallery__coctail_box {
+    width: 395px;
+    height: 395px;
+  }
+}
+.gallery__coctail__box-name {
+  font-size: 32px;
+  margin-bottom: 27px;
+}
+@media screen and (min-width: 1200px) {
+  .gallery__coctail__box-name {
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gallery__coctail_box-buttons {
+    margin-bottom: 20px;
+  }
+}
+.gallery__coctail_img {
+  margin-bottom: 48px;
+}
+@media screen and (min-width: 1200px) {
+  .gallery__coctail_img {
+    margin-bottom: 20px;
+  }
+}
+
 .favorite {
   text-align: center;
 }
