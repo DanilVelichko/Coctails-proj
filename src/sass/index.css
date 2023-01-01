@@ -145,6 +145,13 @@ body {
     font-size: 20px;
   }
 }
+@media screen and (min-width: 768px) {
+  .button__learn {
+    width: 160px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .button__learn {
     width: 182px;
@@ -185,6 +192,13 @@ body {
   background: #fd5103;
 }
 @media screen and (min-width: 480px) {
+  .button__add {
+    width: 123px;
+    height: 48px;
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
   .button__add {
     width: 123px;
     height: 48px;
@@ -599,8 +613,36 @@ body {
   align-items: center;
   gap: 20px;
 }
+.gallery__render-box {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+@media screen and (min-width: 480px) {
+  .gallery__render-box {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery__render-box {
+    gap: 28px;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gallery__render-box {
+    gap: 28px;
+    flex-direction: row;
+  }
+}
 .gallery__title {
   margin-bottom: 60px;
+}
+@media screen and (min-width: 1200px) {
+  .gallery__title {
+    margin-bottom: 27px;
+  }
 }
 .gallery__coctail_box {
   width: 280px;
@@ -618,10 +660,16 @@ body {
     height: 541px;
   }
 }
+@media screen and (min-width: 768px) {
+  .gallery__coctail_box {
+    width: 335px;
+    height: 541px;
+  }
+}
 @media screen and (min-width: 1200px) {
   .gallery__coctail_box {
     width: 395px;
-    height: 395px;
+    height: 556px;
   }
 }
 .gallery__coctail_box-name {
@@ -637,6 +685,11 @@ body {
     margin-bottom: 25px;
     font-size: 28px;
     text-shadow: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery__coctail_box-name {
+    margin-bottom: 25px;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -655,20 +708,30 @@ body {
 }
 @media screen and (min-width: 1200px) {
   .gallery__coctail_box-buttons {
-    margin-bottom: 20px;
+    gap: 16px;
   }
 }
 .gallery__coctail_img {
   margin-bottom: 48px;
+  border-radius: 4px;
 }
 @media screen and (min-width: 480px) {
   .gallery__coctail_img {
-    width: 335px;
+    width: 333px;
+    margin-bottom: 20px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .gallery__coctail_img {
+    width: 333px;
+    height: 395px;
     margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 1200px) {
   .gallery__coctail_img {
+    width: 393px;
+    height: 395px;
     margin-bottom: 20px;
   }
 }

@@ -9,11 +9,32 @@
   }
   @include desktop {
   }
+  &__render-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include mobile {
+      gap: 20px;
+      flex-direction: column;
+    }
+    @include tablet {
+      gap: 28px;
+      flex-direction: row;
+    }
+    @include desktop {
+      gap: 28px;
+      flex-direction: row;
+    }
+  }
   &__title {
     margin-bottom: 60px;
+    @include mobile {
+    }
     @include tablet {
     }
     @include desktop {
+      margin-bottom: 27px;
     }
   }
   &__coctail {
@@ -33,11 +54,13 @@
         height: 541px;
       }
       @include tablet {
+        width: 335px;
+        height: 541px;
       }
 
       @include desktop {
         width: 395px;
-        height: 395px;
+        height: 556px;
       }
     }
     &_box-name {
@@ -53,6 +76,7 @@
         text-shadow: none;
       }
       @include tablet {
+        margin-bottom: 25px;
       }
       @include desktop {
         margin-bottom: 20px;
@@ -68,20 +92,27 @@
       @include tablet {
       }
       @include desktop {
-        margin-bottom: 20px;
+        gap: 16px;
       }
     }
 
     &_img {
       margin-bottom: 48px;
+      border-radius: 4px;
       @include mobile {
-        width: 335px;
+        width: 333px;
         margin-bottom: 20px;
       }
       @include tablet {
+        width: 333px;
+        height: 395px;
+        margin-bottom: 20px;
       }
       @include desktop {
+        width: 393px;
+        height: 395px;
         margin-bottom: 20px;
+        
       }
     }
   }
