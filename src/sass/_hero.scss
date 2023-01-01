@@ -1,0 +1,258 @@
+.hero {
+  &__container {
+    position: relative;
+    padding-top: 60px;
+    padding-bottom: 40px;
+
+    @include tablet {
+      display: flexbox;
+      padding-top: 77px;
+      padding-bottom: 124px;
+    }
+    @include desktop {
+      padding-top: 97px;
+      padding-bottom: 171px;
+    }
+  }
+
+  &__title {
+    font-family: 'Poppins';
+    font-weight: 600;
+    line-height: 2;
+    margin: 0 auto;
+    color: #fd5103;
+
+    max-width: 300px;
+    font-size: 22px;
+    margin-bottom: 60px;
+
+    @include tablet {
+      max-width: 336px;
+      font-size: 26px;
+      margin: 0;
+      margin-bottom: 40px;
+    }
+    @include desktop {
+      max-width: 688px;
+      font-size: 52px;
+    }
+  }
+  
+  &__text {
+  display: flex;
+  justify-content: center;
+
+  font-family: 'Poppins';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.02em;
+
+  margin-bottom: 20px;
+  color: #000000;
+  opacity: 0.8;
+
+  @include tablet {
+    display: block;
+    margin-bottom: 40px;
+  }
+  @include desktop {
+    font-size: 18px;
+  }
+}
+}
+
+.hero-coctail {
+  margin-bottom: 60px;
+  @include tablet {
+    margin-bottom: 0;
+    position: absolute;
+    top: 97px;
+    right: 0;
+  }
+
+  &__picture {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+
+.hero-overlay {
+  @media screen and(max-width: 767px) {
+    width: 93px;
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+}
+.hero-btn {
+  display: none;
+  @media screen and(max-width: 767px) {
+    display: block;
+    width: 93px;
+    height: 34px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 135%;
+
+    padding: 0 65px 0 0;
+    margin: 0;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    color: #fd5103;
+    background-color: rgb(255, 255, 255);
+
+    border: 1px solid #fd5103;
+    border-radius: 4px;
+
+    transition-property: color, background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:focus {
+      color: rgb(255, 255, 255);
+
+      background-color: #fd5103;
+    }
+
+    &--arrow {
+      display: block;
+      width: 10px;
+      height: 1px;
+      top: 50%;
+      left: 70%;
+
+      background-color: #fd5103;
+      position: absolute;
+      transform: rotate(45deg);
+
+      transition-property: background-color;
+      transition-duration: 250ms;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+      &::after {
+        content: '';
+        display: block;
+        left: 5px;
+        bottom: 5px;
+        width: 10px;
+        height: 1px;
+        background-color: #fd5103;
+        position: absolute;
+
+        transform: rotate(90deg);
+
+        transition-property: background-color;
+        transition-duration: 250ms;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .hero-btn:focus & {
+        background-color: rgb(255, 255, 255);
+
+        &::before,
+        &::after {
+          background-color: rgb(255, 255, 255);
+        }
+      }
+    }
+  }
+}
+
+.hero-search {
+  @media screen and(max-width: 767px) {
+    width: 93px;
+    height: 84px;
+
+    margin-top: 34px;
+    border: 1px solid #fd5103;
+    border-radius: 4px;
+    overflow-y: scroll;
+
+    transform: translatey(-100%);
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+    .hero-btn:focus + & {
+      transform: translatey(0%);
+    }
+
+    &::-webkit-scrollbar {
+      width: 14px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      height: 44px;
+      background: #5f6775;
+      border-radius: 50px;
+      background-clip: content-box;
+      border: 6px solid transparent;
+    }
+  }
+  @include tablet {
+    width: 324px;
+  }
+  @include desktop {
+    width: 573px;
+  }
+
+  &__list {
+  @include tablet {
+    display: inline;
+  }
+}
+}
+
+
+
+.hero-search__btn {
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 1.5;
+
+  color: #5f6775;
+  background-color: rgb(255, 255, 255);
+
+  border: none;
+
+  transition-property: color, text-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus,
+  &:hover {
+    color: #fd5103;
+    text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
+  }
+
+  @media screen and(max-width: 767px) {
+    width: 100%;
+    height: 28px;
+
+    padding: 0 50px 0 0;
+    margin: 0;
+  }
+  @include tablet {
+    width: 20px;
+    font-size: 14px;
+  }
+  @include desktop {
+    width: 40px;
+    font-size: 24px;
+  }
+
+  &--el {
+  @include tablet {
+    margin-left: 26px;
+  }
+  @include desktop {
+    margin-left: 45px;
+  }
+}
+}
