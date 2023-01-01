@@ -1,6 +1,7 @@
 import axios from "axios";
+import debounce from 'debounce';
 
-import { refs, fetchEl, point } from './refs.js';
+import { refs, fetchEl, point, counter } from './refs.js';
 
 async function galleryMarkup() {
     clearHTML();
@@ -20,37 +21,37 @@ async function galleryMarkup() {
 function renderCard({ strDrinkThumb, strDrink }) {
 return `
   <li class="gallery__coctail_box">
-        // <picture class="gallery__coctail_img">
-        //   <source
-        //     srcset="
-        //       ${strDrinkThumb}/preview (350x350 pixels) 1x,
-        //       ${strDrinkThumb}/preview (350x350 pixels) 2x
-        //     "
-        //     media="(max-width: 1280px)"
-        //     type="image/png"
-        //   />
-        //   <source
-        //     srcset="
-        //       ${strDrinkThumb}/preview (350x350 pixels) 1x,
-        //       ${strDrinkThumb}/preview (350x350 pixels) 2x
-        //     "
-        //     media="(max-width: 768px)"
-        //     type="image/png"
-        //   />
-        //   <source
-        //     srcset="
-        //       ${strDrinkThumb}/preview (350x350 pixels) 1x,
-        //       ${strDrinkThumb}/preview (350x350 pixels) 2x
-        //     "
-        //     media="(max-width: 480px)"
-        //     type="image/png"
-        //   />
+        <picture class="gallery__coctail_img">
+          <source
+            srcset="
+              ${strDrinkThumb}/preview(350x350 pixels) 1x,
+              ${strDrinkThumb}/preview(350x350 pixels) 2x
+            "
+            media="(max-width: 1280px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ${strDrinkThumb}/preview(350x350 pixels) 1x,
+              ${strDrinkThumb}/preview(350x350 pixels) 2x
+            "
+            media="(max-width: 768px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ${strDrinkThumb}/preview(350x350 pixels) 1x,
+              ${strDrinkThumb}/preview(350x350 pixels) 2x
+            "
+            media="(max-width: 480px)"
+            type="image/png"
+          />
 
           <img
             src="${strDrinkThumb}"
             alt="${strDrink}"
           />
-        // </picture>
+        </picture>
 
         <h3 class="gallery__coctail_box-name">${strDrink}</h3>
         <div class="gallery__coctail_box-buttons">
@@ -60,7 +61,7 @@ return `
             Add to
             <img
               class="heart__button"
-              src="/src/images/Heart-white.svg"
+              src="./src/images/Heart-white.svg"
               alt="Heart red and white"
             />
           </button>
@@ -75,4 +76,31 @@ function clearHTML() {
     point.galleryUl.innerHTML = '';
    
 }
-galleryMarkup();
+
+function formatScreenRender() {
+    if (window.matchMedia("(min-width: 1280px)").matches) {
+for (let i = 0; i < counter.desktop; i++) {
+  galleryMarkup();
+}
+        
+    }
+
+    else if (window.matchMedia("(min-width: 768px)").matches) {
+ for (let i = 0; i < counter.tablet; i++) {
+  galleryMarkup();
+}
+      
+    }
+    else if (window.matchMedia("(max-width: 480px)").matches) {
+         for (let i = 0; i < counter.mobile; i++) {
+  galleryMarkup();
+}
+        
+    } else {
+        
+
+    }
+}
+const debouncedRender = debounce(formatScreenRender, 1000);
+debouncedRender();
+window.addEventListener('resize', debouncedRender);

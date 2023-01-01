@@ -46,6 +46,9 @@
   }
 
   @include tablet {
+    width: 160px;
+    height: 48px;
+    font-size: 20px;
   }
   @include desktop {
     width: 182px;
@@ -95,6 +98,9 @@
   }
 
   @include tablet {
+    width: 123px;
+    height: 48px;
+    font-size: 20px;
   }
   @include desktop {
     width: 141px;
