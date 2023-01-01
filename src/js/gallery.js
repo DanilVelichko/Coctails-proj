@@ -61,8 +61,10 @@ return `
             Add to
             <img
               class="heart__button"
+
               src="/images/Heart-white.svg"
               alt="Heart"
+
             />
           </button>
         </div>
