@@ -1,1 +1,1 @@
-import { refs } from './refs.js';
+import { refs, fetchEl, point, counter } from './refs.js';
