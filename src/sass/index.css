@@ -569,7 +569,7 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .hero-btn--arrow::after {
-    content: '';
+    content: "";
     display: block;
     left: 5px;
     bottom: 5px;
@@ -585,8 +585,7 @@ body {
   .hero-btn:focus .hero-btn--arrow {
     background-color: var(--white-color-color);
   }
-  .hero-btn:focus .hero-btn--arrow::before,
-  .hero-btn:focus .hero-btn--arrow::after {
+  .hero-btn:focus .hero-btn--arrow::before, .hero-btn:focus .hero-btn--arrow::after {
     background-color: var(--white-color-color);
   }
 }
@@ -645,8 +644,7 @@ body {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-search__btn:focus,
-.hero-search__btn:hover {
+.hero-search__btn:focus, .hero-search__btn:hover {
   color: var(--orange-text-color);
   text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
 }
@@ -750,7 +748,7 @@ body {
   margin-bottom: 16px;
   font-size: 32px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: 'Roboto';
+  font-family: "Roboto";
   line-height: 1.62;
   font-weight: 900;
 }
@@ -810,17 +808,17 @@ body {
   }
 }
 
-.favorite {
+.cocktails {
   text-align: center;
 }
 
-.favorite_title {
+.cocktails_title {
   margin-bottom: 60px;
   margin-top: 60px;
   margin-left: auto;
   margin-right: auto;
   max-width: 320px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -828,18 +826,18 @@ body {
   color: #202025;
 }
 @media screen and (min-width: 768px) {
-  .favorite_title {
+  .cocktails_title {
     margin-top: 68px;
     max-width: 493px;
     height: 38px;
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-weight: 700;
     font-size: 32px;
     line-height: 1.1875;
   }
 }
 @media screen and (min-width: 1280px) {
-  .favorite_title {
+  .cocktails_title {
     margin-top: 68px;
     margin-bottom: 60px;
     max-width: 464px;
@@ -851,12 +849,12 @@ body {
   }
 }
 
-.favorite_text {
+.cocktails_text {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 122px;
   max-width: 239px;
-  font-family: 'Poppins';
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -864,7 +862,7 @@ body {
   color: #202025;
 }
 @media screen and (min-width: 768px) {
-  .favorite_text {
+  .cocktails_text {
     margin-bottom: 523px;
     max-width: 296px;
     font-size: 24px;
@@ -872,7 +870,7 @@ body {
   }
 }
 @media screen and (min-width: 1280px) {
-  .favorite_text {
+  .cocktails_text {
     max-width: 385px;
     height: 144px;
     margin-bottom: 472px;
@@ -883,13 +881,7 @@ body {
 
 .footer {
   height: 110px;
-
   background-color: #fd5103;
-
-  width: auto;
-  top: 830px;
-  background: #fd5103;
-  border-radius: 0px;
 }
 
 .backdrop {
@@ -922,7 +914,7 @@ body {
   z-index: 1;
   width: 100vw;
   height: 100vh;
-  background-color: #84a178;
+  background-color: #84A178;
 }
 
 .logo-ice {
@@ -949,11 +941,10 @@ body {
   margin: 16px 20px 52px auto;
   border: none;
   background-color: transparent;
-  fill: #fcfcfc;
+  fill: #FCFCFC;
 }
-.mob-menu-close-btn:hover,
-.mob-menu-close-btn:focus {
-  fill: #f8d24e;
+.mob-menu-close-btn:hover, .mob-menu-close-btn:focus {
+  fill: #F8D24E;
 }
 @media screen and (min-width: 768px) {
   .mob-menu-close-btn {
@@ -978,7 +969,7 @@ body {
   font-weight: 700;
   font-size: 32px;
   line-height: 1.2;
-  color: #fcfcfc;
+  color: #FCFCFC;
 }
 @media screen and (min-width: 768px) {
   .mob-menu-link {
@@ -992,7 +983,7 @@ body {
   left: 50%;
   transform: translateX(-50%);
   bottom: 53px;
-  background-color: #f8d24e;
+  background-color: #F8D24E;
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
@@ -1012,8 +1003,7 @@ body {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
-.mob-menu-buy-btn:hover,
-.mob-menu-buy-btn:focus {
+.mob-menu-buy-btn:hover, .mob-menu-buy-btn:focus {
   background-color: var(--button-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
@@ -1022,4 +1012,4 @@ body {
   width: 12px;
   height: 12px;
   display: inline-block;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
