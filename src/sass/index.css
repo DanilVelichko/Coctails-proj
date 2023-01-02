@@ -49,6 +49,23 @@ address {
   overflow: hidden;
 }
 
+html,
+body {
+  height: 100%;
+  background: #fcfcfc;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
 .list {
   padding: 0;
   margin: 0;
@@ -56,30 +73,33 @@ address {
 }
 
 .container {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
   padding-right: 20px;
   padding-left: 20px;
   margin: 0 auto;
+  border: 2px solid blueviolet;
 }
 @media screen and (min-width: 480px) {
   .container {
-    width: 480px;
+    max-width: 480px;
   }
 }
 @media screen and (min-width: 768px) {
   .container {
-    width: 768px;
+    max-width: 768px;
     padding-right: 32px;
     padding-left: 32px;
   }
 }
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1200px;
+    max-width: 1280px;
     padding-right: 16px;
     padding-left: 16px;
   }
 }
+
 
 .hero__container {
   position: relative;
@@ -87,6 +107,7 @@ address {
   padding-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
+
   .hero__container {
     display: flexbox;
     padding-top: 77px;
@@ -97,6 +118,7 @@ address {
   .hero__container {
     padding-top: 97px;
     padding-bottom: 171px;
+
   }
 }
 .hero__title {
@@ -113,7 +135,9 @@ address {
   .hero__title {
     max-width: 336px;
     font-size: 26px;
+
     margin: 0;
+
     margin-bottom: 40px;
   }
 }
@@ -123,6 +147,8 @@ address {
     font-size: 52px;
   }
 }
+
+
 .hero__text {
   display: flex;
   justify-content: center;
@@ -137,7 +163,9 @@ address {
 }
 @media screen and (min-width: 768px) {
   .hero__text {
+
     display: block;
+
     margin-bottom: 40px;
   }
 }
@@ -146,6 +174,7 @@ address {
     font-size: 18px;
   }
 }
+
 
 .hero-coctail {
   margin-bottom: 60px;
@@ -324,4 +353,5 @@ address {
   .hero-search__btn--el {
     margin-left: 45px;
   }
+
 }/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,41 @@
+@mixin mobile {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin container {
+  max-width: 100%;
+  height: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin: 0 auto;
+  border: 2px solid blueviolet;
+
+  @media screen and (max-width: 480px) {
+    width: 480px;
+    height: auto;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 768px;
+    height: auto;
+  }
+
+  @media screen and (max-width: 1280px) {
+    width: 1280px;
+    height: auto;
+  }
+}

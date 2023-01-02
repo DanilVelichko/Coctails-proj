@@ -1,4 +1,5 @@
 .hero {
+
   &__container {
     position: relative;
     padding-top: 60px;
@@ -13,6 +14,7 @@
       padding-top: 97px;
       padding-bottom: 171px;
     }
+
   }
 
   &__title {
@@ -21,6 +23,7 @@
     line-height: 2;
     margin: 0 auto;
     color: #fd5103;
+
 
     max-width: 300px;
     font-size: 22px;
@@ -38,7 +41,6 @@
     }
   }
   
-  &__text {
   display: flex;
   justify-content: center;
 
@@ -53,6 +55,7 @@
   opacity: 0.8;
 
   @include tablet {
+
     display: block;
     margin-bottom: 40px;
   }
@@ -133,9 +136,11 @@
       position: absolute;
       transform: rotate(45deg);
 
+
       transition-property: background-color;
       transition-duration: 250ms;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
 
       &::after {
         content: '';
@@ -160,10 +165,12 @@
         &::after {
           background-color: rgb(255, 255, 255);
         }
+
       }
     }
   }
 }
+
 
 .hero-search {
   @media screen and(max-width: 767px) {
@@ -213,9 +220,11 @@
 
 
 .hero-search__btn {
+
   font-weight: 700;
   font-size: 10px;
   line-height: 1.5;
+
 
   color: #5f6775;
   background-color: rgb(255, 255, 255);
@@ -256,3 +265,4 @@
   }
 }
 }
+
