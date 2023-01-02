@@ -1,4 +1,16 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+:root {
+  --main-text-color: #202025;
+  --orange-text-color: #fd5103;
+  --white-color-color: #ffffff;
+  --main-background-color: #fcfcfc;
+  --orange-background-color: #fd5103;
+  --base-font-family: Poppins, sans-serif;
+  --primary-font-family: Roboto, sans-serif;
+  --favorite-bg-color: #fffcfa;
+  --filter-text-color: #5f6775;
+}
+
 h1,
 h2,
 h3,
@@ -432,26 +444,17 @@ body {
   background: #fd5103;
 }
 
-.hero {
-  display: flex;
-  justify-content: center;
-  font-family: "Poppins";
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 2;
-  letter-spacing: 0.02em;
-  margin-bottom: 20px;
-  color: #000000;
-  opacity: 0.8;
-}
 .hero__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   padding-top: 60px;
   padding-bottom: 40px;
 }
 @media screen and (min-width: 768px) {
   .hero__container {
-    display: flexbox;
+    display: block;
     padding-top: 77px;
     padding-bottom: 124px;
   }
@@ -463,11 +466,10 @@ body {
   }
 }
 .hero__title {
-  font-family: "Poppins";
+  font-family: var(--base-font-family);
   font-weight: 600;
   line-height: 2;
-  margin: 0 auto;
-  color: #fd5103;
+  color: var(--orange-text-color);
   max-width: 300px;
   font-size: 22px;
   margin-bottom: 60px;
@@ -476,7 +478,6 @@ body {
   .hero__title {
     max-width: 336px;
     font-size: 26px;
-    margin: 0;
     margin-bottom: 40px;
   }
 }
@@ -486,14 +487,23 @@ body {
     font-size: 52px;
   }
 }
+.hero__text {
+  font-family: var(--base-font-family);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 2;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+  color: #000000;
+  opacity: 0.8;
+}
 @media screen and (min-width: 768px) {
-  .hero {
-    display: block;
+  .hero__text {
     margin-bottom: 40px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .hero {
+  .hero__text {
     font-size: 18px;
   }
 }
@@ -509,18 +519,12 @@ body {
     right: 0;
   }
 }
-.hero-coctail__picture {
-  display: flex;
-  justify-content: center;
-}
 
 @media screen and (max-width: 767px) {
   .hero-overlay {
-    width: 93px;
     border-radius: 4px;
     position: relative;
     overflow: hidden;
-    margin: 0 auto;
   }
 }
 
@@ -535,14 +539,12 @@ body {
     font-weight: 700;
     font-size: 16px;
     line-height: 135%;
-    padding: 0 65px 0 0;
-    margin: 0;
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
-    color: #fd5103;
-    background-color: rgb(255, 255, 255);
+    color: var(--orange-text-color);
+    background-color: var(--white-color-color);
     border: 1px solid #fd5103;
     border-radius: 4px;
     transition-property: color, background-color;
@@ -551,7 +553,7 @@ body {
   }
   .hero-btn:focus {
     color: rgb(255, 255, 255);
-    background-color: #fd5103;
+    background-color: var(--orange-background-color);
   }
   .hero-btn--arrow {
     display: block;
@@ -559,7 +561,7 @@ body {
     height: 1px;
     top: 50%;
     left: 70%;
-    background-color: #fd5103;
+    background-color: var(--orange-background-color);
     position: absolute;
     transform: rotate(45deg);
     transition-property: background-color;
@@ -567,13 +569,13 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .hero-btn--arrow::after {
-    content: "";
+    content: '';
     display: block;
     left: 5px;
     bottom: 5px;
     width: 10px;
     height: 1px;
-    background-color: #fd5103;
+    background-color: var(--orange-background-color);
     position: absolute;
     transform: rotate(90deg);
     transition-property: background-color;
@@ -581,10 +583,11 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .hero-btn:focus .hero-btn--arrow {
-    background-color: rgb(255, 255, 255);
+    background-color: var(--white-color-color);
   }
-  .hero-btn:focus .hero-btn--arrow::before, .hero-btn:focus .hero-btn--arrow::after {
-    background-color: rgb(255, 255, 255);
+  .hero-btn:focus .hero-btn--arrow::before,
+  .hero-btn:focus .hero-btn--arrow::after {
+    background-color: var(--white-color-color);
   }
 }
 
@@ -609,7 +612,7 @@ body {
   }
   .hero-search::-webkit-scrollbar-thumb {
     height: 44px;
-    background: #5f6775;
+    background: var(--filter-text-color);
     border-radius: 50px;
     background-clip: content-box;
     border: 6px solid transparent;
@@ -622,7 +625,7 @@ body {
 }
 @media screen and (min-width: 1280px) {
   .hero-search {
-    width: 573px;
+    width: 585px;
   }
 }
 @media screen and (min-width: 768px) {
@@ -635,15 +638,16 @@ body {
   font-weight: 700;
   font-size: 10px;
   line-height: 1.5;
-  color: #5f6775;
-  background-color: rgb(255, 255, 255);
+  color: var(--filter-text-color);
+  background-color: var(--white-color-color);
   border: none;
   transition-property: color, text-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-search__btn:focus, .hero-search__btn:hover {
-  color: #fd5103;
+.hero-search__btn:focus,
+.hero-search__btn:hover {
+  color: var(--orange-text-color);
   text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
 }
 @media screen and (max-width: 767px) {
@@ -746,7 +750,7 @@ body {
   margin-bottom: 16px;
   font-size: 32px;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-family: "Roboto";
+  font-family: 'Roboto';
   line-height: 1.62;
   font-weight: 900;
 }
@@ -816,7 +820,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   max-width: 320px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
@@ -828,7 +832,7 @@ body {
     margin-top: 68px;
     max-width: 493px;
     height: 38px;
-    font-family: "Roboto";
+    font-family: 'Roboto';
     font-weight: 700;
     font-size: 32px;
     line-height: 1.1875;
@@ -852,7 +856,7 @@ body {
   margin-right: auto;
   margin-bottom: 122px;
   max-width: 239px;
-  font-family: "Poppins";
+  font-family: 'Poppins';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -879,5 +883,143 @@ body {
 
 .footer {
   height: 110px;
+
   background-color: #fd5103;
-}/*# sourceMappingURL=index.css.map */
+
+  width: auto;
+  top: 830px;
+  background: #fd5103;
+  border-radius: 0px;
+}
+
+.backdrop {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: visibility 700ms, opacity 700ms var(--two-time);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.backdrop.is-hidden .mob-menu {
+  transform: translate(0%, -100%) scale(0);
+}
+
+.mob-menu {
+  transition: transform 700ms;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: #84a178;
+}
+
+.logo-ice {
+  position: absolute;
+  left: 20px;
+  width: 40px;
+  height: 37px;
+  top: 12px;
+}
+@media screen and (min-width: 768px) {
+  .logo-ice {
+    width: 48px;
+    height: 44px;
+    top: 20px;
+    left: 32px;
+  }
+}
+
+.mob-menu-close-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: block;
+  margin: 16px 20px 52px auto;
+  border: none;
+  background-color: transparent;
+  fill: #fcfcfc;
+}
+.mob-menu-close-btn:hover,
+.mob-menu-close-btn:focus {
+  fill: #f8d24e;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-close-btn {
+    margin: 32px 32px 76px auto;
+  }
+}
+
+.mob-menu-list {
+  text-align: center;
+}
+
+.mob-menu-list:not(:last-child) {
+  margin-bottom: 32px;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-list:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.mob-menu-link {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #fcfcfc;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-link {
+    font-size: 48px;
+    line-height: 1.2;
+  }
+}
+
+.mob-menu-buy-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 53px;
+  background-color: #f8d24e;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #131313;
+  padding: 12px 32px 12px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 112px;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-buy-btn {
+    display: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+.mob-menu-buy-btn:hover,
+.mob-menu-buy-btn:focus {
+  background-color: var(--button-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+.mob-menu-btn-buy {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+} /*# sourceMappingURL=index.css.map */
