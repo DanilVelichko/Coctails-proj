@@ -3,15 +3,21 @@
 }
 
 .favorite_title {
-  margin-bottom: 60px;
-
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: calc(42 / 22);
-
   color: #202025;
+
+  @include mobile {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 280px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: calc(42 / 22);
+  }
 }
 
 .favorite_text {
@@ -19,7 +25,7 @@
   margin-right: auto;
   margin-bottom: 122px;
 
-  width: 239px;
+  max-width: 239px;
   height: 120px;
 
   font-family: 'Poppins';
