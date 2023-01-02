@@ -92,7 +92,7 @@ body {
     padding-left: 32px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .container {
     max-width: 1280px;
     padding-right: 16px;
@@ -152,7 +152,7 @@ body {
     font-size: 20px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .button__learn {
     width: 182px;
     height: 48px;
@@ -205,7 +205,7 @@ body {
     font-size: 20px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .button__add {
     width: 141px;
     height: 48px;
@@ -447,7 +447,7 @@ body {
     padding-bottom: 124px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .hero__container {
     padding-top: 97px;
     padding-bottom: 171px;
@@ -469,7 +469,7 @@ body {
     margin-bottom: 40px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .hero__title {
     max-width: 688px;
     font-size: 52px;
@@ -490,8 +490,10 @@ body {
     margin-bottom: 40px;
   }
 }
-@media screen and (min-width: 1200px) {
-  .hero__text {
+
+@media screen and (min-width: 1280px) {
+  .hero {
+
     font-size: 18px;
   }
 }
@@ -610,7 +612,7 @@ body {
     width: 324px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .hero-search {
     width: 585px;
   }
@@ -650,7 +652,7 @@ body {
     font-size: 14px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .hero-search__btn {
     width: 40px;
     font-size: 24px;
@@ -661,7 +663,7 @@ body {
     margin-left: 26px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .hero-search__btn--el {
     margin-left: 45px;
   }
@@ -690,7 +692,7 @@ body {
     flex-direction: row;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .gallery__render-box {
     gap: 28px;
     flex-direction: row;
@@ -699,7 +701,7 @@ body {
 .gallery__title {
   margin-bottom: 60px;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .gallery__title {
     margin-bottom: 27px;
   }
@@ -726,7 +728,7 @@ body {
     height: 541px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .gallery__coctail_box {
     width: 395px;
     height: 556px;
@@ -752,7 +754,7 @@ body {
     margin-bottom: 25px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .gallery__coctail_box-name {
     margin-bottom: 20px;
   }
@@ -766,7 +768,7 @@ body {
     gap: 12px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .gallery__coctail_box-buttons {
     gap: 16px;
   }
@@ -788,7 +790,7 @@ body {
     margin-bottom: 20px;
   }
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1280px) {
   .gallery__coctail_img {
     width: 393px;
     height: 395px;
@@ -801,20 +803,28 @@ body {
 }
 
 .favorite_title {
-  margin-bottom: 60px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1.9090909091;
   color: #202025;
+}
+@media screen and (min-width: 480px) {
+  .favorite_title {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 280px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.9090909091;
+  }
 }
 
 .favorite_text {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 122px;
-  width: 239px;
+  max-width: 239px;
   height: 120px;
   font-family: "Poppins";
   font-style: normal;
@@ -826,5 +836,8 @@ body {
 
 .footer {
   height: 110px;
+  width: auto;
+  top: 830px;
   background: #fd5103;
+  border-radius: 0px;
 }/*# sourceMappingURL=index.css.map */
