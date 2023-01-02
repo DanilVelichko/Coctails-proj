@@ -811,20 +811,28 @@ body {
 }
 
 .favorite_title {
-  margin-bottom: 60px;
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 600;
-  font-size: 22px;
-  line-height: 1.9090909091;
   color: #202025;
+}
+@media screen and (min-width: 480px) {
+  .favorite_title {
+    margin-bottom: 60px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 280px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.9090909091;
+  }
 }
 
 .favorite_text {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 122px;
-  width: 239px;
+  max-width: 239px;
   height: 120px;
   font-family: "Poppins";
   font-style: normal;
