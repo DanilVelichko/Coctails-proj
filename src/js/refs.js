@@ -16,6 +16,7 @@ export const fetchEl = {
 export const point = {
     galleryUl: document.querySelector('.gallery__render-box'),
 
+    
 };
 
 export const counter = {
