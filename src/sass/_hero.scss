@@ -76,9 +76,17 @@
 
 .hero-overlay {
   @media screen and(max-width: 767px) {
+    height: 34px;
     border-radius: 4px;
     position: relative;
     overflow: hidden;
+    
+    transition-property: height;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    &:focus-within {
+    height: 118px;
+    }
     
   }
 }
