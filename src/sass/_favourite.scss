@@ -160,7 +160,7 @@
   }
 }
 
-//------------------------ Favorite-----------------------//
+//------------------------ Favorite cocktails-----------------------//
 
 .favorite {
   text-align: center;
@@ -182,6 +182,10 @@
 .favorite__border {
   width: 280px;
   height: 449px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
 
   border: 1px solid #fd5103;
   border-radius: 4px;
@@ -215,4 +219,181 @@
   gap: 17px;
 
   margin-bottom: 24px;
+}
+
+.favorite__learn {
+  @include mobile {
+    width: 108px;
+    height: 39px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #ffffff;
+  }
+}
+
+.favorite__Remove {
+  @include mobile {
+    width: 110px;
+    height: 39px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+
+    letter-spacing: 0.02em;
+
+    color: #fd5103;
+  }
+}
+
+.favorite__heart {
+  fill: #fd5103;
+}
+
+.favorite__plugination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+
+  width: 28px;
+  height: 28px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+
+  background: #fffbfb;
+  border: 1px solid #fe7031;
+  border-radius: 2px;
+}
+
+// -----------------------------favorIngredients---------------------//
+
+.favor-ingredients {
+  text-align: center;
+}
+
+.favor-ingredients__title {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: calc(42 / 22);
+
+  color: #202025;
+}
+
+.favor-ingredients__border {
+  width: 280px;
+  height: 449px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  border: 1px solid #fd5103;
+  border-radius: 4px;
+}
+
+.favor-ingredients__cocktail-name {
+  margin-bottom: 16px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: calc(42 / 26);
+
+  color: #202025;
+}
+
+.favor-ingredients__cocktail-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+
+  margin-bottom: 24px;
+}
+
+.favor-ingredients__learn {
+  @include mobile {
+    width: 108px;
+    height: 39px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    color: #ffffff;
+  }
+}
+
+.favor-ingredients__Remove {
+  @include mobile {
+    width: 110px;
+    height: 39px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+
+    letter-spacing: 0.02em;
+
+    color: #fd5103;
+  }
+}
+
+.favor-ingredients__heart {
+  fill: #fd5103;
+}
+
+.favor-ingredients__plugination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+
+  width: 28px;
+  height: 28px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(16 / 14);
+
+  background: #fffbfb;
+  border: 1px solid #fe7031;
+  border-radius: 2px;
 }
