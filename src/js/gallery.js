@@ -62,7 +62,7 @@ return `
             <img
               class="heart__button"
 
-              src="/images/Heart-white.svg"
+              src="./images/Heart-white.svg"
               alt="Heart"
 
             />
