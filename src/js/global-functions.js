@@ -82,3 +82,25 @@ export const formatScreenRender =  (yourFetchFunction) => {
 export const cleanHTML = () => {
     point.galleryUl.innerHTML = '';
 };
+
+// FOR LOCAL STORAGE //
+
+export const saveInLocalStorage = (key, value) => {
+  try {
+    const serializedState = JSON.stringify(value);
+    localStorage.setItem(key, serializedState);
+  } catch (error) {
+    console.error("Set state error: ", error.message);
+  }
+};
+
+export const loadFromLocalStorage = key => {
+  try {
+    const serializedState = localStorage.getItem(key);
+    return serializedState === null ? undefined : JSON.parse(serializedState);
+  } catch (error) {
+    console.error("Get state error: ", error.message);
+  }
+};
+
+console.log('Global functions')

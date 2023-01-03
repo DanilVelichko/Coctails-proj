@@ -8,6 +8,8 @@ export const event = {
 
 };
 
+export const localStorageArr = ['14456'];
+  
 export const fetchEl = {
 
 };
@@ -25,3 +27,6 @@ export const counter = {
     tablet: 6,
     desktop: 9,
 };
+
+
+console.log('Refs js');

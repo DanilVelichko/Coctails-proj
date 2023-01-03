@@ -1,7 +1,7 @@
 import axios from "axios";
 import debounce from 'debounce';
-import { renderCard, formatScreenRender, cleanHTML } from "./global-functions.js";
-import { refs, fetchEl, point, counter } from './refs.js';
+import { renderCard, formatScreenRender, cleanHTML, saveInLocalStorage, loadFromLocalStorage } from "./global-functions.js";
+import { refs, fetchEl, point, counter, localStorageArr } from './refs.js';
 
 const debouncedRender = debounce(formatScreenRender(galleryMarkup), 1000);
 
@@ -17,5 +17,24 @@ async function galleryMarkup() {
     }
 }
 
+
 debouncedRender();
 window.addEventListener('resize', debouncedRender);
+
+// ADD To and Remove cards to Favorites //
+point.galleryUl.addEventListener('click', addToFavorite);
+
+function addToFavorite(e) {
+    localStorageArr.push(e.target.children[1].textContent);
+    saveInLocalStorage('CoctailsId', localStorageArr);
+
+}
+
+function removeFromFavorite(e) {
+    localStorageArr.filter(coctailId => coctailId !== e.target.children[1].textContent);
+   saveInLocalStorage('CoctailsId', localStorageArr);
+
+}
+
+console.log('Gallery js');
+
