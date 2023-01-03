@@ -77,3 +77,142 @@
     line-height: calc(72 / 32);
   }
 }
+
+// ----------------------------- ingredients -------------------------------//
+
+.ingredients {
+  text-align: center;
+}
+
+.ingredients_title {
+  margin-bottom: 60px;
+  margin-top: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 320px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: calc(42 / 22);
+
+  color: #202025;
+
+  @include tablet {
+    margin-top: 68px;
+
+    max-width: 493px;
+    height: 38px;
+
+    font-family: 'Roboto';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: calc(38 / 32);
+  }
+
+  @include desktop {
+    margin-top: 68px;
+    margin-bottom: 60px;
+
+    max-width: 464px;
+    height: 72px;
+
+    font-weight: 700;
+    font-size: 48px;
+    line-height: calc(72 / 48);
+
+    color: #000000;
+  }
+}
+
+.ingredients_text {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 122px;
+
+  max-width: 239px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: calc(60 / 20);
+
+  color: #202025;
+
+  @include tablet {
+    margin-bottom: 523px;
+    max-width: 296px;
+
+    font-size: 24px;
+    line-height: calc(60 / 24);
+  }
+
+  @include desktop {
+    max-width: 385px;
+    height: 144px;
+
+    margin-bottom: 472px;
+
+    font-size: 32px;
+    line-height: calc(72 / 32);
+  }
+}
+
+//------------------------ Favorite-----------------------//
+
+.favorite {
+  text-align: center;
+}
+
+.favorite__title {
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: calc(42 / 22);
+
+  color: #202025;
+}
+
+.favorite__border {
+  width: 280px;
+  height: 449px;
+
+  border: 1px solid #fd5103;
+  border-radius: 4px;
+}
+
+.favorite__img {
+  margin-bottom: 48px;
+
+  width: 280px;
+  height: 280px;
+
+  display: inline-block;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.favorite__cocktail-name {
+  margin-bottom: 16px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 26px;
+  line-height: calc(42 / 26);
+
+  color: #202025;
+}
+
+.favorite__cocktail-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+
+  margin-bottom: 24px;
+}
