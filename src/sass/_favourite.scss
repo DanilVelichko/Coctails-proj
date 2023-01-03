@@ -160,7 +160,7 @@
   }
 }
 
-//------------------------ Favorite-----------------------//
+//------------------------ Favorite cocktails-----------------------//
 
 .favorite {
   text-align: center;
@@ -183,6 +183,8 @@
   width: 280px;
   height: 449px;
 
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
 
   border: 1px solid #fd5103;
@@ -217,4 +219,43 @@
   gap: 17px;
 
   margin-bottom: 24px;
+}
+
+.favorite__learn {
+  @include mobile {
+    width: 108px;
+    height: 39px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+
+    text-align: center;
+    letter-spacing: 0.02em;
+
+    color: #ffffff;
+  }
+}
+
+.favorite__Remove {
+  @include mobile {
+    width: 110px;
+    height: 39px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+
+    letter-spacing: 0.02em;
+
+    color: #fd5103;
+  }
+}
+
+.favorite__heart {
+  fill: #fd5103;
 }

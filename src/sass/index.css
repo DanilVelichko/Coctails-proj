@@ -969,6 +969,8 @@ body {
 .favorite__border {
   width: 280px;
   height: 449px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 20px;
   border: 1px solid #fd5103;
   border-radius: 4px;
@@ -997,6 +999,39 @@ body {
   justify-content: center;
   gap: 17px;
   margin-bottom: 24px;
+}
+
+@media screen and (min-width: 480px) {
+  .favorite__learn {
+    width: 108px;
+    height: 39px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7142857143;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #ffffff;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .favorite__Remove {
+    width: 110px;
+    height: 39px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.7142857143;
+    letter-spacing: 0.02em;
+    color: #fd5103;
+  }
+}
+
+.favorite__heart {
+  fill: #fd5103;
 }
 
 .footer {
