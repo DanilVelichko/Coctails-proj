@@ -57,20 +57,20 @@ export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
 export const formatScreenRender =  (yourFetchFunction) => {
     if (window.matchMedia("(min-width: 1280px)").matches) {
         for (let i = 0; i < counter.desktop; i++) {
-            yourFetchFunction();
+            yourFetchFunction(i);
         }
         
     }
 
     else if (window.matchMedia("(min-width: 768px)").matches) {
         for (let i = 0; i < counter.tablet; i++) {
-            yourFetchFunction();
+            yourFetchFunction(i);
         }
       
     }
     else if (window.matchMedia("(max-width: 480px)").matches) {
         for (let i = 0; i < counter.mobile; i++) {
-            yourFetchFunction();
+            yourFetchFunction(i);
         }
         
     } else {
