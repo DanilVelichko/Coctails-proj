@@ -15,8 +15,9 @@ export const fetchEl = {
 
 export const point = {
     galleryUl: document.querySelector('.gallery__render-box'),
-
-    
+    card: document.querySelectorAll('gallery__coctail_box'),
+    addFavoriteButtons: document.querySelectorAll('.button__add'),
+    idCocktailOnCard: document.querySelectorAll('.coctailsId'),
 };
 
 export const counter = {
