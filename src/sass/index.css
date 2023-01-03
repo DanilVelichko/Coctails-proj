@@ -951,13 +951,10 @@ body {
   }
 }
 
-.favorite {
-  text-align: center;
-}
-
 .favorite__title {
   margin-top: 60px;
   margin-bottom: 60px;
+  text-align: center;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 600;
@@ -965,9 +962,27 @@ body {
   line-height: 1.9090909091;
   color: #202025;
 }
+@media screen and (min-width: 768px) {
+  .favorite__title {
+    margin-top: 68px;
+    font-family: "Roboto";
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favorite__title {
+    margin-top: 69px;
+    font-family: "Poppins";
+    font-size: 48px;
+    line-height: 1.5;
+    color: #000000;
+  }
+}
 
 .favorite__border {
-  width: 280px;
+  max-width: 280px;
   height: 449px;
   margin-left: auto;
   margin-right: auto;
@@ -975,17 +990,38 @@ body {
   border: 1px solid #fd5103;
   border-radius: 4px;
 }
+@media screen and (min-width: 768px) {
+  .favorite__border {
+    max-width: 335px;
+    height: 541px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 60px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favorite__border {
+    max-width: 395px;
+    height: 556px;
+  }
+}
 
 .favorite__img {
   margin-bottom: 48px;
-  width: 280px;
   height: 280px;
   display: inline-block;
   border-radius: 4px 4px 0px 0px;
 }
+@media screen and (min-width: 768px) {
+  .favorite__img {
+    margin-bottom: 20px;
+    height: 395px;
+  }
+}
 
 .favorite__cocktail-name {
   margin-bottom: 16px;
+  text-align: center;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 900;
@@ -993,12 +1029,39 @@ body {
   line-height: 1.6153846154;
   color: #202025;
 }
+@media screen and (min-width: 768px) {
+  .favorite__cocktail-name {
+    margin-bottom: 25px;
+    font-size: 28px;
+    line-height: 1.1785714286;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favorite__cocktail-name {
+    margin-bottom: 27px;
+    font-size: 32px;
+    line-height: 1.1875;
+    color: #000000;
+  }
+}
 
 .favorite__cocktail-buttons {
   display: flex;
   justify-content: center;
   gap: 17px;
   margin-bottom: 24px;
+}
+@media screen and (min-width: 768px) {
+  .favorite__cocktail-buttons {
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favorite__cocktail-buttons {
+    margin-bottom: 28px;
+    gap: 16px;
+  }
 }
 
 @media screen and (min-width: 480px) {
@@ -1016,9 +1079,22 @@ body {
     color: #ffffff;
   }
 }
+@media screen and (min-width: 768px) {
+  .favorite__learn {
+    width: 160px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favorite__learn {
+    width: 182px;
+  }
+}
 
 @media screen and (min-width: 480px) {
-  .favorite__Remove {
+  .favorite__remove {
     width: 110px;
     height: 39px;
     font-family: "Roboto";
@@ -1030,9 +1106,19 @@ body {
     color: #fd5103;
   }
 }
-
-.favorite__heart {
-  fill: #fd5103;
+@media screen and (min-width: 768px) {
+  .favorite__remove {
+    width: 123px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favorite__remove {
+    width: 141px;
+    height: 48px;
+  }
 }
 
 .favorite__plugination {
@@ -1053,12 +1139,14 @@ body {
   border: 1px solid #fe7031;
   border-radius: 2px;
 }
-
-.favor-ingredients {
-  text-align: center;
+@media screen and (min-width: 768px) {
+  .favorite__plugination {
+    display: none;
+  }
 }
 
 .favor-ingredients__title {
+  text-align: center;
   margin-top: 60px;
   margin-bottom: 60px;
   font-family: "Poppins";
@@ -1068,19 +1156,53 @@ body {
   line-height: 1.9090909091;
   color: #202025;
 }
+@media screen and (min-width: 768px) {
+  .favor-ingredients__title {
+    margin-bottom: 78px;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 1.1875;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favor-ingredients__title {
+    margin-top: 69px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 1.5;
+  }
+}
 
 .favor-ingredients__border {
-  width: 280px;
-  height: 449px;
+  max-width: 280px;
+  height: 100%;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 20px;
   border: 1px solid #fd5103;
   border-radius: 4px;
 }
+@media screen and (min-width: 768px) {
+  .favor-ingredients__border {
+    max-width: 336px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favor-ingredients__border {
+    max-width: 395px;
+  }
+}
 
 .favor-ingredients__cocktail-name {
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 900;
@@ -1088,46 +1210,121 @@ body {
   line-height: 1.6153846154;
   color: #202025;
 }
+@media screen and (min-width: 768px) {
+  .favor-ingredients__cocktail-name {
+    margin-bottom: 28px;
+    font-size: 28px;
+    line-height: 1.1785714286;
+    color: #000000;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favor-ingredients__cocktail-name {
+    margin-top: 30px;
+    margin-left: 28px;
+    margin-bottom: 28px;
+    font-size: 32px;
+    line-height: 1.1875;
+    color: #202025;
+  }
+}
+
+.favor-ingredients__ingredients-name {
+  margin-left: 20px;
+  margin-bottom: 20px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .favor-ingredients__ingredients-name {
+    margin-bottom: 28px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #5f6775;
+    text-transform: uppercase;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favor-ingredients__ingredients-name {
+    margin-left: 28px;
+  }
+}
 
 .favor-ingredients__cocktail-buttons {
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
-  gap: 17px;
-  margin-bottom: 24px;
+  gap: 22px;
+}
+@media screen and (min-width: 768px) {
+  .favor-ingredients__cocktail-buttons {
+    gap: 12px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favor-ingredients__cocktail-buttons {
+    margin-bottom: 26px;
+    gap: 16px;
+  }
 }
 
-@media screen and (min-width: 480px) {
+.favor-ingredients__learn {
+  width: 108px;
+  height: 39px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7142857143;
+  text-align: center;
+  letter-spacing: 0.02em;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: #ffffff;
+}
+@media screen and (min-width: 768px) {
   .favor-ingredients__learn {
-    width: 108px;
-    height: 39px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.7142857143;
-    text-align: center;
-    letter-spacing: 0.02em;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    color: #ffffff;
+    width: 160px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .favor-ingredients__learn {
+    width: 182px;
+    height: 48px;
   }
 }
 
-@media screen and (min-width: 480px) {
-  .favor-ingredients__Remove {
-    width: 110px;
-    height: 39px;
-    font-family: "Roboto";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 1.7142857143;
-    letter-spacing: 0.02em;
-    color: #fd5103;
+.favor-ingredients__remove {
+  width: 110px;
+  height: 39px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7142857143;
+  letter-spacing: 0.02em;
+  color: #fd5103;
+}
+@media screen and (min-width: 768px) {
+  .favor-ingredients__remove {
+    width: 123px;
+    height: 48px;
+    font-size: 20px;
+    line-height: 1.2;
   }
 }
-
-.favor-ingredients__heart {
-  fill: #fd5103;
+@media screen and (min-width: 1280px) {
+  .favor-ingredients__remove {
+    width: 141px;
+    height: 48px;
+  }
 }
 
 .favor-ingredients__plugination {
