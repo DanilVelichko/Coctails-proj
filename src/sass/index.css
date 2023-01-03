@@ -969,6 +969,7 @@ body {
 .favorite__border {
   width: 280px;
   height: 449px;
+  margin-bottom: 20px;
   border: 1px solid #fd5103;
   border-radius: 4px;
 }
