@@ -12,6 +12,9 @@ export const fetchEl = {
 
 };
 
+export const buttonRefs = {
+    
+}
 
 export const point = {
     galleryUl: document.querySelector('.gallery__render-box'),
@@ -25,3 +28,6 @@ export const counter = {
     tablet: 6,
     desktop: 9,
 };
+
+
+console.log('Refs js');

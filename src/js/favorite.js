@@ -1,1 +1,2 @@
 
+console.log('Favorite js');

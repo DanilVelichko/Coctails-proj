@@ -17,5 +17,15 @@ async function galleryMarkup() {
     }
 }
 
+
 debouncedRender();
 window.addEventListener('resize', debouncedRender);
+
+// ADD To and Remove cards to Favorites //
+point.galleryUl.addEventListener('click', onClick);
+
+function onClick(e) {
+    console.dir(e.target.children[1].textContent);
+}
+
+console.log('Gallery js');

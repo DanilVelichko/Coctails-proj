@@ -1,18 +1,26 @@
 import { refs, fetchEl, point, counter } from './refs.js';
+import { saveInLocalStorage, loadFromLocalStorage } from './global-functions.js';
 
-window.addEventListener('load', init);
+// window.addEventListener('load', init);
 
-function init(){
-    point.galleryUl.point.card.forEach( card => {
-        card.addEventListener('click', clickhandler );
-    });
+// function init(){
+//     point.addFavoriteButtons.forEach( card => {
+//         card.addEventListener('click', addToFavorite);
+//         console.log('forEach card');
+//     });
+// }
+
+point.galleryUl.addEventListener('click', onClick);
+
+function onClick(e) {
+    console.log(e.target);
 }
-point.addFavoriteButtons.addEventListener('click', addToFavorite);
 
-console.log('Favorite js')
+console.log('Favorite button js');
+
 export function addToFavorite(e) {
     console.log('Click')
-   localStorage.setItem('CoctailsId', '1');
+   saveInLocalStorage('CoctailsId', '1');
    
     console.dir(e.target);
 
