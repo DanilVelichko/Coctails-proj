@@ -522,9 +522,16 @@ body {
 
 @media screen and (max-width: 767px) {
   .hero-overlay {
+    height: 34px;
     border-radius: 4px;
     position: relative;
     overflow: hidden;
+    transition-property: height;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .hero-overlay:focus-within {
+    height: 118px;
   }
 }
 
@@ -710,11 +717,27 @@ body {
   }
 }
 .gallery__title {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.9;
+  width: 280px;
+  color: #202025;
+  text-align: center;
   margin-bottom: 60px;
+}
+@media screen and (min-width: 768px) {
+  .gallery__title {
+    font-weight: 700;
+    font-size: 32px;
+    width: 331px;
+  }
 }
 @media screen and (min-width: 1280px) {
   .gallery__title {
-    margin-bottom: 27px;
+    font-size: 48px;
+    width: 493px;
+    margin-bottom: 60px;
   }
 }
 .gallery__coctail_box {
@@ -807,6 +830,11 @@ body {
     height: 395px;
     margin-bottom: 20px;
   }
+}
+
+.gallery__no-find-box {
+  display: none;
+  margin-bottom: 60px;
 }
 
 .cocktails {

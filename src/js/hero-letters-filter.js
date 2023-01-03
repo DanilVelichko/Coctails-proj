@@ -1,35 +1,56 @@
 import axios from 'axios';
 import { refs, fetchEl, point, counter } from './refs.js';
 
+
 const heroRefs = {
   searchByAbc: document.querySelector('.hero-search'),
   overlayBtn: document.querySelector('.hero-btn'),
+  titleGallery: document.querySelector('.gallery__title'),
+  boxPicture: document.querySelector('.gallery__no-find-box'),
 };
 heroRefs.searchByAbc.addEventListener('click', onSearch);
 
-function onSearch(e) {
-  const elBtn = e.target.textContent;
-  heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
+let elBtn = ''
+  
+  function onSearch(e) {
+    elBtn = e.target.textContent;
+    heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
 
-  gallerySearchCard(elBtn);
-}
+  formatScreenRender();
+};
 
-async function gallerySearchCard(elBtn) {
-  point.galleryUl.innerHTML = '';
-  try {
-    const url = await axios.get(
-      `${refs.ferstLetterSearch}${elBtn}`
-    );
-    renderMarkup(url.data.drinks);
-  } catch (error) {
-    console.log(error);
+function formatScreenRender() {
+  if (window.matchMedia('(min-width: 1280px)').matches) {
+    for (let i = 0; i < counter.desktop; i++) {
+      galleryMarkup(i);
+    }
+  } else if (window.matchMedia('(min-width: 768px)').matches) {
+    for (let i = 0; i < counter.tablet; i++) {
+      galleryMarkup(i);
+    }
+  } else if (window.matchMedia('(max-width: 767px)').matches) {
+    for (let i = 0; i < counter.mobile; i++) {
+      galleryMarkup(i);
+    }
+  } else {
   }
 }
 
-function renderMarkup(card) {
-  const markup = card
-    .map(({ strDrinkThumb, strDrink }) => {
-      return `
+async function galleryMarkup(i) {
+  point.galleryUl.innerHTML = '';
+  try {
+    const url = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
+    point.galleryUl.insertAdjacentHTML('beforeend', renderMarkup(url.data.drinks[i]));
+
+    heroRefs.titleGallery.innerHTML = 'Searching results';
+    heroRefs.boxPicture.style.display = 'none';
+  } catch (error) {
+    if (point.galleryUl.textContent === '') onErrorFind();
+  }
+}
+
+function renderMarkup({ strDrinkThumb, strDrink }) {
+  return `
   <li class="gallery__coctail_box">
         <picture class="gallery__coctail_img">
           <source
@@ -72,16 +93,18 @@ function renderMarkup(card) {
             <img
               class="heart__button"
 
-              src="/images/Heart-white.svg"
+              src="./images/Heart-white.svg"
               alt="Heart"
 
             />
           </button>
         </div>
       </li>
-`
-    }).join('');
+`;
+}
 
-  point.galleryUl.insertAdjacentHTML('beforeend', markup);
+function onErrorFind() {
+  heroRefs.titleGallery.innerHTML = "Sorry, we didn't find any cocktail for you"
+  heroRefs.boxPicture.style.display = "block"
 }
 
