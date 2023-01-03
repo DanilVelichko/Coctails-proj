@@ -1,3 +1,5 @@
+import { refs, fetchEl, point, counter } from './refs.js';
+
 export const renderCard = ({ strDrinkThumb, strDrink }) => {
     return `
   <li class="gallery__coctail_box">
@@ -53,23 +55,23 @@ export const renderCard = ({ strDrinkThumb, strDrink }) => {
 };
   
 
-export const formatScreenRender = () => {
+export const formatScreenRender =  (yourFetchFunction) => {
     if (window.matchMedia("(min-width: 1280px)").matches) {
         for (let i = 0; i < counter.desktop; i++) {
-            galleryMarkup();
+            yourFetchFunction();
         }
         
     }
 
     else if (window.matchMedia("(min-width: 768px)").matches) {
         for (let i = 0; i < counter.tablet; i++) {
-            galleryMarkup();
+            yourFetchFunction();
         }
       
     }
     else if (window.matchMedia("(max-width: 480px)").matches) {
         for (let i = 0; i < counter.mobile; i++) {
-            galleryMarkup();
+            yourFetchFunction();
         }
         
     } else {
@@ -80,4 +82,4 @@ export const formatScreenRender = () => {
 
 export const cleanHTML = () => {
     point.galleryUl.innerHTML = '';
-}
+};
