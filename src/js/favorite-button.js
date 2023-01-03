@@ -10,11 +10,11 @@ import { saveInLocalStorage, loadFromLocalStorage } from './global-functions.js'
 //     });
 // }
 
-point.galleryUl.addEventListener('click', onClick);
+// point.galleryUl.addEventListener('click', onClick);
 
-function onClick(e) {
-    console.log(e.target);
-}
+// function onClick(e) {
+//     console.log(e.target);
+// }
 
 console.log('Favorite button js');
 
