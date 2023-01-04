@@ -2,9 +2,10 @@
 :root {
   --main-text-color: #202025;
   --orange-text-color: #fd5103;
-  --white-color-color: #ffffff;
+  --white-text-color: #ffffff;
   --main-background-color: #fcfcfc;
   --orange-background-color: #fd5103;
+  --main-border-color: #FE7031;
   --base-font-family: Poppins, sans-serif;
   --primary-font-family: Roboto, sans-serif;
   --favorite-bg-color: #fffcfa;
@@ -835,6 +836,48 @@ body {
 .gallery__no-find-box {
   display: none;
   margin-bottom: 60px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .pagination {
+    gap: 12px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .pagination {
+    gap: 13px;
+  }
+}
+.pagination__button {
+  width: 32px;
+  height: 32px;
+  background-color: var(--main-background-color);
+  border-color: var(--main-border-color);
+  border-radius: 50%;
+  font-size: 12px;
+}
+@media screen and (min-width: 768px) {
+  .pagination__button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .pagination__button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+.pagination__button:hover {
+  color: var(--white-text-color);
+  background-color: var(--orange-background-color);
 }
 
 .cocktails {

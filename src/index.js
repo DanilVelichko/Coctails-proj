@@ -1,4 +1,4 @@
-
+import "./js/pagination.js";
 
 import "./js/favorite-button";
 import "./js/favorite";
@@ -8,3 +8,4 @@ import "./js/hero-letters-filter";
 import "./js/modal";
 import "./js/refs";
 import "./js/global-functions";
+
