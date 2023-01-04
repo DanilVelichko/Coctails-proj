@@ -6,7 +6,7 @@ import { refs, fetchEl, point, counter, localStorageArr} from './refs.js';
 const debouncedRender = debounce(formatScreenRender(galleryMarkup), 1000);
 
 
-async function galleryMarkup() {
+export async function galleryMarkup() {
     cleanHTML();
     try {
         const response = await axios.get(refs.randomCoctailApi);

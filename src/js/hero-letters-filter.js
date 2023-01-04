@@ -20,12 +20,12 @@ export let elBtn = '';
 
     // Рендерим Пагинацию под галереей карточек //
     let pagination = await createPagination(elBtn);
-    
+
     point.paginationDiv.innerHTML = pagination;
     console.log(await createPagination(elBtn));
 };
 
-async function galleryMarkup(i) {
+expport async function galleryMarkup(i) {
   cleanHTML();
   try {
     const url = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
