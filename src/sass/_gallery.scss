@@ -29,7 +29,7 @@
   }
   &__title {
     font-family: 'Poppins';
-<<<<<<< Updated upstream
+
     font-weight: 600;
     font-size: 22px;
     line-height: 1.9;
@@ -38,10 +38,9 @@
     color: #202025;
     text-align: center;
 
-=======
     font-style: normal;
     color: var(--main-text-color);
->>>>>>> Stashed changes
+
     margin-bottom: 60px;
     @include mobile {
       font-weight: 600;
@@ -49,7 +48,7 @@
       line-height: 1.9;
     }
     @include tablet {
-<<<<<<< Updated upstream
+
       font-weight: 700;
       font-size: 32px;
       width: 331px;
@@ -58,7 +57,7 @@
       font-size: 48px;
       width: 493px;
       margin-bottom: 60px;
-=======
+
       font-family: 'Roboto';
       font-weight: 700;
       font-size: 32px;
@@ -68,7 +67,7 @@
       font-weight: 700;
       font-size: 48px;
       line-height: 1.5;
->>>>>>> Stashed changes
+
     }
   }
   &__coctail {
@@ -158,6 +157,7 @@
   margin-bottom: 60px;
 }
 
+
 .button_add {
   gap: 8px;
   @include mobile {
@@ -168,5 +168,43 @@ gap: 4px;
   }
   @include desktop {
 gap: 5px;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  @include mobile {
+  }
+  @include tablet {
+    gap: 12px;
+  }
+  @include desktop {
+    gap: 13px;
+  }
+  &__button {
+    width: 32px;
+    height: 32px;
+    background-color: var(--main-background-color);
+    border-color: var(--main-border-color);
+    border-radius: 50%;
+    font-size: 12px;
+    @include mobile {
+    }
+    @include tablet {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+    @include desktop {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+    &:hover {
+      color: var(--white-text-color);
+      background-color: var(--orange-background-color);
+    }
+
   }
 }
