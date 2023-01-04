@@ -7,7 +7,10 @@ const pagRefs = {
   api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
 };
 
+
 point.paginationDiv.addEventListener('click', goToPage = async (e) => {
+
+  const pageNum = (e.target.textContent - 1);
 // Смотрим на размер окна и считаем размер страницы //
  const itemsPerPage = itemsPerScreen();
 
@@ -20,13 +23,18 @@ point.paginationDiv.addEventListener('click', goToPage = async (e) => {
     // Разделяем большой массив на массивы постранично исходя из разрешения экрана //
     const pagesArr = await paginate(responseArr, itemsPerPage);
     console.log('Здесь страницы с коктейлями на каждой:', pagesArr);
+    
+    cleanHTML();
+
+    // Рендерим на страницу по клику на соответсвующую кнопку//
+    point.galleryUl
+            .insertAdjacentHTML('beforeend', pagesArr[pageNum].map(item => renderCard(item)).join(''));
 
     } catch (error) {
         console.dir(error);
   }
+ 
   
-
-
   // чистим и снова рендерим пагинацию //
   await cleanPagination();
   let paginationGoToPage = await createPagination(elBtn);
@@ -45,7 +53,6 @@ async function paginate(array, itemsPerPage) {
   }
   return pages;
 }
-
 
 export async function createPagination(letter) {
   // 
