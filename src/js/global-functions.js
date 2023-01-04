@@ -83,6 +83,10 @@ export const cleanHTML = () => {
     point.galleryUl.innerHTML = '';
 };
 
+export const cleanPagination = () => {
+  point.paginationDiv.innerHTML = "";
+}
+
 // FOR LOCAL STORAGE //
 
 export const saveInLocalStorage = (key, value) => {
