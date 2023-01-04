@@ -17,9 +17,9 @@ export let elBtn = '';
     heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
 
     formatScreenRender(galleryMarkup);
-    let pagination = await createPagination(elBtn)
+    let pagination = await createPagination(elBtn, 1);
     point.paginationDiv.innerHTML = pagination;
-    console.log(createPagination(elBtn));
+    console.log(await createPagination(elBtn, 1));
 };
 
 async function galleryMarkup(i) {
