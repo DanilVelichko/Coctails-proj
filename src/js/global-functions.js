@@ -105,4 +105,15 @@ export const loadFromLocalStorage = key => {
   }
 };
 
+export function itemsPerScreen () {
+    let itemsPerPage = 0;
+  if (window.matchMedia("(min-width: 1280px)").matches) {
+    itemsPerPage = counter.desktop;
+  } else if (window.matchMedia("(min-width: 768px)").matches) {
+itemsPerPage = counter.tablet;
+  } else if (window.matchMedia("(max-width: 480px)").matches) {
+itemsPerPage = counter.mobile;
+  }
+  return itemsPerPage;
+}
 console.log('Global functions')

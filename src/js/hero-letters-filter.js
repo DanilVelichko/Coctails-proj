@@ -17,9 +17,12 @@ export let elBtn = '';
     heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
 
     formatScreenRender(galleryMarkup);
-    let pagination = await createPagination(elBtn, 1);
+
+    // Рендерим Пагинацию под галереей карточек //
+    let pagination = await createPagination(elBtn);
+    
     point.paginationDiv.innerHTML = pagination;
-    console.log(await createPagination(elBtn, 1));
+    console.log(await createPagination(elBtn));
 };
 
 async function galleryMarkup(i) {
