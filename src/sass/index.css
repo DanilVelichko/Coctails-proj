@@ -445,6 +445,57 @@ body {
   background: #fd5103;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+@media screen and (min-width: 768px) {
+  .pagination {
+    gap: 12px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .pagination {
+    gap: 13px;
+  }
+}
+.pagination__button {
+  width: 32px;
+  height: 32px;
+  background-color: var(--main-background-color);
+  border-radius: 50%;
+  font-size: 12px;
+  border: 1px solid transparent;
+  border-color: var(--main-border-color);
+}
+@media screen and (min-width: 768px) {
+  .pagination__button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .pagination__button {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+.pagination__button:hover {
+  color: var(--white-text-color);
+  background-color: var(--orange-background-color);
+}
+.pagination__button-current {
+  color: var(--white-text-color);
+  background-color: var(--orange-background-color);
+}
+.pagination_points {
+  color: var(--orange-text-color);
+  font-size: 25px;
+}
+
 .hero__container {
   display: flex;
   flex-direction: column;
@@ -836,48 +887,6 @@ body {
 .gallery__no-find-box {
   display: none;
   margin-bottom: 60px;
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-@media screen and (min-width: 768px) {
-  .pagination {
-    gap: 12px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .pagination {
-    gap: 13px;
-  }
-}
-.pagination__button {
-  width: 32px;
-  height: 32px;
-  background-color: var(--main-background-color);
-  border-color: var(--main-border-color);
-  border-radius: 50%;
-  font-size: 12px;
-}
-@media screen and (min-width: 768px) {
-  .pagination__button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .pagination__button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-}
-.pagination__button:hover {
-  color: var(--white-text-color);
-  background-color: var(--orange-background-color);
 }
 
 .cocktails {
