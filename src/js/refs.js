@@ -21,7 +21,7 @@ export const point = {
     addFavoriteButtons: document.querySelectorAll('.button__add'),
     idCocktailOnCard: document.querySelectorAll('.coctailsId'),
 };
-
+console.log(point.addFavoriteButtons)
 export const counter = {
     mobile: 3,
     tablet: 6,

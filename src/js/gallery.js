@@ -1,7 +1,7 @@
 import axios from "axios";
 import debounce from 'debounce';
 import { renderCard, formatScreenRender, cleanHTML, saveInLocalStorage, loadFromLocalStorage } from "./global-functions.js";
-import { refs, fetchEl, point, counter, localStorageArr } from './refs.js';
+import { refs, fetchEl, point, counter, localStorageArr} from './refs.js';
 
 const debouncedRender = debounce(formatScreenRender(galleryMarkup), 1000);
 
@@ -25,4 +25,10 @@ window.addEventListener('resize', debouncedRender);
 
 
 console.log('Подключена страница  Gallery js');
+
+
+
+
+
+
 

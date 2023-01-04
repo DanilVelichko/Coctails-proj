@@ -794,10 +794,16 @@ body {
   }
 }
 .gallery__coctail_box-buttons {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   gap: 17px;
 }
 @media screen and (min-width: 480px) {
+  .gallery__coctail_box-buttons {
+    gap: 17px;
+  }
+}
+@media screen and (min-width: 768px) {
   .gallery__coctail_box-buttons {
     gap: 12px;
   }
@@ -835,6 +841,25 @@ body {
 .gallery__no-find-box {
   display: none;
   margin-bottom: 60px;
+}
+
+.button_add {
+  gap: 8px;
+}
+@media screen and (min-width: 480px) {
+  .button_add {
+    gap: 8px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .button_add {
+    gap: 4px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .button_add {
+    gap: 5px;
+  }
 }
 
 .cocktails {

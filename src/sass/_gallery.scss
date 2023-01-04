@@ -98,12 +98,14 @@
     }
 
     &_box-buttons {
-      display: flex;
+      display: inline-flex;
+      align-items: center;
       gap: 17px;
       @include mobile {
-        gap: 12px;
+        gap: 17px;
       }
       @include tablet {
+        gap: 12px;
       }
       @include desktop {
         gap: 16px;
@@ -134,4 +136,17 @@
 .gallery__no-find-box {
   display: none;
   margin-bottom: 60px;
+}
+
+.button_add {
+  gap: 8px;
+  @include mobile {
+    gap: 8px;
+  }
+  @include tablet {
+gap: 4px;
+  }
+  @include desktop {
+gap: 5px;
+  }
 }
