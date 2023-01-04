@@ -10,7 +10,8 @@ async function galleryMarkup() {
     cleanHTML();
     try {
         const response = await axios.get(refs.randomCoctailApi);
-        point.galleryUl.insertAdjacentHTML('beforeend', renderCard(response.data.drinks[0]));
+        point.galleryUl
+            .insertAdjacentHTML('beforeend', renderCard(response.data.drinks[0]));
       
     } catch (error) {
         console.dir(error);
@@ -21,20 +22,7 @@ async function galleryMarkup() {
 debouncedRender();
 window.addEventListener('resize', debouncedRender);
 
-// ADD To and Remove cards to Favorites //
-point.galleryUl.addEventListener('click', addToFavorite);
 
-function addToFavorite(e) {
-    localStorageArr.push(e.target.children[1].textContent);
-    saveInLocalStorage('CoctailsId', localStorageArr);
 
-}
-
-function removeFromFavorite(e) {
-    localStorageArr.filter(coctailId => coctailId !== e.target.children[1].textContent);
-   saveInLocalStorage('CoctailsId', localStorageArr);
-
-}
-
-console.log('Gallery js');
+console.log('Подключена страница  Gallery js');
 
