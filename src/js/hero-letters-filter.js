@@ -25,7 +25,7 @@ export let elBtn = '';
     console.log(await createPagination(elBtn));
 };
 
-expport async function galleryMarkup(i) {
+export async function galleryMarkup(i) {
   cleanHTML();
   try {
     const url = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
