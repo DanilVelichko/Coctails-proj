@@ -29,6 +29,7 @@
   }
   &__title {
     font-family: 'Poppins';
+
     font-weight: 600;
     font-size: 22px;
     line-height: 1.9;
@@ -37,10 +38,17 @@
     color: #202025;
     text-align: center;
 
+    font-style: normal;
+    color: var(--main-text-color);
+
     margin-bottom: 60px;
     @include mobile {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.9;
     }
     @include tablet {
+
       font-weight: 700;
       font-size: 32px;
       width: 331px;
@@ -49,12 +57,21 @@
       font-size: 48px;
       width: 493px;
       margin-bottom: 60px;
+
+      font-family: 'Roboto';
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.3;
+    }
+    @include desktop {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.5;
+
     }
   }
   &__coctail {
     &_box {
-      width: 280px;
-      height: 449px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -64,46 +81,50 @@
       margin-bottom: 20px;
 
       @include mobile {
-        width: 335px;
-        height: 541px;
+        width: 280px;
+        height: 449px;
       }
       @include tablet {
         width: 335px;
-        height: 541px;
+        height: 480px;
       }
-
       @include desktop {
         width: 395px;
         height: 556px;
       }
     }
     &_box-name {
-      margin-bottom: 16px;
-      font-size: 32px;
-      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       font-family: 'Roboto';
-      line-height: 1.62;
+      font-style: normal;
       font-weight: 900;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       @include mobile {
-        margin-bottom: 25px;
-        font-size: 28px;
+        font-size: 26px;
+        line-height: 1.62;
         text-shadow: none;
+        margin-bottom: 16px;
       }
       @include tablet {
+        font-size: 28px;
+        line-height: 1.17;
         margin-bottom: 25px;
       }
       @include desktop {
-        margin-bottom: 20px;
+        font-size: 32px;
+        line-height: 1.19;
+        margin-bottom: 27px;
       }
     }
 
     &_box-buttons {
-      display: flex;
+      display: inline-flex;
+      align-items: center;
       gap: 17px;
       @include mobile {
-        gap: 12px;
+        gap: 17px;
       }
       @include tablet {
+        gap: 12px;
       }
       @include desktop {
         gap: 16px;
@@ -111,19 +132,19 @@
     }
 
     &_img {
-      margin-bottom: 48px;
       border-radius: 4px;
       @include mobile {
-        width: 333px;
+        width: 280px;
+        height: 280px;
         margin-bottom: 20px;
       }
       @include tablet {
         width: 333px;
-        height: 395px;
+        height: 333px;
         margin-bottom: 20px;
       }
       @include desktop {
-        width: 393px;
+        width: 395px;
         height: 395px;
         margin-bottom: 20px;
       }
@@ -135,6 +156,18 @@
   display: none;
   margin-bottom: 60px;
 }
+
+
+.button_add {
+  gap: 8px;
+  @include mobile {
+    gap: 8px;
+  }
+  @include tablet {
+gap: 4px;
+  }
+  @include desktop {
+gap: 5px;
 
 .pagination {
   display: flex;
@@ -172,5 +205,6 @@
       color: var(--white-text-color);
       background-color: var(--orange-background-color);
     }
+
   }
 }
