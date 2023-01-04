@@ -1,0 +1,48 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  @include mobile {
+  }
+  @include tablet {
+    gap: 12px;
+  }
+  @include desktop {
+    gap: 13px;
+  }
+  &__button {
+    width: 32px;
+    height: 32px;
+    background-color: var(--main-background-color);
+
+    border-radius: 50%;
+    font-size: 12px;
+    border: 1px solid transparent;
+    border-color: var(--main-border-color);
+    @include mobile {
+    }
+    @include tablet {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+    @include desktop {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+    &:hover {
+      color: var(--white-text-color);
+      background-color: var(--orange-background-color);
+    }
+    &-current {
+      color: var(--white-text-color);
+      background-color: var(--orange-background-color);
+    }
+  }
+  &_points {
+    color: var(--orange-text-color);
+    font-size: 25px;
+  }
+}
