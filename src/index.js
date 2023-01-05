@@ -1,5 +1,4 @@
 import "./js/pagination.js";
-
 import "./js/favorite-button";
 import "./js/favorite";
 import "./js/gallery";
