@@ -5,7 +5,6 @@ import { refs, fetchEl, point, counter, localStorageArr} from './refs.js';
 
 const debouncedRender = debounce(formatScreenRender(galleryMarkup), 1000);
 
-
 export async function galleryMarkup() {
     cleanHTML();
     try {
@@ -18,11 +17,8 @@ export async function galleryMarkup() {
     }
 }
 
-
 debouncedRender();
 window.addEventListener('resize', debouncedRender);
-
-
 
 console.log('Подключена страница  Gallery js');
 
