@@ -14,7 +14,8 @@ const pagRefs = {
 point.paginationDiv.addEventListener('click', goToPage = async function (e) {
 
 e.target.classList.add("pagination__button-current");
-    const pageNum = (e.target.textContent - 1);
+  const pageNum = (e.target.textContent - 1);
+  
     // Смотрим на размер окна и считаем размер страницы //
     const itemsPerPage = itemsPerScreen();
  
@@ -39,12 +40,13 @@ e.target.classList.add("pagination__button-current");
     }
 
     // чистим и снова рендерим пагинацию //
-    await cleanPagination();
+    // await cleanPagination();
     let paginationGoToPage = await createPagination(elBtn);
   point.paginationDiv.innerHTML = paginationGoToPage;
   
-  // находим класс current на прежней кнопке, снимаем его и ставим этот клас на кликнутую кнопку
  
+  // находим класс current на прежней кнопке, снимаем его и ставим этот клас на кликнутую кнопку
+  await doCurrentClass(e);
 
 });
 
@@ -125,7 +127,7 @@ function renderPagination(totalPages) {
   return pagination;
 }
 async function doCurrentClass(e) {
-    pagRefs.pagesButtons.classList.remove("pagination__button-current");
+    // pagRefs.pagesButtons.classList.remove("pagination__button-current");
         console.log('Класс',  e.target);
         e.target.classList.add("pagination__button-current");
 }
