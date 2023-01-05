@@ -107,7 +107,8 @@ function renderPagination(totalPages) {
       pagination += ' class="pagination__button-current" ';
     }
     pagination += '>' + k + '</button>';
-  }
+    }
+    console.log('Hello');
      // Добавляем троеточие между кнопками страниц //
     pagination += '<div class="pagination_points">...</div>';
 
@@ -124,7 +125,7 @@ function renderPagination(totalPages) {
      }
   }
 
-  
+
   return pagination;
 }
 async function doCurrentClass(e) {
