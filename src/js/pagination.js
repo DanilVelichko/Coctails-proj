@@ -123,7 +123,8 @@ function renderPagination(totalPages) {
       counterTotalPages += 1;
      }
   }
- 
+
+  
   return pagination;
 }
 async function doCurrentClass(e) {
