@@ -5,40 +5,47 @@ import { cleanPagination, renderCard, cleanHTML, formatScreenRender, galleryMark
 
 const pagRefs = {
   api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
+  pagesButtons: document.querySelectorAll('.pagination__button'),
+  currentPage: 'pagination__button-current',
 };
 
 
-point.paginationDiv.addEventListener('click', goToPage = async (e) => {
 
-  const pageNum = (e.target.textContent - 1);
-// Смотрим на размер окна и считаем размер страницы //
- const itemsPerPage = itemsPerScreen();
+point.paginationDiv.addEventListener('click', goToPage = async function (e) {
 
-// Забираем обьект с сервера. В нем 25 коктейлей, сохраняем в массив //
-  try {
-   const response = await axios.get(`${pagRefs.api}${elBtn}`);
-   const responseArr = response.data.drinks;
-    console.log("Все коктейли в одном массиве: ", responseArr);
-
-    // Разделяем большой массив на массивы постранично исходя из разрешения экрана //
-    const pagesArr = await paginate(responseArr, itemsPerPage);
-    console.log('Здесь страницы с коктейлями на каждой:', pagesArr);
-    
-    cleanHTML();
-
-    // Рендерим на страницу по клику на соответсвующую кнопку//
-    point.galleryUl
-            .insertAdjacentHTML('beforeend', pagesArr[pageNum].map(item => renderCard(item)).join(''));
-
-    } catch (error) {
-        console.dir(error);
-  }
+e.target.classList.add("pagination__button-current");
+    const pageNum = (e.target.textContent - 1);
+    // Смотрим на размер окна и считаем размер страницы //
+    const itemsPerPage = itemsPerScreen();
  
-  
-  // чистим и снова рендерим пагинацию //
-  await cleanPagination();
-  let paginationGoToPage = await createPagination(elBtn);
+    // Забираем обьект с сервера. В нем 25 коктейлей, сохраняем в массив //
+    try {
+      const response = await axios.get(`${pagRefs.api}${elBtn}`);
+      const responseArr = response.data.drinks;
+      console.log("Все коктейли в одном массиве: ", responseArr);
+
+      // Разделяем большой массив на массивы постранично исходя из разрешения экрана //
+      const pagesArr = await paginate(responseArr, itemsPerPage);
+      console.log('Здесь страницы с коктейлями на каждой:', pagesArr);
+
+      cleanHTML();
+
+      // Рендерим на страницу по клику на соответсвующую кнопку//
+      point.galleryUl
+        .insertAdjacentHTML('beforeend', pagesArr[pageNum].map(item => renderCard(item)).join(''));
+      
+    } catch (error) {
+      console.dir(error);
+    }
+
+    // чистим и снова рендерим пагинацию //
+    await cleanPagination();
+    let paginationGoToPage = await createPagination(elBtn);
   point.paginationDiv.innerHTML = paginationGoToPage;
+  
+  // находим класс current на прежней кнопке, снимаем его и ставим этот клас на кликнутую кнопку
+ 
+
 });
 
 
@@ -65,8 +72,11 @@ export async function createPagination(letter) {
   const totalResults = data.data.drinks.length;
   const totalPages = Math.ceil(totalResults / itemsPerPage);
   console.log('Total results', totalResults);
-  console.log('Totalpages', totalPages);
+  console.log('Totalpages', totalPages); 
   
+  
+
+
  return renderPagination(totalPages);
 }
 
@@ -78,11 +88,11 @@ function renderPagination(totalPages) {
 
   if (totalPages <= 6) {
     for (let k = 1; k <= totalPages; k++) {
-    pagination += '<button class="pagination__button ';
+    pagination += '<button class="pagination__button" ';
     if (k === currentPage) {
       pagination += ' class="pagination__button-current" ';
     }
-    pagination += '" onclick="goToPage(' + k + ')">' + k + '</button>';
+    pagination += '>' + k + '</button>';
   }
   }
 
@@ -90,7 +100,7 @@ function renderPagination(totalPages) {
   if (totalPages > 7) {
     // Добавляем первые три кнопки страниц //
     for (let k = 1; k <= 3; k++) {
-    pagination += '<button class="pagination__button" onclick="goToPage(' + k + ')"';
+    pagination += '<button class="pagination__button"';
     if (k === currentPage) {
       pagination += ' class="pagination__button-current" ';
     }
@@ -103,7 +113,7 @@ function renderPagination(totalPages) {
     counterTotalPages = (totalPages - 2);
     for (let j = totalPages; j > (totalPages - 3); j -= 1) {
       
-       pagination += '<button class="pagination__button" onclick="goToPage(' + counterTotalPages + ')">'+ counterTotalPages +' </button>';
+       pagination += '<button class="pagination__button" >'+ counterTotalPages +'</button>';
      
        if (j === currentPage) {
       pagination += ' class="pagination__button-current" ';
@@ -113,6 +123,11 @@ function renderPagination(totalPages) {
   }
  
   return pagination;
+}
+async function doCurrentClass(e) {
+    pagRefs.pagesButtons.classList.remove("pagination__button-current");
+        console.log('Класс',  e.target);
+        e.target.classList.add("pagination__button-current");
 }
 
 

@@ -23,7 +23,7 @@ export let elBtn = '';
 
     point.paginationDiv.innerHTML = pagination;
     console.log(await createPagination(elBtn));
-};
+}
 
 export async function galleryMarkup(i) {
   cleanHTML();

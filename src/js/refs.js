@@ -22,7 +22,7 @@ export const point = {
     idCocktailOnCard: document.querySelectorAll('.coctailsId'),
     paginationDiv: document.querySelector('.pagination'),
 };
-console.log(point.addFavoriteButtons)
+console.log(point.addFavoriteButtons);
 export const counter = {
     mobile: 3,
     tablet: 6,
