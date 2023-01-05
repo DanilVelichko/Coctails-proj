@@ -1,22 +1,33 @@
 // import { loadFromLocalStorage } from './global-functions';
 
-// console.log(loadFromLocalStorage());
-// console.log(serializedState);
-
-// function load(CoctailsId) {
-//   try {
-//     const serializedState = localStorage.getItem(CoctailsId);
-//     return serializedState === null ? undefined : JSON.parse(serializedState);
-//   } catch (error) {
-//     console.error('Get state error: ', error.message);
-//   }
+// function storageHost(CoctailsId) {
+//   console.log(loadFromLocalStorage());
 // }
 
-// console.log(load());
+// storageHost(CoctailsId);
 
-function Storage() {
-  const pool = JSON.parse(localStorage.getItem('CoctailsId'));
-  console.log(pool);
+import axios from 'axios';
+
+function loadFromLocalStorage() {
+  try {
+    const serializedState = localStorage.getItem('CoctailsId');
+    return serializedState === null ? undefined : JSON.parse(serializedState);
+  } catch (error) {
+    console.error('Get state error: ', error.message);
+  }
 }
 
-Storage();
+const cocktailId = loadFromLocalStorage();
+
+async function firstSearchId(ele) {
+  try {
+    const result = await axios.get(
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`
+    );
+    console.log(result);
+  } catch (error) {
+    console.error('Get state error: ', error.message);
+  }
+}
+
+firstSearchId();
