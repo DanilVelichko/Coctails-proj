@@ -1572,7 +1572,6 @@ body {
   background: none;
 }
 
-<<<<<<< HEAD
 h1 {
   font-size: 2.5rem;
   margin-bottom: 2rem;
@@ -1621,6 +1620,7 @@ p {
   /* identical to box height, or 162% */
   text-transform: uppercase;
   color: #202025;
+  margin-bottom: 20px;
 }
 
 .Coctails-description {
@@ -1643,6 +1643,7 @@ p {
   /* identical to box height */
   /* Main black */
   color: #000917;
+  margin-top: 20px;
 }
 
 .Per-cocktail {
@@ -1654,9 +1655,12 @@ p {
   /* identical to box height */
   /* Black */
   color: #202025;
+  margin-top: 8px;
 }
 
 .Coctails-list {
+  text-decoration: none;
+  cursor: pointer;
   font-family: "Poppins";
   font-style: normal;
   font-weight: 400;
@@ -1665,12 +1669,14 @@ p {
   /* or 162% */
   /* Gray */
   color: #5F6775;
+  margin-top: 4px;
 }
 
 .Add-button {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  border: none;
   padding: 12px 24px;
   gap: 10px;
   background: #FD5103;
@@ -1687,6 +1693,8 @@ p {
   height: 48px;
   left: 0px;
   top: 0px;
+  justify-content: center;
+  margin-top: 32px;
 }
 
 .overlay {
@@ -1700,10 +1708,3 @@ p {
           backdrop-filter: blur(3px);
   z-index: 5;
 }/*# sourceMappingURL=index.css.map */
-=======
-.mob-menu-btn-buy {
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-}
->>>>>>> main

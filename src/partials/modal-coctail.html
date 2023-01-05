@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="/src/sass/_modal-favourite.scss" />
+    <link rel="stylesheet" href="/src/sass/index.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;900&display=swap"
+        rel="stylesheet" />
+    <title>Modal window</title>
+</head>
+
+<body>
+    <div class="flex-container">
+        <button class="show-modal">Click Me to See the Modal Window</button>
+    </div>
+    <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1 class="Coctails-title">Negroni</h1>
+        <h2 class="Coctails-instractions">
+            Instractions:
+        </h2>
+        <p class="Coctails-description">
+            Add the gin, Campari and sweet vermouth to a mixing glass filled with ice, and stir until well-chilled.
+            Strain into a
+            rocks glass filled with large ice cubes. Garnish with an orange peel.
+        </p>
+        <img src="/src/images/gallery/negroni-mobile-x1.png" alt="Negroni" width="280px" height="280px">
+        <h2 class="Coctails-ingredients">
+            INGREDIENTS
+        </h2>
+        <p class="Per-cocktail">
+            Per cocktail
+        </p>
+        <ul>
+            <li class="Coctails-list">
+                <a href="" class="Coctails-link">
+                    ✶ Ice
+                </a>
+            </li>
+            <li class="Coctails-list">
+                <a href="" class="Coctails-link">
+                    ✶ 1 ounce gin
+                </a>
+            </li>
+            <li class="Coctails-list">
+                <a href="" class="Coctails-link">
+                    ✶ 1 ounce Campari
+                </a>
+            </li>
+            <li class="Coctails-list">
+                <a href="" class="Coctails-link">
+                    ✶ 1 ounce sweet vermouth
+                </a>
+            </li>
+            <li class="Coctails-list">
+                <a href="" class="Coctails-link">
+                    ✶ Garnish: orange peel
+                </a>
+            </li>
+        </ul>
+
+        <button type="button" class="Add-button">Add to favorite</button>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <script src="/src/js/modal.js"></script>
+</body>
+
+</html>
