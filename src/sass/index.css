@@ -450,6 +450,7 @@ body {
   justify-content: center;
   gap: 8px;
   margin-top: 45px;
+  align-items: baseline;
 }
 @media screen and (min-width: 768px) {
   .pagination {
@@ -465,6 +466,7 @@ body {
   width: 32px;
   height: 32px;
   background-color: var(--main-background-color);
+  color: var(--orange-text-color);
   border-radius: 50%;
   font-size: 12px;
   border: 1px solid transparent;
@@ -496,6 +498,11 @@ body {
 .pagination_points {
   color: var(--orange-text-color);
   font-size: 25px;
+}
+.pagination__arrow {
+  color: var(--orange-background-color);
+  border-color: transparent;
+  background-color: transparent;
 }
 
 .hero__container {
@@ -935,48 +942,6 @@ body {
   .button_add {
     gap: 5px;
   }
-}
-
-.pagination {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-}
-@media screen and (min-width: 768px) {
-  .pagination {
-    gap: 12px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .pagination {
-    gap: 13px;
-  }
-}
-.pagination__button {
-  width: 32px;
-  height: 32px;
-  background-color: var(--main-background-color);
-  border-color: var(--main-border-color);
-  border-radius: 50%;
-  font-size: 12px;
-}
-@media screen and (min-width: 768px) {
-  .pagination__button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .pagination__button {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
-}
-.pagination__button:hover {
-  color: var(--white-text-color);
-  background-color: var(--orange-background-color);
 }
 
 .cocktails {
@@ -1647,4 +1612,4 @@ body {
   width: 12px;
   height: 12px;
   display: inline-block;
-}
+}/*# sourceMappingURL=index.css.map */
