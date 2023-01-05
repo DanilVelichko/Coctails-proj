@@ -1,12 +1,6 @@
-// import { loadFromLocalStorage } from './global-functions';
-
-// function storageHost(CoctailsId) {
-//   console.log(loadFromLocalStorage());
-// }
-
-// storageHost(CoctailsId);
-
 import axios from 'axios';
+
+const favoriteCards = document.querySelector('.favorite');
 
 function loadFromLocalStorage() {
   try {
@@ -19,15 +13,53 @@ function loadFromLocalStorage() {
 
 const cocktailId = loadFromLocalStorage();
 
-async function firstSearchId(ele) {
+function countCocktailId(count) {
+  count.forEach(ele => {
+    countId = ele;
+    firstSearchId();
+  });
+}
+
+countCocktailId(cocktailId);
+
+async function firstSearchId() {
   try {
     const result = await axios.get(
-      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${cocktailId}`
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${countId}`
     );
-    console.log(result);
+    cocktailIdMarkup(result);
   } catch (error) {
-    console.error('Get state error: ', error.message);
+    console.error('Get state error:', error.message);
   }
 }
 
-firstSearchId();
+function cocktailIdMarkup(id) {
+  const drinks = id.data.drinks[0];
+  const { strDrinkThumb, strDrink } = drinks;
+  const create = `<ul class="favorite__border">
+    <li>
+      <img
+        class="favorite__img"
+        src=${strDrinkThumb}
+        alt=${strDrink}
+      />
+      <h2 class="favorite__cocktail-name">${strDrink}</h2>
+      <div class="favorite__cocktail-buttons">
+        <button class="favorite__learn button__learn">Learn More</button>
+
+        <button class="favorite__remove button__remove_mobile">
+          Remove
+          <img
+            class="favorite__heart"
+            src="./src/images/icons/Vector.png"
+            alt="Heart red and white"
+            width="18"
+            height="18"
+          />
+        </button>
+      </div>
+    </li>
+  </ul>
+  `;
+  favoriteCards.insertAdjacentHTML('beforeend', create);
+}
