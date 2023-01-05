@@ -19,10 +19,7 @@ function removeFromFavorite(e) {
 
 console.log('Подключена страница Favorite button js');
 
- 
-
-
-// window.addEventListener('load', init);
+ // window.addEventListener('load', init);
 
 // function init(){
 //     point.addFavoriteButtons.forEach( card => {
