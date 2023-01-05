@@ -1,16 +1,24 @@
 :root {
-  --main-text-color: #202025;
-  --orange-text-color: #fd5103;
-  --white-text-color: #ffffff;
+  --second-text-color: #fd5103;
+  
+  --focus-text-bg-color: #ffffff;
+  --abc-text-color: #5f6775;
 
-  --main-background-color: #fcfcfc;
-  --orange-background-color: #fd5103;
+  --favorite-bg-color: #fffcfa;
+  --second-background-color: #fd5103;
 
   --main-border-color: #FE7031;
+  --btn-border-color: #fd5103;
 
   --base-font-family: Poppins, sans-serif;
   --primary-font-family: Roboto, sans-serif;
 
-  --favorite-bg-color: #fffcfa;
-  --filter-text-color: #5f6775;
 }
+
+
+//  Главные цвета для светлой и темной темы
+
+//   --main-text-color: #202025;
+//   --filter-text-color: #5f6775;
+//   --main-background-color: #fcfcfc;
+
