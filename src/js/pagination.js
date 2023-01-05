@@ -1,7 +1,7 @@
 import { refs, fetchEl, point, counter } from './refs.js';
 import axios from 'axios';
 import { elBtn } from './hero-letters-filter.js';
-import { cleanPagination, renderCard, cleanHTML, formatScreenRender, galleryMarkup, itemsPerScreen } from './global-functions.js';
+import { cleanPagination, renderCard, cleanHTML, formatScreenRender, itemsPerScreen } from './global-functions.js';
 
 const pagRefs = {
   api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
