@@ -1,6 +1,6 @@
 * {
-    margin: 0;
-    padding: 0;
+    margin: auto;
+    padding: auto;
     box-sizing: inherit;
 }
 
@@ -92,6 +92,16 @@ p {
     }
 }
 
+.Coctails-pic{
+  @media screen and (min-width:768px) {
+    position: absolute;
+    width: 288px;
+    height: 320px;
+    left: 0px;
+    top: 0px;
+  }
+}
+
 .Coctails-title {
     font-family: 'Roboto';
     font-style: normal;
@@ -100,6 +110,13 @@ p {
     line-height: 38px;
     /* Black */
     color: #202025;
+    @media screen and (min-width:768px) {
+        position: absolute;
+        width: 129px;
+        height: 37px;
+        left: 320px;
+        top: 40px;
+    }     
 }
 
 .Coctails-instractions {
@@ -112,6 +129,13 @@ p {
     text-transform: uppercase;
     color: #202025;
     margin-bottom: 20px;
+    @media screen and (min-width:768px) {
+            position: absolute;
+            width: 122px;
+            height: 26px;
+            left: 28px;
+            top: 348px;
+        }
 }
 
 .Coctails-description {
@@ -123,6 +147,14 @@ p {
     /* or 175% */
     /* Gray */
     color: #5F6775;
+
+    @media screen and (min-width:768px) {
+            position: absolute;
+            width: 615px;
+            height: 84px;
+            left: 28px;
+            top: 398px;
+        }
 }
 
 .Coctails-ingredients {
@@ -135,6 +167,14 @@ p {
     /* Main black */
     color: #000917;
     margin-top: 20px;
+    
+    @media screen and (min-width:768px) {
+            position: absolute;
+            width: 103px;
+            height: 24px;
+            left: 320px;
+            top: 105px;
+        }
 }
 
 .Per-cocktail {
@@ -143,10 +183,17 @@ p {
     font-weight: 300;
     font-size: 14px;
     line-height: 21px;
-    /* identical to box height */
-    /* Black */
     color: #202025;
     margin-top: 8px;
+
+    @media screen and (min-width:768px) {
+            position: absolute;
+            width: 80px;
+            height: 21px;
+            left: 320px;
+            top: 137px;
+            
+        }
 }
 
 .Coctails-list {
@@ -157,10 +204,18 @@ p {
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-    /* or 162% */
-    /* Gray */
     color: #5F6775;
     margin-top: 4px;
+
+    @media screen and (min-width:768px) {
+            position: absolute;
+            width: 215px;
+            height: 130px;
+            left: 320px;
+            top: 166px;
+            padding-top: 4px;
+    
+        }
 }
 
 .Add-button {
@@ -176,16 +231,26 @@ p {
     font-weight: 400;
     font-size: 20px;
     line-height: 24px;
-    /* identical to box height, or 120% */
     letter-spacing: 0.02em;
-    /* White */
     color: #FCFCFC;
     width: 185px;
     height: 48px;
     left: 0px;
     top: 0px;
+    border-radius: 4px;
     justify-content: center;
     margin-top: 32px;
+
+    @media screen and (min-width:768px) {
+            position:absolute;
+            width: 248px;
+            height: 48px;
+            left: 539px;
+            top: 488px;
+            
+            
+            
+        }
 
 
 }
