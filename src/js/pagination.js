@@ -72,7 +72,8 @@ export async function createPagination(letter) {
   const totalResults = data.data.drinks.length;
   const totalPages = Math.ceil(totalResults / itemsPerPage);
   console.log('Total results', totalResults);
-  console.log('Totalpages', totalPages);
+  console.log('Totalpages', totalPages); 
+  
   
 
 
