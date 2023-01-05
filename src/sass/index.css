@@ -449,6 +449,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 8px;
+  margin-top: 45px;
 }
 @media screen and (min-width: 768px) {
   .pagination {
@@ -468,6 +469,7 @@ body {
   font-size: 12px;
   border: 1px solid transparent;
   border-color: var(--main-border-color);
+  margin-bottom: 39px;
 }
 @media screen and (min-width: 768px) {
   .pagination__button {
@@ -1645,4 +1647,4 @@ body {
   width: 12px;
   height: 12px;
   display: inline-block;
-}/*# sourceMappingURL=index.css.map */
+}

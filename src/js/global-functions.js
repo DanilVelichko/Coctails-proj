@@ -83,7 +83,7 @@ export const cleanHTML = () => {
 
 export const cleanPagination = () => {
   point.paginationDiv.innerHTML = "";
-}
+};
 
 // FOR LOCAL STORAGE //
 
@@ -116,4 +116,4 @@ itemsPerPage = counter.mobile;
   }
   return itemsPerPage;
 }
-console.log('Global functions')
+console.log('Global functions');
