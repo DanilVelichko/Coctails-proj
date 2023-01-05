@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-margin-top: 45px;
+  margin-top: 45px;
+  align-items: baseline;
 
   @include mobile {
   }
@@ -16,7 +17,7 @@ margin-top: 45px;
     width: 32px;
     height: 32px;
     background-color: var(--main-background-color);
-
+    color: var(--orange-text-color);
     border-radius: 50%;
     font-size: 12px;
     border: 1px solid transparent;
@@ -46,5 +47,12 @@ margin-top: 45px;
   &_points {
     color: var(--orange-text-color);
     font-size: 25px;
+  }
+  &__arrow {
+    // width: 10px;
+    // height: 15px;
+    color: var(--orange-background-color);
+    border-color: transparent;
+    background-color: transparent;
   }
 }
