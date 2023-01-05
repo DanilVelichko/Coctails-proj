@@ -11,7 +11,7 @@ const pagRefs = {
 
 
 
-point.paginationDiv.addEventListener('click', goToPage = async function (e) {
+point.paginationDiv.addEventListener('click', goToPage = async  (e) => {
 
 e.target.classList.add("pagination__button-current");
   const pageNum = (e.target.textContent - 1);
