@@ -1,0 +1,210 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  @include mobile {
+  }
+  @include tablet {
+  }
+  @include desktop {
+  }
+  &__render-box {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @include mobile {
+      gap: 20px;
+      flex-direction: column;
+    }
+    @include tablet {
+      gap: 28px;
+      flex-direction: row;
+    }
+    @include desktop {
+      gap: 28px;
+      flex-direction: row;
+    }
+  }
+  &__title {
+    font-family: 'Poppins';
+
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.9;
+
+    width: 280px;
+    color: #202025;
+    text-align: center;
+
+    font-style: normal;
+    color: var(--main-text-color);
+
+    margin-bottom: 60px;
+    @include mobile {
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 1.9;
+    }
+    @include tablet {
+
+      font-weight: 700;
+      font-size: 32px;
+      width: 331px;
+    }
+    @include desktop {
+      font-size: 48px;
+      width: 493px;
+      margin-bottom: 60px;
+
+      font-family: 'Roboto';
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 1.3;
+    }
+    @include desktop {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1.5;
+
+    }
+  }
+  &__coctail {
+    &_box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      border: 1px solid #fd5103;
+      border-radius: 4px;
+      margin-bottom: 20px;
+
+      @include mobile {
+        width: 280px;
+        height: 449px;
+      }
+      @include tablet {
+        width: 335px;
+        height: 480px;
+      }
+      @include desktop {
+        width: 395px;
+        height: 556px;
+      }
+    }
+    &_box-name {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 900;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      @include mobile {
+        font-size: 26px;
+        line-height: 1.62;
+        text-shadow: none;
+        margin-bottom: 16px;
+      }
+      @include tablet {
+        font-size: 28px;
+        line-height: 1.17;
+        margin-bottom: 25px;
+      }
+      @include desktop {
+        font-size: 32px;
+        line-height: 1.19;
+        margin-bottom: 27px;
+      }
+    }
+
+    &_box-buttons {
+      display: inline-flex;
+      align-items: center;
+      gap: 17px;
+      @include mobile {
+        gap: 17px;
+      }
+      @include tablet {
+        gap: 12px;
+      }
+      @include desktop {
+        gap: 16px;
+      }
+    }
+
+    &_img {
+      border-radius: 4px;
+      @include mobile {
+        width: 280px;
+        height: 280px;
+        margin-bottom: 20px;
+      }
+      @include tablet {
+        width: 333px;
+        height: 333px;
+        margin-bottom: 20px;
+      }
+      @include desktop {
+        width: 395px;
+        height: 395px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.gallery__no-find-box {
+  display: none;
+  margin-bottom: 60px;
+}
+
+.button_add {
+  gap: 8px;
+  @include mobile {
+    gap: 8px;
+  }
+  @include tablet {
+gap: 4px;
+  }
+  @include desktop {
+gap: 5px;
+  }}
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+
+  @include mobile {
+  }
+  @include tablet {
+    gap: 12px;
+  }
+  @include desktop {
+    gap: 13px;
+  }
+  &__button {
+    width: 32px;
+    height: 32px;
+    background-color: var(--main-background-color);
+    border-color: var(--main-border-color);
+    border-radius: 50%;
+    font-size: 12px;
+    @include mobile {
+    }
+    @include tablet {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+    @include desktop {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+    }
+    &:hover {
+      color: var(--white-text-color);
+      background-color: var(--orange-background-color);
+    }
+
+  }
+}
+
