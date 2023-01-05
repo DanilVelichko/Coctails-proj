@@ -224,7 +224,8 @@
 
 .favorite__img {
   margin-bottom: 48px;
-  height: 280px;
+  height: 100%;
+  max-width: 100%;
 
   display: inline-block;
   border-radius: 4px 4px 0px 0px;
@@ -283,22 +284,20 @@
 }
 
 .favorite__learn {
-  @include mobile {
-    width: 108px;
-    height: 39px;
+  width: 108px;
+  height: 39px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: calc(24 / 14);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
 
-    text-align: center;
-    letter-spacing: 0.02em;
+  text-align: center;
+  letter-spacing: 0.02em;
 
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    color: #ffffff;
-  }
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  color: #ffffff;
 
   @include tablet {
     width: 160px;
@@ -313,20 +312,20 @@
 }
 
 .favorite__remove {
-  @include mobile {
-    width: 110px;
-    height: 39px;
+  width: 110px;
+  height: 39px;
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: calc(24 / 14);
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(24 / 14);
 
-    letter-spacing: 0.02em;
+  letter-spacing: 0.02em;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
-    color: #fd5103;
-  }
+  color: #fd5103;
+
   @include tablet {
     width: 123px;
     height: 48px;

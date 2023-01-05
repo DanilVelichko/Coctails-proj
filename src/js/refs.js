@@ -20,8 +20,9 @@ export const point = {
     card: document.querySelectorAll('gallery__coctail_box'),
     addFavoriteButtons: document.querySelectorAll('.button__add'),
     idCocktailOnCard: document.querySelectorAll('.coctailsId'),
+    paginationDiv: document.querySelector('.pagination'),
 };
-
+console.log(point.addFavoriteButtons);
 export const counter = {
     mobile: 3,
     tablet: 6,
