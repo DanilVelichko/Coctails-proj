@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { refs, fetchEl, point, counter } from './refs.js';
-import { renderCard,formatScreenRender, cleanHTML, cleanPagination } from './global-functions.js';
+import { refs, fetchEl, point, counter, favorites } from './refs.js';
+import { renderCard, formatScreenRender, cleanHTML, cleanPagination, renderButtonInternals, formatScreenRenderGallery } from './global-functions.js';
 import { createPagination } from './pagination.js';
 const heroRefs = {
   searchByAbc: document.querySelector('.hero-search'),
@@ -29,7 +29,16 @@ export async function galleryMarkup(i) {
   try {
     const url = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
     point.galleryUl.insertAdjacentHTML('beforeend', renderCard(url.data.drinks[i]));
-
+    addBtnListener(id, (e) => {
+          if (favorites.includes(drink.idDrink)) {
+            favorites.splice(favorites.indexOf(drink.idDrink), 1);
+          } else {
+            favorites.push(drink.idDrink);
+          }
+          console.log(favorites);
+          e.target.innerHTML = renderButtonInternals(drink.idDrink);
+    });
+    
     heroRefs.titleGallery.innerHTML = 'Searching results';
     heroRefs.boxPicture.style.display = 'none';
     
