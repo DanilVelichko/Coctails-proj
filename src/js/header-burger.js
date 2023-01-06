@@ -18,6 +18,6 @@ export function closeMobileMenu() {
   refs.refHeaderMobMenu.classList.toggle('open');
   refs.refHeaderSwitcher.classList.toggle('open');
   document.querySelector('.header__search').classList.toggle('open');
-  document.querySelector('.header__nav-desktop').classList.toggle('open');
+  document.querySelector('.nav-desktop__dropdown').classList.toggle('open');
   document.body.classList.toggle('overflow');
 }

@@ -3,106 +3,96 @@
     <div class="header__wrapper">
       <div class="header__logo">
         <a class="logo__link" href="./index.html">
-          <img
-            class="logo__img"
-            src="./images/header__logo.svg"
-            alt="logo__icon"
-            width="123"
-            height="34"
-          />
+          <img class="logo__img" src="./images/header__logo.svg" alt="logo__icon" width="123" height="34" />
         </a>
       </div>
       <nav class="header__nav-desktop">
-        <a class="nav-desktop__home nav-desktop__active" href="./index.html">
-          Home
-        </a>
-        <div class="nav-desktop__favorite nav-desktop__active">
-          <a class="header__favorite__link" href="#">
-            Favorite
-            <span>
-              <svg class="nav__icon" width="20" height="20">
-                <use href="/src/images/header__icons.svg#icon-arrow-up"></use>
-              </svg>
-            </span>
-          </a>
-          <div class="favorite__list">
-            <ul>
+        <ul class="nav-desktop__list">
+          <li class=" nav-desktop__home nav-desktop__active">
+            <a href="./index.html">Home</a>
+          </li>
+          <li class="nav-desktop__favorite nav-desktop__active">
+            <a href="#">Favorite</a>
+            <ul class="nav-desktop__dropdown">
               <li class="favorite__item">
-                <a
-                  class="favorite__link"
-                  href="./partials/favourite-coctails.html"
-                >
+                <a class="favorite__link" href="./partials/favourite-coctails.html">
                   Favorite cocktails
                 </a>
               </li>
               <li class="favorite__item">
-                <a
-                  class="favorite__link"
-                  href="./partials/favourite-ingredients.html"
-                >
+                <a class="favorite__link" href="./partials/favourite-ingredients.html">
+                  Favorite ingredients
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <!-- <div>
+
+          <div class="favorite__list">
+            <ul>
+              <li class="favorite__item">
+                <a class="favorite__link" href="./partials/favourite-coctails.html">
+                  Favorite cocktails
+                </a>
+              </li>
+              <li class="favorite__item">
+                <a class="favorite__link" href="./partials/favourite-ingredients.html">
                   Favorite ingredients
                 </a>
 
                 <div class="nav-desktop__favorite nav-desktop__active">
-                    <a class="header__favorite__link" href="#">
-                        Favorite
-                        <span>
-                            <svg class="nav__icon" width="20" height="20">
-                                <use href="/src/images/header__icons.svg#icon-arrow-up">
-                                </use>
-                            </svg>
-                        </span>
-                    </a>
-                    <div class="favorite__list">
-                        <ul>
-                            <li class="favorite__item">
-                                <a class="favorite__link" href="./partials/favourite-coctails.html">
-                                    Favorite cocktails
-                                </a>
-                            </li>
-                            <li class="favorite__item">
-                                <a class="favorite__link" href="./partials/favourite-ingredients.html">
-                                    Favorite ingredients
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <form class="header__search js-form-search">
-                <button class="search__btn js-search-btn" type="submit"></button>
-                <svg class="search__icon" width="24" height="24">
-                    <use href="/src/images/header__icons.svg#icon-search"></use>
-                </svg>
-                <input type="text" id="coctail-search" name="search" class="search__input js-input-search"
-                    placeholder="Search" />
-            </form>
-            <div class="switcher">
-                <span class="switcher__light">Light</span>
-                <div class="switch">
-                    <input class="switch__input themeSwitch" type="checkbox" id="themeSwitch" />
-                    <label aria-hidden="true" class="switch__label" for="themeSwitch"></label>
-                    <div aria-hidden="true" class="switch__marker"></div>
-                </div>
-                <span class="switcher__dark">Dark</span>
-            </div>
-            <div class="header__nav-mobile">
-                <svg class="nav-mobile__icon" width="30" height="16">
-                    <use href="/src/images/header__icons.svg#icon-menu"></use>
-                </svg>
-                <div class="nav-mobile__burger">
-                    <div class="burger__box">
-                        <div class="menu__logo">
-                            <img src="./images/header__logo.svg" width="123" height="34" alt="logo img" />
-                        </div>
-                        <button type="button" class="burger__close">
-                            <svg class="close__icon" width="18" height="18">
-                                <use href="/src/images/header__icons.svg#icon-icon-close"></use>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
+                  <a class="header__favorite__link" href="#">
+                    Favorite
+                    <span>
+                      <svg class="nav__icon" width="20" height="20">
+                        <use href="/src/images/header__icons.svg#icon-arrow-up">
+                        </use>
+                      </svg>
+                    </span>
+                  </a>
+                  <div class="favorite__list">
+                    <ul>
+                      <li class="favorite__item">
+                        <a class="favorite__link" href="./partials/favourite-coctails.html">
+                          Favorite cocktails
+                        </a>
+                      </li>
+                      <li class="favorite__item">
+                        <a class="favorite__link" href="./partials/favourite-ingredients.html">
+                          Favorite ingredients
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div> -->
+      </nav>
 
+      <form class="header__search js-form-search">
+        <button class="search__btn js-search-btn" type="submit"></button>
+        <svg class="search__icon" width="24" height="24">
+          <use href="/src/images/header__icons.svg#icon-search"></use>
+        </svg>
+        <input type="text" id="coctail-search" name="search" class="search__input js-input-search"
+          placeholder="Search" />
+      </form>
+      <div class="switcher">
+        <span class="switcher__light">Light</span>
+        <div class="switch">
+          <input class="switch__input themeSwitch" type="checkbox" id="themeSwitch" />
+          <label aria-hidden="true" class="switch__label" for="themeSwitch"></label>
+          <div aria-hidden="true" class="switch__marker"></div>
+        </div>
+        <span class="switcher__dark">Dark</span>
+      </div>
+      <div class="header__nav-mobile">
+        <svg class="nav-mobile__icon" width="30" height="16">
+          <use href="/src/images/header__icons.svg#icon-menu"></use>
+        </svg>
+        <div class="nav-mobile__burger">
+          <div class="burger__box">
+            <div class="menu__logo">
+              <img src="./images/header__logo.svg" width="123" height="34" alt="logo img" />
             </div>
             <button type="button" class="burger__close">
               <svg class="close__icon" width="18" height="18">
@@ -111,7 +101,16 @@
             </button>
           </div>
         </div>
+
       </div>
+      <button type="button" class="burger__close">
+        <svg class="close__icon" width="18" height="18">
+          <use href="/src/images/header__icons.svg#icon-icon-close"></use>
+        </svg>
+      </button>
     </div>
+  </div>
+  </div>
+  </div>
   </div>
 </header>
