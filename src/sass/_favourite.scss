@@ -196,6 +196,15 @@
   }
 }
 
+.favorite__flex {
+  display: flex;
+  flex-wrap: wrap;
+
+  @include tablet {
+    gap: 32px;
+  }
+}
+
 .favorite__border {
   max-width: 280px;
   height: 449px;

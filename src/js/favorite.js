@@ -1,10 +1,11 @@
 import axios from 'axios';
+import { STORAGE_KEY } from './refs';
 
-const favoriteCards = document.querySelector('.favorite');
+const favoriteCards = document.querySelector('.favorite__flex');
 
 function loadFromLocalStorage() {
   try {
-    const serializedState = localStorage.getItem('CoctailsId');
+    const serializedState = localStorage.getItem(STORAGE_KEY);
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
     console.error('Get state error: ', error.message);

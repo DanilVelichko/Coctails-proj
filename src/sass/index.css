@@ -1116,6 +1116,16 @@ body {
   }
 }
 
+.favorite__flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .favorite__flex {
+    gap: 32px;
+  }
+}
+
 .favorite__border {
   max-width: 280px;
   height: 449px;
