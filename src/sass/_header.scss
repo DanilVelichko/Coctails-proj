@@ -40,6 +40,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    @include desktop {
+        display: none;
+    }
 }
 
 .nav-mobile__icon {
@@ -156,12 +160,15 @@
     }
 }
 
-.nav-desktop__home {
+.nav-desktop__home a,
+.nav-desktop__favorite a {
     font-family: --base-font-family;
     font-size: 28px;
     line-height: 1.1;
     letter-spacing: 0.02em;
     padding: 0;
+
+    color: --main-text-color;
 
     &:hover,
     &:focus {
@@ -258,6 +265,7 @@
     top: 90px;
     left: -12px;
     width: 100%;
+    // border: 1px solid --btn-border-color;
     transform: translateX(-400%);
     transition: 300ms all ease;
 
@@ -310,7 +318,7 @@
     left: 30px;
     background-color: transparent;
     border-left: 0;
-    border-right: 1px solid --second-text-color;
+    border-right: 1px solid --btn-border-color;
     border-top: 0;
     border-bottom: 0;
     z-index: 2;
@@ -331,7 +339,7 @@
 .search__input {
     width: 94%;
     height: 40px;
-    border: 1px solid --second-text-color;
+    border: 1px solid --btn-border-color;
     border-radius: 4px;
     padding-left: 44px;
     caret-color: --filter-text-color;

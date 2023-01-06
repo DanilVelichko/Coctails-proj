@@ -11,16 +11,13 @@ function loadFromLocalStorage() {
 }
 
 function countCocktailId(count) {
-  count.forEach(ele => {
-    countId = ele;
-    firstSearchId();
-  });
+  count.forEach(ele => firstSearchId(ele));
 }
 
-async function firstSearchId() {
+async function firstSearchId(ele) {
   try {
     const result = await axios.get(
-      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${countId}`
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${ele}`
     );
     cocktailIdMarkup(result);
   } catch (error) {
