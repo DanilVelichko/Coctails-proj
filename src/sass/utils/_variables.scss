@@ -1,4 +1,12 @@
 :root {
+  --main-text-color: #202025;
+  --filter-text-color: #5f6775;
+
+  --main-background-color: #fcfcfc;
+
+  --switch-light-color: #fd5103;;
+  --switch-dark-color: #5f6775; ;
+
   --second-text-color: #fd5103;
   
   --focus-text-bg-color: #ffffff;
@@ -15,10 +23,12 @@
 
 }
 
+[dark] {
+  --main-text-color: #fcfcfc;
+  --filter-text-color: #bdbdbd;
 
-//  Главные цвета для светлой и темной темы
+  --main-background-color: #202025;
 
-//   --main-text-color: #202025;
-//   --filter-text-color: #5f6775;
-//   --main-background-color: #fcfcfc;
-
+  --switch-light-color:#fcfcfc ;
+  --switch-dark-color: #fd5103; ;
+}

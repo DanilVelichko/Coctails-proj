@@ -1,5 +1,10 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 :root {
+  --main-text-color: #202025;
+  --filter-text-color: #5f6775;
+  --main-background-color: #fcfcfc;
+  --switch-light-color: #fd5103;
+  --switch-dark-color: #5f6775;
   --second-text-color: #fd5103;
   --focus-text-bg-color: #ffffff;
   --abc-text-color: #5f6775;
@@ -9,6 +14,14 @@
   --btn-border-color: #fd5103;
   --base-font-family: Poppins, sans-serif;
   --primary-font-family: Roboto, sans-serif;
+}
+
+[dark] {
+  --main-text-color: #fcfcfc;
+  --filter-text-color: #bdbdbd;
+  --main-background-color: #202025;
+  --switch-light-color:#fcfcfc ;
+  --switch-dark-color: #fd5103;
 }
 
 h1,
@@ -72,6 +85,7 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  background: var(--main-background-color);
 }
 
 .main {
