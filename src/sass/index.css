@@ -505,6 +505,332 @@ body {
   background-color: transparent;
 }
 
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.logo__img {
+  width: 123px;
+  height: 34px;
+}
+@media screen and (min-width: 768px) {
+  .logo__img {
+    width: 156px;
+    height: 43px;
+  }
+}
+
+.header__nav-mobile {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav-mobile__icon {
+  cursor: pointer;
+}
+
+.nav-mobile__burger {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  background-color: --main-background-color;
+  transform: translateX(-100%);
+  transition: 300ms all ease;
+}
+.nav-mobile__burger.open {
+  display: flex;
+  visibility: visible;
+  transform: translateX(0);
+  flex-direction: column;
+  opacity: 1;
+}
+
+.burger__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  height: 60px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+@media screen and (min-width: 768px) {
+  .burger__box {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.menu__logo {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .menu__logo {
+    display: block;
+    margin-right: 60px;
+  }
+}
+
+.burger__close {
+  background-color: transparent;
+  border: 0;
+  left: 90%;
+  cursor: pointer;
+  margin-left: auto;
+  margin-top: 12px;
+}
+@media screen and (min-width: 768px) {
+  .burger__close {
+    margin-right: 0;
+    margin-top: 0;
+  }
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.header__nav-desktop {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  opacity: 0;
+  transform: translateX(-300%);
+  transition: 300ms transform ease;
+}
+.header__nav-desktop.open {
+  display: flex;
+  transform: translateX(0);
+  flex-direction: column;
+  z-index: 3;
+  opacity: 1;
+  position: absolute;
+  top: 180px;
+  left: 20px;
+}
+@media screen and (min-width: 768px) {
+  .header__nav-desktop {
+    gap: 40px;
+  }
+  .header__nav-desktop.open {
+    left: 45%;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__nav-desktop {
+    opacity: 1;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+    transform: none;
+    transition: none;
+    align-items: center;
+    margin-left: 43px;
+    gap: 60px;
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.3;
+  }
+}
+
+.nav-desktop__home {
+  font-family: --base-font-family;
+  font-size: 28px;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+  padding: 0;
+}
+.nav-desktop__home:hover, .nav-desktop__home:focus {
+  color: --second-text-color;
+}
+
+.nav-desktop__active {
+  color: --second-text-color;
+}
+
+.favorite__list {
+  visibility: hidden;
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  top: 10px;
+  left: 30px;
+  transform: scaleX(0);
+  border-radius: 5px;
+  background-color: --focus-text-bg-color;
+  overflow: hidden;
+  transition: 300ms all ease;
+}
+.favorite__list.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scaleX(1);
+}
+@media screen and (min-width: 1280px) {
+  .favorite__list {
+    top: 0;
+    left: 75px;
+    transform: translate(-50%, -50%) scaleX(0);
+    overflow: hidden;
+    transition: 300ms all ease;
+  }
+  .favorite__list.active {
+    opacity: 1;
+    transform: translate(0, 0) scaleX(1);
+  }
+}
+
+.nav__icon {
+  color: --main-text-color;
+  margin-left: 10px;
+  fill: currentColor;
+}
+.nav__icon:hover, .nav__icon:focus {
+  color: --filter-text-color;
+}
+@media screen and (min-width: 1280px) {
+  .nav__icon {
+    display: none;
+  }
+}
+
+.favorite__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: --focus-text-bg-color;
+  font-family: --base-font-family;
+  letter-spacing: 0.02em;
+  font-size: 18px;
+  line-height: 1.3;
+  border: 1px solid --second-text-color;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-bottom: 0;
+}
+.favorite__item:hover {
+  background-color: --second-text-color;
+}
+
+.favorite__link {
+  padding: 12px;
+  padding-right: 35px;
+}
+.favorite__link:hover {
+  color: --focus-text-bg-color;
+}
+
+.header__search {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0;
+  top: 90px;
+  left: -12px;
+  width: 100%;
+  transform: translateX(-400%);
+  transition: 300ms all ease;
+}
+.header__search.open {
+  pointer-events: all;
+  display: flex;
+  z-index: 3;
+  opacity: 1;
+  transform: translateX(0);
+  position: absolute;
+}
+@media screen and (min-width: 768px) {
+  .header__search {
+    opacity: 1;
+    top: 0;
+    left: 0;
+    width: 288px;
+    transform: none;
+    transition: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    margin-left: auto;
+    margin-top: 10px;
+    transition: none;
+    pointer-events: all;
+  }
+  .header__search.open {
+    display: none;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .header__search {
+    position: relative;
+    pointer-events: all;
+    top: 0;
+    left: 0;
+    width: 288px;
+    transform: translateX(0);
+    opacity: 1;
+    margin-right: 170px;
+  }
+}
+
+.search__btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  left: 30px;
+  background-color: transparent;
+  border-left: 0;
+  border-right: 1px solid --second-text-color;
+  border-top: 0;
+  border-bottom: 0;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.search__icon {
+  position: relative;
+  margin-right: -30px;
+  z-index: 1;
+  top: 9px;
+}
+@media screen and (min-width: 768px) {
+  .search__icon {
+    top: 0;
+  }
+}
+
+.search__input {
+  width: 94%;
+  height: 40px;
+  border: 1px solid --second-text-color;
+  border-radius: 4px;
+  padding-left: 44px;
+  caret-color: --filter-text-color;
+}
+.search__input::-moz-placeholder {
+  color: --filter-text-color;
+}
+.search__input:-ms-input-placeholder {
+  color: --filter-text-color;
+}
+.search__input::placeholder {
+  color: --filter-text-color;
+}
+.search__input:focus {
+  outline: 1px solid --main-border-color;
+}
+
 .hero__container {
   display: flex;
   flex-direction: column;
