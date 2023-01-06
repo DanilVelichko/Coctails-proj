@@ -16,7 +16,7 @@ export let elBtn = '';
     elBtn = e.target.textContent;
     heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
 
-    formatScreenRenderGallery(galleryMarkup);
+    formatScreenRender(galleryMarkup);
 
     // Рендерим Пагинацию под галереей карточек //
     point.paginationDiv.innerHTML = await createPagination(elBtn);
@@ -29,7 +29,16 @@ export async function galleryMarkup(i) {
   try {
     const url = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
     point.galleryUl.insertAdjacentHTML('beforeend', renderCard(url.data.drinks[i]));
-
+    addBtnListener(id, (e) => {
+          if (favorites.includes(drink.idDrink)) {
+            favorites.splice(favorites.indexOf(drink.idDrink), 1);
+          } else {
+            favorites.push(drink.idDrink);
+          }
+          console.log(favorites);
+          e.target.innerHTML = renderButtonInternals(drink.idDrink);
+    });
+    
     heroRefs.titleGallery.innerHTML = 'Searching results';
     heroRefs.boxPicture.style.display = 'none';
     

@@ -1,5 +1,6 @@
 import { refs, fetchEl, point, counter, favorites } from './refs.js';
 import axios from "axios";
+import { elBtn } from './hero-letters-filter.js';
 
 export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
     return `
@@ -69,7 +70,24 @@ async function asyncRender() {
   cleanHTML();
   //load data
   for (let i = 0; i < itemsPerPage; i++) {
-    await loadData()
+    if (elBtn) {
+  await loadDataLetter()
+      .then(drink => {
+        point.galleryUl
+          .insertAdjacentHTML('beforeend', renderCard(drink));
+        const id = "fb_" + drink.idDrink;
+        addBtnListener(id, (e) => {
+          if (favorites.includes(drink.idDrink)) {
+            favorites.splice(favorites.indexOf(drink.idDrink), 1);
+          } else {
+            favorites.push(drink.idDrink);
+          }
+          console.log(favorites);
+          e.target.innerHTML = renderButtonInternals(drink.idDrink);
+        });
+      });
+
+} else await loadData()
       .then(drink => {
         point.galleryUl
           .insertAdjacentHTML('beforeend', renderCard(drink));
@@ -86,8 +104,6 @@ async function asyncRender() {
       });
   }
 }
-
-
 
 export const formatScreenRender =  (yourFetchFunction) => {
     if (window.matchMedia("(min-width: 1280px)").matches) {
@@ -124,6 +140,10 @@ async function loadData() {
   return response.data.drinks[0];
 }
 
+async function loadDataLetter() {
+  const response = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
+  return response.data.drinks[0];
+}
 
 export const getCountForDevice = () => {
   if (window.matchMedia("(min-width: 1280px)").matches) {
