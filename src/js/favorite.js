@@ -6,7 +6,7 @@ const favoriteCards = document.querySelector('.favorite__flex');
 let STORAGE_KEY = [];
 
 function loadFromLocalStorage() {
-  if (STORAGE_KEY !== null) {
+  if (STORAGE_KEY !== undefined) {
     const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
     serializedState.forEach(ele => firstSearchId(ele));
     console.log('yhoooooo!');
