@@ -4,11 +4,12 @@ import { elBtn } from './hero-letters-filter.js';
 import { cleanPagination, renderCard, cleanHTML, formatScreenRender, itemsPerScreen } from './global-functions.js';
 
 const pagRefs = {
-  api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
+  api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',
   pagesButtons: document.querySelector('.pagination'),
   currentPage: 'pagination__button-current',
   leftArrow: document.querySelector('.pagination__arrow-left'),
   rightArrow: document.querySelector('.pagination__arrow-right'),
+  pageCounter: 0,
 };
 
 
@@ -16,14 +17,15 @@ const pagRefs = {
 point.paginationDiv.addEventListener('click', async function goToPage(e) {
 
 // e.target.classList.add("pagination__button-current");
-  const pageNum = (e.target.textContent - 1);
+    let pageNum = (e.target.textContent - 1);
   
     // Смотрим на размер окна и считаем размер страницы //
     const itemsPerPage = itemsPerScreen();
  
     // Забираем обьект с сервера. В нем 25 коктейлей, сохраняем в массив //
     try {
-      const response = await axios.get(`${pagRefs.api}${elBtn}`);
+      const response = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
+      console.log('Response for Letter: ', response);
       const responseArr = response.data.drinks;
       console.log("Все коктейли в одном массиве: ", responseArr);
 
@@ -31,7 +33,13 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
       const pagesArr = await paginate(responseArr, itemsPerPage);
       console.log('Здесь страницы с коктейлями на каждой:', pagesArr);
 
-      
+      console.log('e.target log', e.target);
+      console.dir('e.target dir', e.target);
+      console.log('e.target.elements log', e.target.elements);
+      console.dir('e.target.elements dir', e.target.elements);
+      console.log('e.target.attributes', e.target.attributes);
+      console.log('e.target.attributes[1]', e.target.attributes[1]); //?
+      console.log('e.target.attributes.length', e.target.attributes.length);
 
       // Рендерим на страницу по клику на соответсвующую кнопку//
       if (e.target.attributes.length == 1) {
@@ -39,16 +47,39 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
         await doCurrentClass(e);
         point.galleryUl
           .insertAdjacentHTML('beforeend', pagesArr[pageNum].map(item => renderCard(item)).join(''));
+        pagRefs.pageCounter = (e.target.textContent - 1);
       }
 
-      else if (e.target.attributes[1].fill.value === '#202025' && pageNum != pagesArr.length) {
+      // Рендерим по клику на правую стрелку
+      else if (e.target.getAttribute('data-custom-attribute') === 'right' && pagRefs.pageCounter != (pagesArr.length - 1)) {
         cleanHTML();
+        console.log("Click right arrow");
+        console.log('pageCounter до клика на правую кнопку', pagRefs.pageCounter)
         point.galleryUl
-          .insertAdjacentHTML('beforeend', pagesArr[(pageNum + 1)].map(item => renderCard(item)).join(''));
-        e.target.classList.remove('pagination__button-current');
-        e.target.nextSibling.classList.add("pagination__button-current");
+          .insertAdjacentHTML('beforeend', pagesArr[(pagRefs.pageCounter + 1)].map(item => renderCard(item)).join(''));
+        pagRefs.pageCounter += 1;
+        pageNum += pagRefs.pageCounter;
+        console.log('pageCounter после клика на правую кнопку', pagRefs.pageCounter)
+        // e.target.classList.remove('pagination__button-current');
+        // e.target.nextSibling.classList.add("pagination__button-current");
 
       }
+// Рендерим по клику на левую стрелку
+      else if (e.target.getAttribute('data-custom-attribute') === 'left' && pagRefs.pageCounter != 0) {
+        cleanHTML();
+        console.log("Click Left arrow");
+
+        console.log('pageCounter до клика на левую кнопку', pagRefs.pageCounter)
+        point.galleryUl
+          .insertAdjacentHTML('beforeend', pagesArr[(pagRefs.pageCounter - 1)].map(item => renderCard(item)).join(''));
+        pagRefs.pageCounter -= 1;
+        pageNum -= pagRefs.pageCounter;
+        console.log('pageCounter после клика на левую кнопку', pagRefs.pageCounter);
+        // e.target.classList.remove('pagination__button-current');
+        // e.target.nextSibling.classList.add("pagination__button-current");
+
+      }
+
      // Добавляем выделение текущей страницы и Снимаем класс Текущей страницы со всех кнопок//
       
 
@@ -105,8 +136,8 @@ function renderPagination(totalPages) {
   // Добавляем количество кнопок страниц до 6, исходя из макета
 
   if (totalPages <= 6) {
-pagination += `<button class="pagination__arrow-left"> <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z" fill="#5F6775"/>
+pagination += `<button class="pagination__arrow-left" data-custom-attribute="left" > <svg width="8" height="13" viewBox="0 0 8 13" fill="1" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z" fill="#202025"/>
 </svg> </button>`;
 
     for (let k = 1; k <= totalPages; k++) {
@@ -144,7 +175,7 @@ pagination += `<button class="pagination__arrow-left"> <svg width="8" height="13
   }
 
   // Рендерим правую стрелку
-    pagination += `<button class="pagination__arrow-right"> <svg width="9" height="13" viewBox="0 0 9 13" fill="none">
+    pagination += `<button class="pagination__arrow-right"  data-custom-attribute="right" > <svg width="9" height="13" viewBox="0 0 9 13" fill="2">
 <path d="M5.31321 6.5L0.221924 1.44422L1.67628 0L8.22192 6.5L1.67628 13L0.221924 11.5558L5.31321 6.5Z" fill="#202025"/>
 </svg> </button>`;
 

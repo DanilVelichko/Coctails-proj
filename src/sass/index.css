@@ -499,6 +499,13 @@ body {
   font-size: 25px;
 }
 .pagination__arrow-left {
+
+  color: var(--orange-background-color);
+  border-color: transparent;
+  background-color: transparent;
+}
+.pagination__arrow-right {
+
   color: var(--orange-background-color);
   border-color: transparent;
   background-color: transparent;
@@ -507,6 +514,64 @@ body {
   color: var(--orange-background-color);
   border-color: transparent;
   background-color: transparent;
+}
+
+.switcher {
+  display: flex;
+}
+.switcher__light {
+  color: var(--switch-light-color);
+}
+.switcher__dark {
+  color: var(--switch-dark-color);
+}
+.switcher__label {
+  display: inline-block;
+  margin: 0 12px;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.switcher__switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 40px;
+  height: 20px;
+  border: 1px solid var(--second-background-color);
+  border-radius: 25%/50%;
+  vertical-align: top;
+  background: var(--focus-text-bg-color);
+  transition: 0.2s;
+}
+.switcher__switch:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--second-background-color);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.15s;
+}
+.switcher__input {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.switcher__input:checked + .switcher__switch {
+  border-color: var(--focus-text-bg-color);
+  background: var(--second-background-color);
+}
+.switcher__input:checked + .switcher__switch:before {
+  background-color: var(--focus-text-bg-color);
+  transform: translateX(20px);
+}
+.switcher__input:checked + .switcher__light {
+  color: var(--focus-text-bg-color);
 }
 
 .header__wrapper {
@@ -1047,6 +1112,7 @@ body {
   line-height: 1.5;
   color: var(--abc-text-color);
   background-color: var(--main-background-color);
+  cursor: pointer;
   border: none;
   transition-property: color, text-shadow;
   transition-duration: 250ms;
@@ -1455,6 +1521,16 @@ body {
   }
 }
 
+.favorite__flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 768px) {
+  .favorite__flex {
+    gap: 32px;
+  }
+}
+
 .favorite__border {
   max-width: 280px;
   height: 449px;
@@ -1466,16 +1542,16 @@ body {
 }
 @media screen and (min-width: 768px) {
   .favorite__border {
-    max-width: 335px;
+    max-width: 334px;
     height: 541px;
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 1280px) {
   .favorite__border {
-    max-width: 395px;
+    max-width: 393px;
     height: 556px;
   }
 }
