@@ -7,6 +7,8 @@ const pagRefs = {
   api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
   pagesButtons: document.querySelector('.pagination'),
   currentPage: 'pagination__button-current',
+  leftArrow: document.querySelector('.pagination__arrow-left'),
+  rightArrow: document.querySelector('.pagination__arrow-right'),
 };
 
 
@@ -29,15 +31,26 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
       const pagesArr = await paginate(responseArr, itemsPerPage);
       console.log('Здесь страницы с коктейлями на каждой:', pagesArr);
 
-      cleanHTML();
+      
 
       // Рендерим на страницу по клику на соответсвующую кнопку//
-      if (e.target.textContent) {
+      if (e.target.attributes.length == 1) {
+        cleanHTML();
+        await doCurrentClass(e);
         point.galleryUl
           .insertAdjacentHTML('beforeend', pagesArr[pageNum].map(item => renderCard(item)).join(''));
       }
+
+      else if (e.target.attributes[1].fill.value === '#202025' && pageNum != pagesArr.length) {
+        cleanHTML();
+        point.galleryUl
+          .insertAdjacentHTML('beforeend', pagesArr[(pageNum + 1)].map(item => renderCard(item)).join(''));
+        e.target.classList.remove('pagination__button-current');
+        e.target.nextSibling.classList.add("pagination__button-current");
+
+      }
      // Добавляем выделение текущей страницы и Снимаем класс Текущей страницы со всех кнопок//
-      await doCurrentClass(e);
+      
 
     } catch (error) {
       console.dir(error);
@@ -92,7 +105,7 @@ function renderPagination(totalPages) {
   // Добавляем количество кнопок страниц до 6, исходя из макета
 
   if (totalPages <= 6) {
-pagination += `<button class="pagination__arrow"> <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+pagination += `<button class="pagination__arrow-left"> <svg width="8" height="13" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z" fill="#5F6775"/>
 </svg> </button>`;
 
@@ -131,7 +144,7 @@ pagination += `<button class="pagination__arrow"> <svg width="8" height="13" vie
   }
 
   // Рендерим правую стрелку
-    pagination += `<button class="pagination__arrow"> <svg width="9" height="13" viewBox="0 0 9 13" fill="none">
+    pagination += `<button class="pagination__arrow-right"> <svg width="9" height="13" viewBox="0 0 9 13" fill="none">
 <path d="M5.31321 6.5L0.221924 1.44422L1.67628 0L8.22192 6.5L1.67628 13L0.221924 11.5558L5.31321 6.5Z" fill="#202025"/>
 </svg> </button>`;
 
@@ -139,19 +152,19 @@ pagination += `<button class="pagination__arrow"> <svg width="8" height="13" vie
 }
 export async function doCurrentClass(e) {
   console.log(e.target);
+  console.dir(e.target);
      pagRefs.pagesButtons.childNodes.forEach(items => items.classList.remove("pagination__button-current"));
-  if (e.target.textContent) {
+  if (e.target.attributes.length == 1) {
     e.target.classList.add("pagination__button-current");
-    
+}  
 }
 
-  
-}
 async function deletePrevClass(e) {
       e.target.previousSibling.classList.remove("pagination__button-current");
-
 }
+
 async function deleteNextClass(e) {
 e.target.nextSibling.classList.remove("pagination__button-current"); 
-  }
+}
+
 console.log('Подключена страница Pagination');
