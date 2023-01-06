@@ -7,4 +7,4 @@ import "./modal";
 import "./refs";
 import "./global-functions";
 import "./pagination";
-import "./_ingredients";
+import "./ingredients";
