@@ -3,18 +3,16 @@ import { STORAGE_KEY } from './refs';
 
 const favoriteCards = document.querySelector('.favorite__flex');
 
-let STORAGE_KEY = [];
-
-function loadFromLocalStorage() {
-  if (STORAGE_KEY !== undefined) {
-    const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
-    serializedState.forEach(ele => firstSearchId(ele));
-    console.log('yhoooooo!');
-    return;
-  } else {
-    console.log('DONE!!!');
-  }
-}
+// function loadFromLocalStorage() {
+//   if (STORAGE_KEY) {
+//     const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
+//     serializedState.forEach(ele => firstSearchId(ele));
+//     console.log('yhoooooo!');
+//     return;
+//   } else {
+//     console.log('DONE!!!');
+//   }
+// }
 
 loadFromLocalStorage();
 
