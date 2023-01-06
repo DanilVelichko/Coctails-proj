@@ -1,15 +1,14 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
 :root {
-  --main-text-color: #202025;
-  --orange-text-color: #fd5103;
-  --white-text-color: #ffffff;
-  --main-background-color: #fcfcfc;
-  --orange-background-color: #fd5103;
+  --second-text-color: #fd5103;
+  --focus-text-bg-color: #ffffff;
+  --abc-text-color: #5f6775;
+  --favorite-bg-color: #fffcfa;
+  --second-background-color: #fd5103;
   --main-border-color: #FE7031;
+  --btn-border-color: #fd5103;
   --base-font-family: Poppins, sans-serif;
   --primary-font-family: Roboto, sans-serif;
-  --favorite-bg-color: #fffcfa;
-  --filter-text-color: #5f6775;
 }
 
 h1,
@@ -65,7 +64,7 @@ address {
 html,
 body {
   height: 100%;
-  background: #fcfcfc;
+  background: var(--main-background-color);
   box-sizing: border-box;
 }
 
@@ -856,7 +855,7 @@ body {
   font-family: var(--base-font-family);
   font-weight: 600;
   line-height: 2;
-  color: var(--orange-text-color);
+  color: var(--second-text-color);
   max-width: 300px;
   font-size: 22px;
   margin-bottom: 60px;
@@ -881,7 +880,7 @@ body {
   line-height: 2;
   letter-spacing: 0.02em;
   margin-bottom: 20px;
-  color: #000000;
+  color: var(--main-text-color);
   opacity: 0.8;
 }
 @media screen and (min-width: 768px) {
@@ -938,17 +937,17 @@ body {
     top: 0;
     left: 0;
     z-index: 1;
-    color: var(--orange-text-color);
-    background-color: var(--white-color-color);
-    border: 1px solid #fd5103;
+    color: var(--second-text-color);
+    background-color: var(--main-background-color);
+    border: 1px solid var(--btn-border-color);
     border-radius: 4px;
     transition-property: color, background-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .hero-btn:focus {
-    color: rgb(255, 255, 255);
-    background-color: var(--orange-background-color);
+    color: var(--focus-text-bg-color);
+    background-color: var(--second-background-color);
   }
   .hero-btn--arrow {
     display: block;
@@ -956,7 +955,7 @@ body {
     height: 1px;
     top: 50%;
     left: 70%;
-    background-color: var(--orange-background-color);
+    background-color: var(--second-background-color);
     position: absolute;
     transform: rotate(45deg);
     transition-property: background-color;
@@ -970,7 +969,7 @@ body {
     bottom: 5px;
     width: 10px;
     height: 1px;
-    background-color: var(--orange-background-color);
+    background-color: var(--second-background-color);
     position: absolute;
     transform: rotate(90deg);
     transition-property: background-color;
@@ -978,10 +977,10 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .hero-btn:focus .hero-btn--arrow {
-    background-color: var(--white-color-color);
+    background-color: var(--focus-text-bg-color);
   }
-  .hero-btn:focus .hero-btn--arrow::before, .hero-btn:focus .hero-btn--arrow::after {
-    background-color: var(--white-color-color);
+  .hero-btn:focus .hero-btn--arrow::after {
+    background-color: var(--focus-text-bg-color);
   }
 }
 
@@ -990,7 +989,7 @@ body {
     width: 93px;
     height: 84px;
     margin-top: 34px;
-    border: 1px solid #fd5103;
+    border: 1px solid var(--btn-border-color);
     border-radius: 4px;
     overflow-y: scroll;
     transform: translatey(-100%);
@@ -1006,7 +1005,7 @@ body {
   }
   .hero-search::-webkit-scrollbar-thumb {
     height: 44px;
-    background: var(--filter-text-color);
+    background: var(--abc-text-color);
     border-radius: 50px;
     background-clip: content-box;
     border: 6px solid transparent;
@@ -1032,15 +1031,15 @@ body {
   font-weight: 700;
   font-size: 10px;
   line-height: 1.5;
-  color: var(--filter-text-color);
-  background-color: var(--white-color-color);
+  color: var(--abc-text-color);
+  background-color: var(--main-background-color);
   border: none;
   transition-property: color, text-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-search__btn:focus, .hero-search__btn:hover {
-  color: var(--orange-text-color);
+  color: var(--second-text-color);
   text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
 }
 @media screen and (max-width: 767px) {
