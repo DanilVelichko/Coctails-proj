@@ -6,13 +6,8 @@ import { cleanPagination, renderCard, cleanHTML, formatScreenRender, itemsPerScr
 const pagRefs = {
   api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',
   pagesButtons: document.querySelector('.pagination'),
-  currentPage: 'pagination__button-current',
-  leftArrow: document.querySelector('.pagination__arrow-left'),
-  rightArrow: document.querySelector('.pagination__arrow-right'),
   pageCounter: 0,
 };
-
-
 
 point.paginationDiv.addEventListener('click', async function goToPage(e) {
 
@@ -24,7 +19,7 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
  
     // Забираем обьект с сервера. В нем 25 коктейлей, сохраняем в массив //
     try {
-      const response = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
+      const response = await axios.get(`${pagRefs.api}${elBtn}`);
       console.log('Response for Letter: ', response);
       const responseArr = response.data.drinks;
       console.log("Все коктейли в одном массиве: ", responseArr);
