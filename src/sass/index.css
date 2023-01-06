@@ -1898,132 +1898,274 @@ body {
   background-color: #fd5103;
 }
 
-.backdrop {
-  z-index: 1;
-  position: fixed;
-  top: 0;
-  left: 0;
-  opacity: 1;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: visibility 700ms, opacity 700ms var(--two-time);
+* {
+  margin: auto;
+  padding: auto;
+  box-sizing: inherit;
 }
 
-.backdrop.is-hidden {
-  opacity: 0;
-  pointer-events: none;
-  visibility: hidden;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-.backdrop.is-hidden .mob-menu {
-  transform: translate(0%, -100%) scale(0);
-}
-
-.mob-menu {
-  transition: transform 700ms;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 100vw;
+body {
+  font-family: sans-serif;
+  color: #333;
+  line-height: 1.5;
   height: 100vh;
-  background-color: #84A178;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: linear-gradient(to top left, #719e19, #4286f3);
 }
 
-.logo-ice {
-  position: absolute;
-  left: 20px;
-  width: 40px;
-  height: 37px;
-  top: 12px;
-}
-@media screen and (min-width: 768px) {
-  .logo-ice {
-    width: 48px;
-    height: 44px;
-    top: 20px;
-    left: 32px;
-  }
+.flex-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
 
-.mob-menu-close-btn {
-  width: 32px;
-  height: 32px;
-  padding: 0;
-  display: block;
-  margin: 16px 20px 52px auto;
-  border: none;
-  background-color: transparent;
-  fill: #FCFCFC;
-}
-.mob-menu-close-btn:hover, .mob-menu-close-btn:focus {
-  fill: #F8D24E;
-}
-@media screen and (min-width: 768px) {
-  .mob-menu-close-btn {
-    margin: 32px 32px 76px auto;
-  }
-}
-
-.mob-menu-list {
-  text-align: center;
-}
-
-.mob-menu-list:not(:last-child) {
-  margin-bottom: 32px;
-}
-@media screen and (min-width: 768px) {
-  .mob-menu-list:not(:last-child) {
-    margin-bottom: 40px;
-  }
-}
-
-.mob-menu-link {
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.2;
-  color: #FCFCFC;
-}
-@media screen and (min-width: 768px) {
-  .mob-menu-link {
-    font-size: 48px;
-    line-height: 1.2;
-  }
-}
-
-.mob-menu-buy-btn {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 53px;
-  background-color: #F8D24E;
-  border-radius: 10px;
+.show-modal {
+  font-size: 2rem;
   font-weight: 600;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  color: #131313;
-  padding: 12px 32px 12px;
+  padding: 1.75rem 3.5rem;
+  margin: 5rem 2rem;
   border: none;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 112px;
+  background-color: #fff;
+  color: #444;
+  border-radius: 10rem;
   cursor: pointer;
 }
-@media screen and (min-width: 768px) {
-  .mob-menu-buy-btn {
-    display: none;
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-}
-.mob-menu-buy-btn:hover, .mob-menu-buy-btn:focus {
-  background-color: var(--button-color);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+.close-modal {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
+<<<<<<< HEAD
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+p {
+  font-size: 1.8rem;
+}
+
+/* -------------------------- */
+/* Specific to Modal */
+.hidden {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  height: 956px;
+  background: #FCFCFC;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+@media screen and (min-width: 768px) {
+  .modal {
+    width: 822px;
+    height: 598px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .Coctails-pic {
+    position: absolute;
+    width: 288px;
+    height: 320px;
+    left: 0px;
+    top: 0px;
+  }
+}
+
+.Coctails-title {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 32px;
+  line-height: 38px;
+  /* Black */
+  color: #202025;
+}
+@media screen and (min-width: 768px) {
+  .Coctails-title {
+    position: absolute;
+    width: 129px;
+    height: 37px;
+    left: 320px;
+    top: 40px;
+  }
+}
+
+.Coctails-instractions {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  /* identical to box height, or 162% */
+  text-transform: uppercase;
+  color: #202025;
+  margin-bottom: 20px;
+}
+@media screen and (min-width: 768px) {
+  .Coctails-instractions {
+    position: absolute;
+    width: 122px;
+    height: 26px;
+    left: 28px;
+    top: 348px;
+  }
+}
+
+.Coctails-description {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 28px;
+  /* or 175% */
+  /* Gray */
+  color: #5F6775;
+}
+@media screen and (min-width: 768px) {
+  .Coctails-description {
+    position: absolute;
+    width: 615px;
+    height: 84px;
+    left: 28px;
+    top: 398px;
+  }
+}
+
+.Coctails-ingredients {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height */
+  /* Main black */
+  color: #000917;
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .Coctails-ingredients {
+    position: absolute;
+    width: 103px;
+    height: 24px;
+    left: 320px;
+    top: 105px;
+  }
+}
+
+.Per-cocktail {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 21px;
+  color: #202025;
+  margin-top: 8px;
+}
+@media screen and (min-width: 768px) {
+  .Per-cocktail {
+    position: absolute;
+    width: 80px;
+    height: 21px;
+    left: 320px;
+    top: 137px;
+  }
+}
+
+.Coctails-list {
+  text-decoration: none;
+  cursor: pointer;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #5F6775;
+  margin-top: 4px;
+}
+@media screen and (min-width: 768px) {
+  .Coctails-list {
+    position: absolute;
+    width: 215px;
+    height: 130px;
+    left: 320px;
+    top: 166px;
+    padding-top: 4px;
+  }
+}
+
+.Add-button {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  border: none;
+  padding: 12px 24px;
+  gap: 10px;
+  background: #FD5103;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #FCFCFC;
+  width: 185px;
+  height: 48px;
+  left: 0px;
+  top: 0px;
+  border-radius: 4px;
+  justify-content: center;
+  margin-top: 32px;
+}
+@media screen and (min-width: 768px) {
+  .Add-button {
+    position: absolute;
+    width: 248px;
+    height: 48px;
+    left: 539px;
+    top: 488px;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 5;
+=======
 .mob-menu-btn-buy {
   width: 12px;
   height: 12px;
   display: inline-block;
+>>>>>>> main
 }/*# sourceMappingURL=index.css.map */
