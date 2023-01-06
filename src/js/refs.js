@@ -11,15 +11,16 @@ export const event = {};
 export const localStorageArr = ['14456'];
 
 export const fetchEl = {};
+export const favorites = [];
 
 export const point = {
   galleryUl: document.querySelector('.gallery__render-box'),
   card: document.querySelectorAll('gallery__coctail_box'),
   addFavoriteButtons: document.querySelectorAll('.button__add'),
   idCocktailOnCard: document.querySelectorAll('.coctailsId'),
-  paginationDiv: document.querySelector('.pagination'),
+    paginationDiv: document.querySelector('.pagination'),
+  removeFavoriteButtons: document.querySelectorAll('.button__remove'),
 };
-console.log(point.addFavoriteButtons);
 
 export const counter = {
   mobile: 3,
