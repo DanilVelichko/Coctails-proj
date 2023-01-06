@@ -18,7 +18,7 @@ export const point = {
   card: document.querySelectorAll('gallery__coctail_box'),
   addFavoriteButtons: document.querySelectorAll('.button__add'),
   idCocktailOnCard: document.querySelectorAll('.coctailsId'),
-    paginationDiv: document.querySelector('.pagination'),
+  paginationDiv: document.querySelector('.pagination'),
   removeFavoriteButtons: document.querySelectorAll('.button__remove'),
 };
 

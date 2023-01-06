@@ -176,6 +176,7 @@ export const saveInLocalStorage = (key, value) => {
   } catch (error) {
     console.error("Set state error: ", error.message);
   }
+
 };
 
 // export const loadFromLocalStorageGlobal = async (key) => {
@@ -186,6 +187,7 @@ export const saveInLocalStorage = (key, value) => {
 //     console.error("Get state error: ", error.message);
 //   }
 // };
+
 
 export function itemsPerScreen () {
     let itemsPerPage = 0;

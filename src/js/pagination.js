@@ -129,53 +129,59 @@ function renderPagination(totalPages) {
 // Рендерим левую стрелку
 
   // Добавляем количество кнопок страниц до 6, исходя из макета
-
-  if (totalPages <= 6) {
-pagination += `<button class="pagination__arrow-left" data-custom-attribute="left" > <svg id="arrow-icon" class="pagination__button-icon" width="8" height="13" viewBox="0 0 9 13">
+  if (totalPages > 1) {
+    if (totalPages <= 6) {
+      pagination += `<button class="pagination__arrow-left" data-custom-attribute="left" > <svg id="arrow-icon" class="pagination__button-icon" width="8" height="13" viewBox="0 0 9 13">
 <path class="letter" d="M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z"/>
 </svg> </button>`;
 
-    for (let k = 1; k <= totalPages; k++) {
-    pagination += '<button class="pagination__button ';
-    if (k === currentPage) {
-      pagination += 'pagination__button-current';
-    }
-    pagination += '">' + k + '</button>';
-  }
-  }
-
-  // Если страниц будет больше 6, то появляется разделитель '...' первых трех и последних трехстраниц
-  if (totalPages > 7) {
-    // Добавляем первые три кнопки страниц //
-    for (let k = 1; k <= 3; k++) {
-    pagination += '<button class="pagination__button"';
-   
-    pagination += '>' + k + '</button>';
-    }
-    
-     // Добавляем троеточие между кнопками страниц //
-    pagination += '<div class="pagination_points">...</div>';
-
-    // Добавляем последние три кнопки страниц //
-    counterTotalPages = (totalPages - 2);
-    for (let j = totalPages; j > (totalPages - 3); j -= 1) {
-      
-       pagination += '<button class="pagination__button" >'+ counterTotalPages +'</button>';
-     
-       if (j === currentPage) {
-      pagination += 'pagination__button-current';
+      for (let k = 1; k <= totalPages; k++) {
+        pagination += '<button class="pagination__button ';
+        if (k === currentPage) {
+          pagination += 'pagination__button-current';
+        }
+        pagination += '">' + k + '</button>';
       }
-      counterTotalPages += 1;
-    }    
-  }
+    }
 
-  // Рендерим правую стрелку
+    // Если страниц будет больше 6, то появляется разделитель '...' первых трех и последних трехстраниц
+    if (totalPages > 7) {
+      // Добавляем первые три кнопки страниц //
+      for (let k = 1; k <= 3; k++) {
+        pagination += '<button class="pagination__button"';
+   
+        pagination += '>' + k + '</button>';
+      }
+    
+      // Добавляем троеточие между кнопками страниц //
+      pagination += '<div class="pagination_points">...</div>';
+
+      // Добавляем последние три кнопки страниц //
+      counterTotalPages = (totalPages - 2);
+      for (let j = totalPages; j > (totalPages - 3); j -= 1) {
+      
+        pagination += '<button class="pagination__button" >' + counterTotalPages + '</button>';
+     
+        if (j === currentPage) {
+          pagination += 'pagination__button-current';
+        }
+        counterTotalPages += 1;
+      }
+    }
+
+    // Рендерим правую стрелку
     pagination += `<button class="pagination__arrow-right"  data-custom-attribute="right" > <svg class="pagination__button-icon" width="9" height="13" viewBox="0 0 9 13">
 <path class="letter" d="M5.31321 6.5L0.221924 1.44422L1.67628 0L8.22192 6.5L1.67628 13L0.221924 11.5558L5.31321 6.5Z"/>
 </svg> </button>`;
 
-  return pagination;
-}
+    return pagination;
+  } 
+  pagRefs.pagesButtons.classList.add('visually-hidden');
+  return `<div class="visually-hidden"></div>`;
+} 
+
+
+
 export async function doCurrentClass(e) {
   console.log(e.target);
   console.dir(e.target);
