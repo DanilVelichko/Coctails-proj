@@ -499,12 +499,7 @@ body {
   color: var(--orange-text-color);
   font-size: 25px;
 }
-.pagination__arrow-left {
-  color: var(--orange-background-color);
-  border-color: transparent;
-  background-color: transparent;
-}
-.pagination__arrow-right {
+.pagination__arrow {
   color: var(--orange-background-color);
   border-color: transparent;
   background-color: transparent;
@@ -1617,4 +1612,6 @@ body {
   width: 12px;
   height: 12px;
   display: inline-block;
-}/*# sourceMappingURL=index.css.map */
+}
+
+/*# sourceMappingURL=index.css.map */
