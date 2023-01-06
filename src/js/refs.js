@@ -20,6 +20,7 @@ export const point = {
   paginationDiv: document.querySelector('.pagination'),
 };
 console.log(point.addFavoriteButtons);
+
 export const counter = {
   mobile: 3,
   tablet: 6,
