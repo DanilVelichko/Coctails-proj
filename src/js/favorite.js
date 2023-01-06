@@ -1,18 +1,14 @@
 import axios from 'axios';
 import { STORAGE_KEY } from './refs';
 
-const favoriteCards = document.querySelector('.favorite__flex');
+function loadFromLocalStorage() {
+  const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
 
-// function loadFromLocalStorage() {
-//   if (STORAGE_KEY) {
-//     const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
-//     serializedState.forEach(ele => firstSearchId(ele));
-//     console.log('yhoooooo!');
-//     return;
-//   } else {
-//     console.log('DONE!!!');
-//   }
-// }
+  for (let i = 0; i < serializedState.length; i++) {
+    const element = serializedState[i];
+    firstSearchId(element);
+  }
+}
 
 loadFromLocalStorage();
 
@@ -29,6 +25,7 @@ async function firstSearchId(ele) {
 
 function cocktailIdMarkup(id) {
   const drinks = id.data.drinks[0];
+  console.log();
   const { strDrinkThumb, strDrink } = drinks;
   const create = `<ul class="favorite__border">
     <li>
@@ -52,5 +49,7 @@ function cocktailIdMarkup(id) {
     </li>
   </ul>
   `;
-  favoriteCards.insertAdjacentHTML('beforeend', create);
+  document
+    .querySelector('.favorite__flex')
+    .insertAdjacentHTML('beforeend', create);
 }
