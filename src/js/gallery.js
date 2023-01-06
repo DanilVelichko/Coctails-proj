@@ -2,14 +2,14 @@ import axios from 'axios';
 import debounce from 'debounce';
 import {
   renderCard,
-  formatScreenRender,
+  formatScreenRenderGallery,
   cleanHTML,
   saveInLocalStorage,
-  loadFromLocalStorage,
+  loadFromLocalStorageGlobal,
 } from './global-functions.js';
 import { refs, fetchEl, point, counter, localStorageArr } from './refs.js';
 
-const debouncedRender = debounce(formatScreenRender(galleryMarkup), 1000);
+const debouncedRender = debounce(formatScreenRenderGallery(galleryMarkup), 1000);
 
 export async function galleryMarkup() {
   cleanHTML();
