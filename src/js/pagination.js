@@ -4,7 +4,7 @@ import { elBtn } from './hero-letters-filter.js';
 import { cleanPagination, renderCard, cleanHTML, formatScreenRender, itemsPerScreen } from './global-functions.js';
 
 const pagRefs = {
-  api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=',
+  api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',
   pagesButtons: document.querySelector('.pagination'),
   currentPage: 'pagination__button-current',
   leftArrow: document.querySelector('.pagination__arrow-left'),
@@ -23,7 +23,8 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
  
     // Забираем обьект с сервера. В нем 25 коктейлей, сохраняем в массив //
     try {
-      const response = await axios.get(`${pagRefs.api}${elBtn}`);
+      const response = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
+      console.log('Response for Letter: ', response);
       const responseArr = response.data.drinks;
       console.log("Все коктейли в одном массиве: ", responseArr);
 
