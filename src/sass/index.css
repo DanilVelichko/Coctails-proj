@@ -488,30 +488,23 @@ body {
 }
 .pagination__button:hover {
   color: var(--white-text-color);
-  background-color: var(--orange-background-color);
+  background-color: var(--switch-light-color);
 }
 .pagination__button-current {
   color: var(--white-text-color);
-  background-color: var(--orange-background-color);
+  background-color: var(--switch-light-color);
 }
 .pagination_points {
   color: var(--orange-text-color);
   font-size: 25px;
 }
 .pagination__arrow-left {
-
-  color: var(--orange-background-color);
+  color: var(--switch-light-color);
   border-color: transparent;
   background-color: transparent;
 }
 .pagination__arrow-right {
-
-  color: var(--orange-background-color);
-  border-color: transparent;
-  background-color: transparent;
-}
-.pagination__arrow-right {
-  color: var(--orange-background-color);
+  color: var(--switch-light-color);
   border-color: transparent;
   background-color: transparent;
 }

@@ -6,4 +6,5 @@ import "./hero-letters-filter";
 import "./modal";
 import "./refs";
 import "./global-functions";
-import "./pagination.js";
+import "./pagination";
+import "./_ingredients";

@@ -37,11 +37,11 @@
     }
     &:hover {
       color: var(--white-text-color);
-      background-color: var(--orange-background-color);
+      background-color: var(--switch-light-color);
     }
     &-current {
       color: var(--white-text-color);
-      background-color: var(--orange-background-color);
+      background-color: var(--switch-light-color);
     }
   }
   &_points {
@@ -51,14 +51,14 @@
   &__arrow-left {
     // width: 10px;
     // height: 15px;
-    color: var(--orange-background-color);
+    color: var(--switch-light-color);
     border-color: transparent;
     background-color: transparent;
   }
   &__arrow-right {
     // width: 10px;
     // height: 15px;
-    color: var(--orange-background-color);
+    color: var(--switch-light-color);
     border-color: transparent;
     background-color: transparent;
   }
