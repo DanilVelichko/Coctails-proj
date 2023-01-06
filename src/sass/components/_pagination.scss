@@ -2,7 +2,8 @@
   display: flex;
   justify-content: center;
   gap: 8px;
-margin-top: 45px;
+  margin-top: 45px;
+  align-items: baseline;
 
   @include mobile {
   }
@@ -16,7 +17,7 @@ margin-top: 45px;
     width: 32px;
     height: 32px;
     background-color: var(--main-background-color);
-
+    color: var(--orange-text-color);
     border-radius: 50%;
     font-size: 12px;
     border: 1px solid transparent;
@@ -36,15 +37,29 @@ margin-top: 45px;
     }
     &:hover {
       color: var(--white-text-color);
-      background-color: var(--orange-background-color);
+      background-color: var(--switch-light-color);
     }
     &-current {
       color: var(--white-text-color);
-      background-color: var(--orange-background-color);
+      background-color: var(--switch-light-color);
     }
   }
   &_points {
     color: var(--orange-text-color);
     font-size: 25px;
+  }
+  &__arrow-left {
+    // width: 10px;
+    // height: 15px;
+    color: var(--switch-light-color);
+    border-color: transparent;
+    background-color: transparent;
+  }
+  &__arrow-right {
+    // width: 10px;
+    // height: 15px;
+    color: var(--switch-light-color);
+    border-color: transparent;
+    background-color: transparent;
   }
 }

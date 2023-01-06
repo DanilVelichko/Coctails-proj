@@ -24,7 +24,7 @@
     font-family: var(--base-font-family);
     font-weight: 600;
     line-height: 2;
-    color:var(--orange-text-color);
+    color:var(--second-text-color);
 
     max-width: 300px;
     font-size: 22px;
@@ -49,7 +49,7 @@
   letter-spacing: 0.02em;
 
   margin-bottom: 20px;
-  color: #000000;
+  color: var(--main-text-color);
   opacity: 0.8;
 
   @include tablet {
@@ -107,10 +107,10 @@
     left: 0;
     z-index: 1;
 
-    color: var(--orange-text-color);
-    background-color: var(--white-color-color);
+    color: var(--second-text-color);
+    background-color: var(--main-background-color);
 
-    border: 1px solid #fd5103;
+    border: 1px solid var(--btn-border-color);
     border-radius: 4px;
 
     transition-property: color, background-color;
@@ -118,9 +118,9 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     &:focus {
-      color: rgb(255, 255, 255);
+      color: var(--focus-text-bg-color);
 
-      background-color:  var(--orange-background-color);
+      background-color:  var(--second-background-color);
     }
 
     &--arrow {
@@ -130,7 +130,7 @@
       top: 50%;
       left: 70%;
 
-      background-color:  var(--orange-background-color);
+      background-color:  var(--second-background-color);
       position: absolute;
       transform: rotate(45deg);
 
@@ -147,7 +147,7 @@
         bottom: 5px;
         width: 10px;
         height: 1px;
-        background-color:  var(--orange-background-color);
+        background-color:  var(--second-background-color);
         position: absolute;
 
         transform: rotate(90deg);
@@ -157,11 +157,10 @@
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
       .hero-btn:focus & {
-        background-color: var(--white-color-color);
-
-        &::before,
+        background-color: var(--focus-text-bg-color);
+        
         &::after {
-          background-color: var(--white-color-color);
+          background-color: var(--focus-text-bg-color);
         }
 
       }
@@ -176,7 +175,7 @@
     height: 84px;
 
     margin-top: 34px;
-    border: 1px solid #fd5103;
+    border: 1px solid var(--btn-border-color);
     border-radius: 4px;
     overflow-y: scroll;
 
@@ -195,7 +194,7 @@
 
     &::-webkit-scrollbar-thumb {
       height: 44px;
-      background: var(--filter-text-color);
+      background: var(--abc-text-color);
       border-radius: 50px;
       background-clip: content-box;
       border: 6px solid transparent;
@@ -224,9 +223,9 @@
   line-height: 1.5;
 
 
-  color:  var(--filter-text-color);
-  background-color:  var(--white-color-color);
-
+  color:  var(--abc-text-color);
+  background-color:  var(--main-background-color);
+  cursor: pointer;
   border: none;
 
   transition-property: color, text-shadow;
@@ -234,7 +233,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:focus,
   &:hover {
-    color:  var(--orange-text-color);
+    color:  var(--second-text-color);
     text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
   }
 

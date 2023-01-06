@@ -19,10 +19,9 @@ export let elBtn = '';
     formatScreenRender(galleryMarkup);
 
     // Рендерим Пагинацию под галереей карточек //
-    let pagination = await createPagination(elBtn);
-
-    point.paginationDiv.innerHTML = pagination;
+    point.paginationDiv.innerHTML = await createPagination(elBtn);
     console.log(await createPagination(elBtn));
+    // doCurrentClass(e);
 }
 
 export async function galleryMarkup(i) {
