@@ -1,26 +1,27 @@
 import axios from 'axios';
 import { STORAGE_KEY } from './refs';
+import { loadFromLocalStorageGlobal } from './global-functions';
 
 const favoriteCards = document.querySelector('.favorite__flex');
+// window.onload = function () {
+//   loadFromLocalStorage();
+// }
 
 loadFromLocalStorage();
-
-function loadFromLocalStorage() {
-  const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  countCocktailId(serializedState);
+async function loadFromLocalStorage() {
+  
+  const serializedState = loadFromLocalStorageGlobal(STORAGE_KEY);
+  await countCocktailId(serializedState);
 }
 
-function countCocktailId(count) {
-  count.forEach(ele => {
-    countId = ele;
-    firstSearchId();
-  });
+async function countCocktailId(count) {
+  await count.forEach(ele => firstSearchId(ele));
 }
 
-async function firstSearchId() {
+async function firstSearchId(ele) {
   try {
     const result = await axios.get(
-      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${countId}`
+      `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${ele} `
     );
     cocktailIdMarkup(result);
   } catch (error) {
