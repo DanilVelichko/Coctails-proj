@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { refs, fetchEl, point, counter } from './refs.js';
-import { renderCard,formatScreenRender, cleanHTML, cleanPagination } from './global-functions.js';
+import { refs, fetchEl, point, counter, favorites } from './refs.js';
+import { renderCard, formatScreenRender, cleanHTML, cleanPagination, renderButtonInternals, formatScreenRenderGallery } from './global-functions.js';
 import { createPagination } from './pagination.js';
 const heroRefs = {
   searchByAbc: document.querySelector('.hero-search'),
@@ -16,7 +16,7 @@ export let elBtn = '';
     elBtn = e.target.textContent;
     heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
 
-    formatScreenRender(galleryMarkup);
+    formatScreenRenderGallery(galleryMarkup);
 
     // Рендерим Пагинацию под галереей карточек //
     point.paginationDiv.innerHTML = await createPagination(elBtn);
