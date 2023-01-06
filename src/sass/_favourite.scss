@@ -199,7 +199,6 @@
 .favorite__flex {
   display: flex;
   flex-wrap: wrap;
-
   @include tablet {
     gap: 32px;
   }
@@ -217,16 +216,16 @@
   border-radius: 4px;
 
   @include tablet {
-    max-width: 335px;
+    max-width: 334px;
     height: 541px;
 
-    margin-left: 0;
-    margin-right: 0;
-    margin-bottom: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 20px;
   }
 
   @include desktop {
-    max-width: 395px;
+    max-width: 393px;
     height: 556px;
   }
 }
