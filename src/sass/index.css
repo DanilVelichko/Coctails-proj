@@ -487,11 +487,11 @@ body {
   }
 }
 .pagination__button:hover {
-  color: var(--white-text-color);
+  color: var(--button-text-color);
   background-color: var(--switch-light-color);
 }
 .pagination__button-current {
-  color: var(--white-text-color);
+  color: var(--button-text-color);
   background-color: var(--switch-light-color);
 }
 .pagination_points {
@@ -507,6 +507,12 @@ body {
   color: var(--switch-light-color);
   border-color: transparent;
   background-color: transparent;
+}
+.pagination__button-icon {
+  fill: #5f6775;
+}
+.pagination__button-icon:hover {
+  fill: #202025;
 }
 
 .switcher {

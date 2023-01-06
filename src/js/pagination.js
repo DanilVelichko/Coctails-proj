@@ -131,8 +131,8 @@ function renderPagination(totalPages) {
   // Добавляем количество кнопок страниц до 6, исходя из макета
 
   if (totalPages <= 6) {
-pagination += `<button class="pagination__arrow-left" data-custom-attribute="left" > <svg width="8" height="13" viewBox="0 0 8 13" fill="1" xmlns="http://www.w3.org/2000/svg">
-<path d="M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z" fill="#202025"/>
+pagination += `<button class="pagination__arrow-left" data-custom-attribute="left" > <svg id="arrow-icon" class="pagination__button-icon" width="8" height="13" viewBox="0 0 9 13">
+<path class="letter" d="M2.90872 6.5L8 11.5558L6.54564 13L0 6.5L6.54564 0L8 1.44422L2.90872 6.5Z"/>
 </svg> </button>`;
 
     for (let k = 1; k <= totalPages; k++) {
@@ -170,8 +170,8 @@ pagination += `<button class="pagination__arrow-left" data-custom-attribute="lef
   }
 
   // Рендерим правую стрелку
-    pagination += `<button class="pagination__arrow-right"  data-custom-attribute="right" > <svg width="9" height="13" viewBox="0 0 9 13" fill="2">
-<path d="M5.31321 6.5L0.221924 1.44422L1.67628 0L8.22192 6.5L1.67628 13L0.221924 11.5558L5.31321 6.5Z" fill="#202025"/>
+    pagination += `<button class="pagination__arrow-right"  data-custom-attribute="right" > <svg class="pagination__button-icon" width="9" height="13" viewBox="0 0 9 13">
+<path class="letter" d="M5.31321 6.5L0.221924 1.44422L1.67628 0L8.22192 6.5L1.67628 13L0.221924 11.5558L5.31321 6.5Z"/>
 </svg> </button>`;
 
   return pagination;
