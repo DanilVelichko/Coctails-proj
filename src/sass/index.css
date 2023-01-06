@@ -499,7 +499,12 @@ body {
   color: var(--orange-text-color);
   font-size: 25px;
 }
-.pagination__arrow {
+.pagination__arrow-left {
+  color: var(--orange-background-color);
+  border-color: transparent;
+  background-color: transparent;
+}
+.pagination__arrow-right {
   color: var(--orange-background-color);
   border-color: transparent;
   background-color: transparent;
