@@ -499,6 +499,13 @@ body {
   font-size: 25px;
 }
 .pagination__arrow-left {
+
+  color: var(--orange-background-color);
+  border-color: transparent;
+  background-color: transparent;
+}
+.pagination__arrow-right {
+
   color: var(--orange-background-color);
   border-color: transparent;
   background-color: transparent;
@@ -589,6 +596,11 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+@media screen and (min-width: 1280px) {
+  .header__nav-mobile {
+    display: none;
+  }
 }
 
 .nav-mobile__icon {
@@ -707,14 +719,18 @@ body {
   }
 }
 
-.nav-desktop__home {
+.nav-desktop__home a,
+.nav-desktop__favorite a {
   font-family: --base-font-family;
   font-size: 28px;
   line-height: 1.1;
   letter-spacing: 0.02em;
   padding: 0;
+  color: --main-text-color;
 }
-.nav-desktop__home:hover, .nav-desktop__home:focus {
+.nav-desktop__home a:hover, .nav-desktop__home a:focus,
+.nav-desktop__favorite a:hover,
+.nav-desktop__favorite a:focus {
   color: --second-text-color;
 }
 
@@ -853,7 +869,7 @@ body {
   left: 30px;
   background-color: transparent;
   border-left: 0;
-  border-right: 1px solid --second-text-color;
+  border-right: 1px solid --btn-border-color;
   border-top: 0;
   border-bottom: 0;
   z-index: 2;
@@ -875,7 +891,7 @@ body {
 .search__input {
   width: 94%;
   height: 40px;
-  border: 1px solid --second-text-color;
+  border: 1px solid --btn-border-color;
   border-radius: 4px;
   padding-left: 44px;
   caret-color: --filter-text-color;
