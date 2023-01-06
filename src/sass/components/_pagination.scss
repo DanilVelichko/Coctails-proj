@@ -48,7 +48,14 @@
     color: var(--orange-text-color);
     font-size: 25px;
   }
-  &__arrow {
+  &__arrow-left {
+    // width: 10px;
+    // height: 15px;
+    color: var(--orange-background-color);
+    border-color: transparent;
+    background-color: transparent;
+  }
+  &__arrow-right {
     // width: 10px;
     // height: 15px;
     color: var(--orange-background-color);
