@@ -1,6 +1,8 @@
+
 @import './utils/mixin';
 @import './utils/variables';
 
+@import './header';
 @import './components/reset';
 @import './components/base';
 @import './components/buttons';
@@ -8,7 +10,7 @@
 @import './components/switcher';
 
 @import './common';
-@import './header';
+
 @import './hero';
 @import './gallery';
 @import './favourite';
