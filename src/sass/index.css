@@ -25,9 +25,7 @@
 }
 
 .header__section {
-  overflow: hidden;
   background-color: var(--main-background-color);
-  position: fixed;
   top: 0;
   width: 100%;
   border-bottom: 1px solid var(--main-border-color);

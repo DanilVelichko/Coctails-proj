@@ -1,6 +1,11 @@
 export const STORAGE_KEY = 'CoctailsId';
 
 export const refs = {
+  //header
+  backdropMenu: document.querySelector('.nav-desktop__item--js'),
+  menuSecondRow: document.querySelector('.favorite__list'),
+  mobileMenuBurger: document.querySelector('.active'),
+  //
   apiKey: 1,
   randomCoctailApi: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
   ferstLetterSearch: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=', // после равно ставим букву в ${} для поиска
