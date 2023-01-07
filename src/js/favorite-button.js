@@ -1,4 +1,4 @@
-import { refs, fetchEl, point, counter, localStorageArr } from './refs.js';
+import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
 import { saveInLocalStorage, loadFromLocalStorage } from './global-functions.js';
 
 
@@ -7,19 +7,22 @@ point.galleryUl.addEventListener('click', addToFavorite);
 
 function addToFavorite(e) {
     const element = e.target.children[1].textContent;
+    if (/^\d{5}$/.test(element)) {
+
     if (!localStorageArr.includes(element)) {
         localStorageArr.push(element);
-        saveInLocalStorage('CoctailsId', localStorageArr);
+        
         console.log("e.target.children[1].textContent", element);
     }  else {
         const index = localStorageArr.indexOf(element);
         if (index > -1) {
             localStorageArr.splice(index, 1);
         }
-        saveInLocalStorage('CoctailsId', localStorageArr);
+        
     }
+    saveInLocalStorage('CoctailsId', localStorageArr);
 }
-
+}
 
 function removeFromFavorite(e) {
     localStorageArr.filter(coctailId => coctailId !== e.target.children[1].textContent);
