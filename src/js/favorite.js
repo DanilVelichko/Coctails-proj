@@ -1,13 +1,12 @@
 import axios from 'axios';
-import { STORAGE_KEY, localStorageArr } from './refs';
+import { STORAGE_KEY } from './refs';
 
-let localStorageArr = [];
+let STORAGE_KEY = [];
 
 function loadFromLocalStorage() {
-  const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  console.log(localStorageArr);
+  const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
-  if (localStorageArr.length === 0) {
+  if (serializedState.length === 0) {
     const create = ` 
     <p class="cocktails_text">
       You haven't added any favorite cocktails yet
@@ -15,9 +14,9 @@ function loadFromLocalStorage() {
   `;
     document.querySelector('.favorite').insertAdjacentHTML('beforeend', create);
   } else {
-    for (let i = 0; i < localStorageArr.length; i++) {
-      const element = localStorageArr[i];
-      console.log(element);
+    for (let i = 0; i < serializedState.length; i += 1) {
+      const element = serializedState[i];
+
       firstSearchId(element);
     }
   }
@@ -39,7 +38,7 @@ async function firstSearchId(ele) {
 function cocktailIdMarkup(id) {
   const drinks = id.data.drinks[0];
   console.log();
-  const { strDrinkThumb, strDrink } = drinks;
+  const { strDrinkThumb, strDrink, idDrink } = drinks;
   const create = `<ul class="favorite__border">
     <li>
       <img
@@ -50,8 +49,8 @@ function cocktailIdMarkup(id) {
       <h2 class="favorite__cocktail-name">${strDrink}</h2>
       <div class="favorite__cocktail-buttons">
         <button class="favorite__learn button__learn">Learn More</button>
-
-        <button class="favorite__remove button__remove_mobile">
+           <div class="coctailsId visually-hidden">${idDrink}</div>
+        <button class="favorite__remove button__remove_mobile  ">
           Remove
                   <svg
                 width="21"
@@ -76,4 +75,18 @@ function cocktailIdMarkup(id) {
   document
     .querySelector('.favorite__flex')
     .insertAdjacentHTML('beforeend', create);
+}
+
+document.querySelector('.favorite').addEventListener('click', event => {
+  if (event.target.innerText === 'Remove') {
+    removeCocktail(event);
+  } else if (event.target.innerText === 'Learn More') {
+    console.log('Для вызова Modal!');
+  }
+});
+
+function removeCocktail(event) {
+  console.log(event);
+  const key = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  console.log(key);
 }
