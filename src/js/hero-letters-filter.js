@@ -15,7 +15,7 @@ export let elBtn = '';
   async function onSearch(e) {
     elBtn = e.target.textContent;
     heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
-    activeStileBtn()
+    heroRefs.overlayBtn.classList.add('active-btn');
     formatScreenRender(galleryMarkup);
 
     // Рендерим Пагинацию под галереей карточек //
@@ -58,7 +58,5 @@ function onErrorFind() {
   cleanPagination();
 }
 
-function activeStileBtn() {
-  heroRefs.overlayBtn.classList.add('active-btn')
 
-}
+
