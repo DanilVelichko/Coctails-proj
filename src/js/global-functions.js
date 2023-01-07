@@ -3,7 +3,54 @@ import axios from "axios";
 import { elBtn } from './hero-letters-filter.js';
 
 export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
+  if (strDrink.length > 16) {
     return `
+  <li class="gallery__coctail_box">
+        <picture class="gallery__coctail_img">
+          <source
+            srcset="
+              ${strDrinkThumb} 1x,
+              ${strDrinkThumb} 2x
+            "
+            media="(max-width: 1280px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ${strDrinkThumb} 1x,
+              ${strDrinkThumb} 2x
+            "
+            media="(max-width: 768px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ${strDrinkThumb} 1x,
+              ${strDrinkThumb} 2x
+            "
+            media="(max-width: 480px)"
+            type="image/png"
+          />
+
+          <img
+            src="${strDrinkThumb}"
+            alt="${strDrink}"
+          />
+        </picture>
+
+        <h3 class="gallery__coctail_box-name" style="font-size: 28px;">${strDrink}</h3>
+        <div class="gallery__coctail_box-buttons">
+          <button class="button__learn">Learn More</button>
+          <button class="button__add button__fav" id="fb_${idDrink}">
+            ${renderButtonInternals(idDrink)}
+          
+            <div class="coctailsId visually-hidden">${idDrink}</div>
+          </button>
+        </div> 
+      </li>
+`;
+  } else {
+     return `
   <li class="gallery__coctail_box">
         <picture class="gallery__coctail_img">
           <source
@@ -48,6 +95,7 @@ export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
         </div> 
       </li>
 `;
+  }
 };
   
 export const renderButtonInternals = (idDrink) => {
