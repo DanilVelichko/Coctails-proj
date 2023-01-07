@@ -1,8 +1,13 @@
+<<<<<<< Updated upstream
 console.log('hello');
+=======
+console.log('hello!');
+>>>>>>> Stashed changes
 import axios from 'axios';
 import { STORAGE_KEY, localStorageArr } from './refs';
 
 let localStorageArr = [];
+console.log(localStorageArr);
 
 function loadFromLocalStorage() {
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -13,7 +18,9 @@ function loadFromLocalStorage() {
       You haven't added any favorite ingredients yet
     </p>
   `;
-    document.querySelector('.favorite').insertAdjacentHTML('beforeend', create);
+    document
+      .querySelector('.favor-ingredients')
+      .insertAdjacentHTML('beforeend', create);
   } else {
     for (let i = 0; i < localStorageArr.length; i++) {
       const element = localStorageArr[i];
@@ -39,7 +46,11 @@ async function firstSearchId(ele) {
 function ingredientsIdMarkup(id) {
   const drinks = id.data.drinks[0];
   console.log(drinks);
+<<<<<<< Updated upstream
   // const { strDrinkThumb, strDrink } = drinks;
+=======
+  const { strDrinkThumb, strDrink } = drinks;
+>>>>>>> Stashed changes
   // const create = `<div class="favor-ingredients__cards">
   //     <ul class="favor-ingredients__border">
   //       <li>

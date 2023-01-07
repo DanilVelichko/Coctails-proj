@@ -6,6 +6,7 @@ let localStorageArr = [];
 function loadFromLocalStorage() {
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
   console.log(localStorageArr);
+
   if (localStorageArr.length === 0) {
     const create = ` 
     <p class="cocktails_text">

@@ -1479,6 +1479,7 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 122px;
+  text-align: center;
   max-width: 239px;
   font-family: var(--base-font-family);
   font-style: normal;
