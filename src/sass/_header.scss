@@ -12,21 +12,18 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 200px;
+    height: 60px;
 }
 
 // .header__logo {
 //     margin-right: 126px;
-
 //     @include tablet {
 //         margin-right: 190px;
 //     }
-
 //     @include desktop {
 //         margin-right: 43px;
 //     }
 // }
-
 .logo__img {
     width: 123px;
     height: 34px;
@@ -156,23 +153,34 @@
         margin-left: 43px;
         gap: 60px;
         margin-top: 15px;
-        font-size: 14px;
-        line-height: 1.3;
+        // font-size: 14px;
+        // line-height: 1.3;
     }
 }
 
 .nav-desktop__item>a {
+    position: relative;
     font-family: var(--base-font-family);
     font-size: 28px;
     line-height: 1.1;
     letter-spacing: 0.02em;
     padding: 0;
-
     color: var(--main-text-color);
 
     &:hover,
     &:focus {
         color: var(--second-text-color);
+    }
+
+    @include desktop {
+        opacity: 1;
+        flex-direction: row;
+        justify-content: center;
+        transform: none;
+        transition: none;
+        align-items: center;
+        font-size: 18px;
+        line-height: 1.3;
     }
 }
 
@@ -181,17 +189,15 @@
 }
 
 .favorite__list {
-    visibility: hidden;
+    position: absolute;
+    visibility: visible;
     opacity: 0;
-    position: relative;
     z-index: 2;
-
     top: 10px;
     left: 30px;
     transform: scaleX(0);
     border-radius: 5px;
     background-color: var(--focus-text-bg-color);
-
     overflow: hidden;
     transition: 300ms all ease;
 
@@ -231,9 +237,9 @@
 }
 
 .favorite__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     background-color: var(--focus-text-bg-color);
     font-family: var(--base-font-family);
     letter-spacing: 0.02em;
@@ -265,7 +271,6 @@
     top: 90px;
     left: -12px;
     width: 100%;
-    border: 1px solid var(--btn-border-color);
     transform: translateX(-400%);
     transition: 300ms all ease;
 

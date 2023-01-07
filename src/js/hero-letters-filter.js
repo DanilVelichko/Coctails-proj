@@ -26,8 +26,12 @@ export let elBtn = '';
 
 export async function galleryMarkup(i) {
   cleanHTML();
+ 
+ 
   try {
+
     const url = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
+      
     point.galleryUl.insertAdjacentHTML('beforeend', renderCard(url.data.drinks[i]));
     
     heroRefs.titleGallery.innerHTML = 'Searching results';
