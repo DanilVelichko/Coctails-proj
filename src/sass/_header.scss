@@ -17,16 +17,13 @@
 
 // .header__logo {
 //     margin-right: 126px;
-
 //     @include tablet {
 //         margin-right: 190px;
 //     }
-
 //     @include desktop {
 //         margin-right: 43px;
 //     }
 // }
-
 .logo__img {
     width: 123px;
     height: 34px;
@@ -167,7 +164,6 @@
     line-height: 1.1;
     letter-spacing: 0.02em;
     padding: 0;
-
     color: var(--main-text-color);
 
     &:hover,
@@ -181,17 +177,16 @@
 }
 
 .favorite__list {
+    position: absolute;
     visibility: hidden;
     opacity: 0;
     position: relative;
     z-index: 2;
-
     top: 10px;
     left: 30px;
     transform: scaleX(0);
     border-radius: 5px;
     background-color: var(--focus-text-bg-color);
-
     overflow: hidden;
     transition: 300ms all ease;
 
@@ -231,9 +226,9 @@
 }
 
 .favorite__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
     background-color: var(--focus-text-bg-color);
     font-family: var(--base-font-family);
     letter-spacing: 0.02em;
