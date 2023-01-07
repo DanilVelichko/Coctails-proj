@@ -1,4 +1,4 @@
-import { refs, fetchEl, point, counter, favorites } from './refs.js';
+import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
 import axios from "axios";
 import { elBtn } from './hero-letters-filter.js';
 
@@ -178,6 +178,22 @@ export const saveInLocalStorage = (key, value) => {
   }
 
 };
+
+point.galleryUl.addEventListener("click", onFavoriteButtonClick);
+
+function onFavoriteButtonClick() {
+  cardInLocalStorage('CoctailsId', favorites);
+}
+
+const cardInLocalStorage = (key, value) => {
+  try {
+    const state = JSON.stringify(value);
+    localStorage.setItem(key, state);
+  } catch (error) {
+    console.error("Set state error: ", error.message);
+  }
+}
+
 
 // export const loadFromLocalStorageGlobal = async (key) => {
 //   try {
