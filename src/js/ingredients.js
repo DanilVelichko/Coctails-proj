@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
 console.log('hello');
-=======
-console.log('hello!');
->>>>>>> Stashed changes
+
 import axios from 'axios';
 import { STORAGE_KEY, localStorageArr } from './refs';
 
@@ -46,11 +43,9 @@ async function firstSearchId(ele) {
 function ingredientsIdMarkup(id) {
   const drinks = id.data.drinks[0];
   console.log(drinks);
-<<<<<<< Updated upstream
+
   // const { strDrinkThumb, strDrink } = drinks;
-=======
-  const { strDrinkThumb, strDrink } = drinks;
->>>>>>> Stashed changes
+
   // const create = `<div class="favor-ingredients__cards">
   //     <ul class="favor-ingredients__border">
   //       <li>
