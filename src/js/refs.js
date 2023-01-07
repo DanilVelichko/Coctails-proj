@@ -9,9 +9,8 @@ export const refs = {
 export const event = {};
 
 export const localStorageArr = ['14456'];
-export const favorites = [];
 export const fetchEl = {};
-
+export const favorites = [];
 
 export const point = {
   galleryUl: document.querySelector('.gallery__render-box'),

@@ -1,4 +1,4 @@
-import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
+import { refs, fetchEl, point, counter, localStorageArr} from './refs.js';
 import { saveInLocalStorage, loadFromLocalStorage } from './global-functions.js';
 
 
