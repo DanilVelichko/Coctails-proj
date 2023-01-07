@@ -36,11 +36,11 @@
       font-size: 16px;
     }
     &:hover {
-      color: var(--button-text-color);
+      color: var(--main-background-color);
       background-color: var(--switch-light-color);
     }
     &-current {
-      color: var(--button-text-color);
+      color: var(--main-background-color);
       background-color: var(--switch-light-color);
     }
   }

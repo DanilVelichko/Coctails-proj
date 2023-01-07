@@ -849,11 +849,11 @@ body {
   }
 }
 .pagination__button:hover {
-  color: var(--button-text-color);
+  color: var(--main-background-color);
   background-color: var(--switch-light-color);
 }
 .pagination__button-current {
-  color: var(--button-text-color);
+  color: var(--main-background-color);
   background-color: var(--switch-light-color);
 }
 .pagination_points {

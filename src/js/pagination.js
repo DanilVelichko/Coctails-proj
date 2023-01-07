@@ -3,15 +3,15 @@ import axios from 'axios';
 import { elBtn } from './hero-letters-filter.js';
 import { cleanPagination, renderCard, cleanHTML, formatScreenRender, itemsPerScreen } from './global-functions.js';
 
-const pagRefs = {
+export const pagRefs = {
   api: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',
+  pagContainer: document.querySelector('.pag-hidden'),
   pagesButtons: document.querySelector('.pagination'),
   pageCounter: 0,
 };
 
 point.paginationDiv.addEventListener('click', async function goToPage(e) {
-
-// e.target.classList.add("pagination__button-current");
+  
     let pageNum = (e.target.textContent - 1);
   
     // Смотрим на размер окна и считаем размер страницы //
@@ -28,13 +28,13 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
       const pagesArr = await paginate(responseArr, itemsPerPage);
       console.log('Здесь страницы с коктейлями на каждой:', pagesArr);
 
-      console.log('e.target log', e.target);
-      console.dir('e.target dir', e.target);
-      console.log('e.target.elements log', e.target.elements);
-      console.dir('e.target.elements dir', e.target.elements);
-      console.log('e.target.attributes', e.target.attributes);
-      console.log('e.target.attributes[1]', e.target.attributes[1]); //?
-      console.log('e.target.attributes.length', e.target.attributes.length);
+      // console.log('e.target log', e.target);
+      // console.dir('e.target dir', e.target);
+      // console.log('e.target.elements log', e.target.elements);
+      // console.dir('e.target.elements dir', e.target.elements);
+      // console.log('e.target.attributes', e.target.attributes);
+      // console.log('e.target.attributes[1]', e.target.attributes[1]); //?
+      // console.log('e.target.attributes.length', e.target.attributes.length);
 
       // Рендерим на страницу по клику на соответсвующую кнопку//
       if (e.target.attributes.length == 1) {
@@ -70,10 +70,7 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
         pagRefs.pageCounter -= 1;
         pageNum -= pagRefs.pageCounter;
         console.log('pageCounter после клика на левую кнопку', pagRefs.pageCounter);
-        // e.target.classList.remove('pagination__button-current');
-        // e.target.nextSibling.classList.add("pagination__button-current");
-
-      }
+          }
 
      // Добавляем выделение текущей страницы и Снимаем класс Текущей страницы со всех кнопок//
       
@@ -81,15 +78,6 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
     } catch (error) {
       console.dir(error);
     }
-
-    // чистим и снова рендерим пагинацию //
-    // await cleanPagination();
-    // let paginationGoToPage = await createPagination(elBtn);
-    //  point.paginationDiv.innerHTML = paginationGoToPage;
-  
- 
-  // находим класс current на прежней кнопке, снимаем его и ставим этот клас на кликнутую кнопку
-  
 
 });
 
