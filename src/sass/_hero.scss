@@ -1,5 +1,4 @@
 .hero {
-
   &__container {
     display: flex;
     flex-direction: column;
@@ -24,7 +23,7 @@
     font-family: var(--base-font-family);
     font-weight: 600;
     line-height: 2;
-    color:var(--second-text-color);
+    color: var(--second-text-color);
 
     max-width: 300px;
     font-size: 22px;
@@ -35,32 +34,31 @@
       font-size: 26px;
       margin-bottom: 40px;
     }
-    
+
     @include desktop {
       max-width: 688px;
       font-size: 52px;
     }
   }
-  &__text{
-  font-family: var(--base-font-family);
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 2;
-  letter-spacing: 0.02em;
+  &__text {
+    font-family: var(--base-font-family);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 2;
+    letter-spacing: 0.02em;
 
-  margin-bottom: 20px;
-  color: var(--main-text-color);
-  opacity: 0.8;
+    margin-bottom: 20px;
+    color: var(--main-text-color);
+    opacity: 0.8;
 
-  @include tablet {
-    margin-bottom: 40px;
-  }
-  @include desktop {
-    font-size: 18px;
+    @include tablet {
+      margin-bottom: 40px;
+    }
+    @include desktop {
+      font-size: 18px;
+    }
   }
 }
-}
-
 
 .hero-coctail {
   margin-bottom: 60px;
@@ -70,9 +68,7 @@
     top: 97px;
     right: 0;
   }
-
 }
-
 
 .hero-overlay {
   @media screen and(max-width: 767px) {
@@ -80,14 +76,13 @@
     border-radius: 4px;
     position: relative;
     overflow: hidden;
-    
+
     transition-property: height;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     &:focus-within {
-    height: 118px;
+      height: 118px;
     }
-    
   }
 }
 .hero-btn {
@@ -96,7 +91,7 @@
     display: block;
     width: 93px;
     height: 34px;
-    padding-right: 70px;;
+    padding-right: 70px;
 
     font-weight: 700;
     font-size: 16px;
@@ -113,14 +108,12 @@
     border: 1px solid var(--btn-border-color);
     border-radius: 4px;
 
-    transition-property: color, background-color;
+    transition-property: color, background-color, box-shadow;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     &:focus {
-      color: var(--focus-text-bg-color);
-
-      background-color:  var(--second-background-color);
+      box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5) inset;
     }
 
     &--arrow {
@@ -130,15 +123,13 @@
       top: 50%;
       left: 70%;
 
-      background-color:  var(--second-background-color);
+      background-color: var(--second-background-color);
       position: absolute;
       transform: rotate(45deg);
-
 
       transition-property: background-color;
       transition-duration: 250ms;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
 
       &::after {
         content: '';
@@ -147,7 +138,7 @@
         bottom: 5px;
         width: 10px;
         height: 1px;
-        background-color:  var(--second-background-color);
+        background-color: var(--second-background-color);
         position: absolute;
 
         transform: rotate(90deg);
@@ -156,18 +147,34 @@
         transition-duration: 250ms;
         transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
-      .hero-btn:focus & {
-        background-color: var(--focus-text-bg-color);
-        
-        &::after {
-          background-color: var(--focus-text-bg-color);
-        }
+    }
+  }
+}
+.active-btn {
+  color: var(--focus-text-bg-color);
+  background-color: var(--second-background-color);
 
+  & .hero-btn--arrow {
+    background-color: var(--focus-text-bg-color);
+
+    &::after {
+      background-color: var(--focus-text-bg-color);
+    }
+  }
+
+  &:focus {
+    color: var(--second-text-color);
+    background-color: var(--main-background-color);
+
+    .hero-btn--arrow {
+      background-color: var(--second-background-color);
+
+      &::after {
+        background-color: var(--second-background-color);
       }
     }
   }
 }
-
 
 .hero-search {
   @media screen and(max-width: 767px) {
@@ -186,6 +193,7 @@
 
     .hero-btn:focus + & {
       transform: translatey(0%);
+      box-shadow: 0px 9px 6px -2px rgba(0, 0, 0, 0.48);
     }
 
     &::-webkit-scrollbar {
@@ -204,27 +212,23 @@
     width: 324px;
   }
   @include desktop {
-      width: 585px;
+    width: 585px;
   }
 
   &__list {
-  @include tablet {
-    display: inline;
+    @include tablet {
+      display: inline;
+    }
   }
 }
-}
-
-
 
 .hero-search__btn {
-
   font-weight: 700;
   font-size: 10px;
   line-height: 1.5;
 
-
-  color:  var(--abc-text-color);
-  background-color:  var(--main-background-color);
+  color: var(--abc-text-color);
+  background-color: var(--main-background-color);
   cursor: pointer;
   border: none;
 
@@ -233,7 +237,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   &:focus,
   &:hover {
-    color:  var(--second-text-color);
+    color: var(--second-text-color);
     text-shadow: 0px 4px 4px rgba(95, 103, 117, 0.25);
   }
 
@@ -254,12 +258,11 @@
   }
 
   &--el {
-  @include tablet {
-    margin-left: 26px;
-  }
-  @include desktop {
-    margin-left: 45px;
+    @include tablet {
+      margin-left: 26px;
+    }
+    @include desktop {
+      margin-left: 45px;
+    }
   }
 }
-}
-

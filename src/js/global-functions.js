@@ -119,7 +119,9 @@ export const formatScreenRender =  (yourFetchFunction) => {
         }
       
     }
+
     else if (window.matchMedia("(min-width: 480px)").matches) {
+
         for (let i = 0; i < counter.mobile; i++) {
             yourFetchFunction(i);
         }

@@ -5,17 +5,17 @@ import { createPagination } from './pagination.js';
 const heroRefs = {
   searchByAbc: document.querySelector('.hero-search'),
   overlayBtn: document.querySelector('.hero-btn'),
+  overlayArrow: document.querySelector('.hero-btn--arrow'),
   titleGallery: document.querySelector('.gallery__title'),
   boxPicture: document.querySelector('.gallery__no-find-box'),
 };
 heroRefs.searchByAbc.addEventListener('click', onSearch);
 
 export let elBtn = '';
-  
   async function onSearch(e) {
     elBtn = e.target.textContent;
     heroRefs.overlayBtn.innerHTML = `${elBtn}<span class="hero-btn--arrow"></span>`;
-
+    heroRefs.overlayBtn.classList.add('active-btn');
     formatScreenRender(galleryMarkup);
 
     // Рендерим Пагинацию под галереей карточек //
@@ -33,6 +33,10 @@ export async function galleryMarkup(i) {
     const url = await axios.get(`${refs.ferstLetterSearch}${elBtn}`);
       
     point.galleryUl.insertAdjacentHTML('beforeend', renderCard(url.data.drinks[i]));
+    
+    heroRefs.titleGallery.innerHTML = 'Searching results';
+    heroRefs.boxPicture.style.display = 'none';
+
     addBtnListener(id, (e) => {
           if (favorites.includes(drink.idDrink)) {
             favorites.splice(favorites.indexOf(drink.idDrink), 1);
@@ -42,10 +46,7 @@ export async function galleryMarkup(i) {
           console.log(favorites);
           e.target.innerHTML = renderButtonInternals(drink.idDrink);
     });
-    
-    heroRefs.titleGallery.innerHTML = 'Searching results';
-    heroRefs.boxPicture.style.display = 'none';
-    
+
   } catch (error) {
     if (point.galleryUl.textContent === '') onErrorFind();
   }
@@ -56,3 +57,6 @@ function onErrorFind() {
   heroRefs.boxPicture.style.display = "block";
   cleanPagination();
 }
+
+
+
