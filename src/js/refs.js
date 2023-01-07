@@ -3,7 +3,8 @@ export const STORAGE_KEY = 'CoctailsId';
 export const refs = {
   apiKey: 1,
   randomCoctailApi: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
-  ferstLetterSearch: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=', // после равно ставим букву в ${} для поиска
+  ferstLetterSearch:
+    'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=', // после равно ставим букву в ${} для поиска
 };
 
 export const event = {};
@@ -28,4 +29,3 @@ export const counter = {
 };
 
 console.log('Refs js');
-

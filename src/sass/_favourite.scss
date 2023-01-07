@@ -9,13 +9,13 @@
   margin-right: auto;
   max-width: 320px;
 
-  font-family: 'Poppins';
+  font-family: var(--base-font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-top: 68px;
@@ -23,7 +23,7 @@
     max-width: 493px;
     height: 38px;
 
-    font-family: 'Roboto';
+    font-family: var(--primary-font-family);
     font-weight: 700;
     font-size: 32px;
     line-height: calc(38 / 32);
@@ -45,19 +45,20 @@
 }
 
 .cocktails_text {
+  margin-bottom: 122px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 122px;
 
   max-width: 239px;
 
-  font-family: 'Poppins';
+  text-align: center;
+  font-family: var(--base-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: calc(60 / 20);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 523px;
@@ -91,13 +92,13 @@
   margin-right: auto;
   max-width: 320px;
 
-  font-family: 'Poppins';
+  font-family: var(--base-font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-top: 68px;
@@ -105,7 +106,7 @@
     max-width: 493px;
     height: 38px;
 
-    font-family: 'Roboto';
+    font-family: var(--primary-font-family);
     font-weight: 700;
     font-size: 32px;
     line-height: calc(38 / 32);
@@ -130,16 +131,17 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 122px;
+  text-align: center;
 
   max-width: 239px;
 
-  font-family: 'Poppins';
+  font-family: var(--base-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
   line-height: calc(60 / 20);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 523px;
@@ -168,18 +170,18 @@
 
   text-align: center;
 
-  font-family: 'Poppins';
+  font-family: var(--base-font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-top: 68px;
 
-    font-family: 'Roboto';
+    font-family: var(--primary-font-family);
     font-weight: 700;
     font-size: 32px;
     line-height: calc(38 / 32);
@@ -188,7 +190,7 @@
   @include desktop {
     margin-top: 69px;
 
-    font-family: 'Poppins';
+    font-family: var(--base-font-family);
     font-size: 48px;
     line-height: calc(72 / 48);
 
@@ -249,13 +251,13 @@
 
   text-align: center;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
   line-height: calc(42 / 26);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 25px;
@@ -295,7 +297,7 @@
   width: 108px;
   height: 39px;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -323,7 +325,7 @@
   width: 110px;
   height: 39px;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -360,7 +362,7 @@
   width: 28px;
   height: 28px;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -383,18 +385,18 @@
   margin-top: 60px;
   margin-bottom: 60px;
 
-  font-family: 'Poppins';
+  font-family: var(--base-font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 78px;
 
-    font-family: 'Roboto';
+    font-family: var(--primary-font-family);
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
@@ -404,7 +406,7 @@
   @include desktop {
     margin-top: 69px;
 
-    font-family: 'Poppins';
+    font-family: var(--base-font-family);
     font-style: normal;
     font-weight: 700;
     font-size: 48px;
@@ -412,11 +414,11 @@
   }
 }
 
-.favor-ingredients__cards {
-  // @include tablet {
-  //   display: flex;
-  // }
-}
+// .favor-ingredients__cards {
+//   // @include tablet {
+//   //   display: flex;
+//   // }
+// }
 
 .favor-ingredients__border {
   max-width: 280px;
@@ -445,13 +447,13 @@
   margin-top: 20px;
   margin-left: 20px;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 900;
   font-size: 26px;
   line-height: calc(42 / 26);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 28px;
@@ -470,7 +472,7 @@
     font-size: 32px;
     line-height: calc(38 / 32);
 
-    color: #202025;
+    color: var(--main-text-color);
   }
 }
 
@@ -478,7 +480,7 @@
   margin-left: 20px;
   margin-bottom: 20px;
 
-  font-family: 'Poppins';
+  font-family: var(--base-font-family);
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
@@ -527,7 +529,7 @@
   width: 108px;
   height: 39px;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -557,7 +559,7 @@
   width: 110px;
   height: 39px;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -593,7 +595,7 @@
   width: 28px;
   height: 28px;
 
-  font-family: 'Roboto';
+  font-family: var(--primary-font-family);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
