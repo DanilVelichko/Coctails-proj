@@ -38,7 +38,7 @@ export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
           />
         </picture>
 
-        <h3 class="gallery__coctail_box-name" style="font-size: 28px;">${strDrink}</h3>
+        <h3 class="gallery__coctail_box-name" style="font-size: 28px; text-align: center;">${strDrink}</h3>
         <div class="gallery__coctail_box-buttons">
           <button class="button__learn">Learn More</button>
           <button class="button__add button__fav" id="fb_${idDrink}">
