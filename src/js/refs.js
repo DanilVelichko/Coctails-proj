@@ -9,7 +9,7 @@ export const refs = {
 
 export const event = {};
 
-export const localStorageArr = ['15409', '17204', '17216'];
+export const localStorageArr = ['15409'];
 
 export const fetchEl = {};
 export const favorites = [];
