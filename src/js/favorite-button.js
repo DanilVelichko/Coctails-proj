@@ -7,12 +7,16 @@ point.galleryUl.addEventListener('click', addToFavorite);
 
 function addToFavorite(e) {
     const element = e.target.children[1].textContent;
+    // срабатывает только при нажатии на кнопку, которая передает 5 цифр id коктейля
     if (/^\d{5}$/.test(element)) {
-
+// проверяет есть ли id  уже в массиве с favorite коктейлями, если
+        // нет - добавляет
     if (!localStorageArr.includes(element)) {
         localStorageArr.push(element);
         
         console.log("e.target.children[1].textContent", element);
+
+        // если есть - удаляет
     }  else {
         const index = localStorageArr.indexOf(element);
         if (index > -1) {
