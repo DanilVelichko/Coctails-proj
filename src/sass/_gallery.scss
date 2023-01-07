@@ -97,12 +97,11 @@
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 900;
+      font-size: 26px;
+      line-height: 1.62;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      margin-bottom: 16px;
       @include mobile {
-        font-size: 26px;
-        line-height: 1.62;
-        text-shadow: none;
-        margin-bottom: 16px;
       }
       @include tablet {
         font-size: 28px;
@@ -120,31 +119,34 @@
       display: inline-flex;
       align-items: center;
       gap: 17px;
+      margin-bottom: 24px;
       @include mobile {
         gap: 17px;
       }
       @include tablet {
         gap: 12px;
+        margin-bottom: 19px;
       }
       @include desktop {
         gap: 16px;
+        margin-bottom: 30px;
       }
     }
 
     &_img {
+      margin-bottom: 48px;
       border-radius: 4px;
       @include mobile {
-        width: 280px;
+        width: 100%;
         height: 280px;
-        margin-bottom: 20px;
       }
       @include tablet {
-        width: 333px;
+        width: 100%;
         height: 333px;
         margin-bottom: 20px;
       }
       @include desktop {
-        width: 395px;
+        width: 100%;
         height: 395px;
         margin-bottom: 20px;
       }
@@ -157,15 +159,85 @@
   margin-bottom: 60px;
 }
 
-.button_add {
-  gap: 8px;
+.button__learn {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.71;
+letter-spacing: 0.02em;
+cursor: pointer;
+
+width: 110px;
+height: 39px;
+@include mobile {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.71;
+letter-spacing: 0.02em;
+
+width: 110px;
+height: 39px;
+  
+}
+@include tablet {
+  font-size: 20px;
+line-height: 1.2;
+
+width: 160px;
+height: 48px;
+}
+@include desktop {
+  font-size: 20px;
+  line-height: 1.2;
+
+  width: 182px;
+  height: 48px;
+}
+}
+
+.button__add {
+  font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.71;
+letter-spacing: 0.02em;
+justify-content:center;
+align-items: center;
+cursor: pointer;
+
+width: 110px;
+height: 39px;  
+gap: 8px;
   @include mobile {
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 1.71;
+letter-spacing: 0.02em;
+
+width: 110px;
+height: 39px;
     gap: 8px;
   }
   @include tablet {
+    font-size: 20px;
+    line-height: 1.2;
+    
+    width: 123px;
+    height: 48px;
 gap: 4px;
   }
   @include desktop {
+    font-size: 20px;
+line-height: 1.2;
+
+width: 141px;
+height: 48px;
 gap: 5px;
   }}
 

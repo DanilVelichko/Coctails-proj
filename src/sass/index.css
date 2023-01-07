@@ -1284,15 +1284,10 @@ body {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 900;
+  font-size: 26px;
+  line-height: 1.62;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-@media screen and (min-width: 480px) {
-  .gallery__coctail_box-name {
-    font-size: 26px;
-    line-height: 1.62;
-    text-shadow: none;
-    margin-bottom: 16px;
-  }
+  margin-bottom: 16px;
 }
 @media screen and (min-width: 768px) {
   .gallery__coctail_box-name {
@@ -1312,6 +1307,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 17px;
+  margin-bottom: 24px;
 }
 @media screen and (min-width: 480px) {
   .gallery__coctail_box-buttons {
@@ -1321,33 +1317,35 @@ body {
 @media screen and (min-width: 768px) {
   .gallery__coctail_box-buttons {
     gap: 12px;
+    margin-bottom: 19px;
   }
 }
 @media screen and (min-width: 1280px) {
   .gallery__coctail_box-buttons {
     gap: 16px;
+    margin-bottom: 30px;
   }
 }
 .gallery__coctail_img {
+  margin-bottom: 48px;
   border-radius: 4px;
 }
 @media screen and (min-width: 480px) {
   .gallery__coctail_img {
-    width: 280px;
+    width: 100%;
     height: 280px;
-    margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 768px) {
   .gallery__coctail_img {
-    width: 333px;
+    width: 100%;
     height: 333px;
     margin-bottom: 20px;
   }
 }
 @media screen and (min-width: 1280px) {
   .gallery__coctail_img {
-    width: 395px;
+    width: 100%;
     height: 395px;
     margin-bottom: 20px;
   }
@@ -1358,21 +1356,88 @@ body {
   margin-bottom: 60px;
 }
 
-.button_add {
+.button__learn {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  width: 110px;
+  height: 39px;
+}
+@media screen and (min-width: 480px) {
+  .button__learn {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.02em;
+    width: 110px;
+    height: 39px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .button__learn {
+    font-size: 20px;
+    line-height: 1.2;
+    width: 160px;
+    height: 48px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .button__learn {
+    font-size: 20px;
+    line-height: 1.2;
+    width: 182px;
+    height: 48px;
+  }
+}
+
+.button__add {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.71;
+  letter-spacing: 0.02em;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 110px;
+  height: 39px;
   gap: 8px;
 }
 @media screen and (min-width: 480px) {
-  .button_add {
+  .button__add {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.02em;
+    width: 110px;
+    height: 39px;
     gap: 8px;
   }
 }
 @media screen and (min-width: 768px) {
-  .button_add {
+  .button__add {
+    font-size: 20px;
+    line-height: 1.2;
+    width: 123px;
+    height: 48px;
     gap: 4px;
   }
 }
 @media screen and (min-width: 1280px) {
-  .button_add {
+  .button__add {
+    font-size: 20px;
+    line-height: 1.2;
+    width: 141px;
+    height: 48px;
     gap: 5px;
   }
 }
