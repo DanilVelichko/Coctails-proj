@@ -1,4 +1,4 @@
-import { refs, fetchEl, point, counter, localStorageArr } from './refs.js';
+import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
 import axios from "axios";
 import { elBtn } from './hero-letters-filter.js';
 
@@ -51,10 +51,10 @@ export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
 };
   
 export const renderButtonInternals = (idDrink) => {
-  return `<div> ${localStorageArr.includes(idDrink) ? `Remove` : `Add to`}
+  return `<div> ${favorites.includes(idDrink) ? `Remove` : `Add to`}
             <svg width="21" height="19" viewBox="0 0 21 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M10.5 19L8.9775 17.6332C3.57 12.7978 0 9.60872 0 5.69482C0 2.50572 2.541 0 5.775 0C7.602 0 9.3555 0.838692 10.5 2.16403C11.6445 0.838692 13.398 0 15.225 0C18.459 0 21 2.50572 21 5.69482C21 9.60872 17.43 12.7978 12.0225 17.6436L10.5 19Z" fill="#FD5103"/>
-${localStorageArr.includes(idDrink) ? '' : `<path d="M10.5 17L9.2675 15.921C4.89 12.1035 2 9.58583 2 6.49591C2 3.9782 4.057 2 6.675 2C8.154 2 9.5735 2.66213 10.5 3.70845C11.4265 2.66213 12.846 2 14.325 2C16.943 2 19 3.9782 19 6.49591C19 9.58583 16.11 12.1035 11.7325 15.9292L10.5 17Z" fill="#FCFCFC"/>`}
+${favorites.includes(idDrink) ? '' : `<path d="M10.5 17L9.2675 15.921C4.89 12.1035 2 9.58583 2 6.49591C2 3.9782 4.057 2 6.675 2C8.154 2 9.5735 2.66213 10.5 3.70845C11.4265 2.66213 12.846 2 14.325 2C16.943 2 19 3.9782 19 6.49591C19 9.58583 16.11 12.1035 11.7325 15.9292L10.5 17Z" fill="#FCFCFC"/>`}
 </svg>
 <div class="coctailsId visually-hidden">${idDrink}</div></div>
   `;
@@ -77,12 +77,12 @@ async function asyncRender() {
           .insertAdjacentHTML('beforeend', renderCard(drink));
         const id = "fb_" + drink.idDrink;
         addBtnListener(id, (e) => {
-          if (localStorageArr.includes(drink.idDrink)) {
-            localStorageArr.splice(localStorageArr.indexOf(drink.idDrink), 1);
+          if (favorites.includes(drink.idDrink)) {
+            favorites.splice(favorites.indexOf(drink.idDrink), 1);
           } else {
-            localStorageArr.push(drink.idDrink);
+            favorites.push(drink.idDrink);
           }
-          console.log(localStorageArr);
+          console.log(favorites);
           e.target.innerHTML = renderButtonInternals(drink.idDrink);
         });
       });
@@ -93,12 +93,12 @@ async function asyncRender() {
           .insertAdjacentHTML('beforeend', renderCard(drink));
         const id = "fb_" + drink.idDrink;
         addBtnListener(id, (e) => {
-          if (localStorageArr.includes(drink.idDrink)) {
-            localStorageArr.splice(localStorageArr.indexOf(drink.idDrink), 1);
+          if (favorites.includes(drink.idDrink)) {
+            favorites.splice(favorites.indexOf(drink.idDrink), 1);
           } else {
-            localStorageArr.push(drink.idDrink);
+            favorites.push(drink.idDrink);
           }
-          console.log(localStorageArr);
+          console.log(favorites);
           e.target.innerHTML = renderButtonInternals(drink.idDrink);
         });
       });
@@ -178,6 +178,22 @@ export const saveInLocalStorage = (key, value) => {
   }
 
 };
+
+point.galleryUl.addEventListener("click", onFavoriteButtonClick);
+
+function onFavoriteButtonClick() {
+  cardInLocalStorage('CoctailsId', favorites);
+}
+
+const cardInLocalStorage = (key, value) => {
+  try {
+    const state = JSON.stringify(value);
+    localStorage.setItem(key, state);
+  } catch (error) {
+    console.error("Set state error: ", error.message);
+  }
+}
+
 
 // export const loadFromLocalStorageGlobal = async (key) => {
 //   try {
