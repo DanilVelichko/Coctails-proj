@@ -155,29 +155,14 @@ async function asyncRender() {
 
 export const formatScreenRender =  (yourFetchFunction) => {
     if (window.matchMedia("(min-width: 1280px)").matches) {
-        for (let i = 0; i < counter.desktop; i++) {
-            yourFetchFunction(i);
-        }
-        
+      for (let i = 0; i < counter.desktop; i++) { yourFetchFunction(i); }   
     }
-
     else if (window.matchMedia("(min-width: 768px)").matches) {
-        for (let i = 0; i < counter.tablet; i++) {
-            yourFetchFunction(i);
-        }
-      
+        for (let i = 0; i < counter.tablet; i++) { yourFetchFunction(i); } 
     }
-
     else if (window.matchMedia("(min-width: 480px)").matches) {
-
-        for (let i = 0; i < counter.mobile; i++) {
-            yourFetchFunction(i);
-        }
-        
-    } else {
-        
-
-    }
+        for (let i = 0; i < counter.mobile; i++) { yourFetchFunction(i); } 
+    } 
 };
 
 
