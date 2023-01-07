@@ -153,12 +153,13 @@
         margin-left: 43px;
         gap: 60px;
         margin-top: 15px;
-        font-size: 14px;
-        line-height: 1.3;
+        // font-size: 14px;
+        // line-height: 1.3;
     }
 }
 
 .nav-desktop__item>a {
+    position: relative;
     font-family: var(--base-font-family);
     font-size: 28px;
     line-height: 1.1;
@@ -170,6 +171,17 @@
     &:focus {
         color: var(--second-text-color);
     }
+
+    @include desktop {
+        opacity: 1;
+        flex-direction: row;
+        justify-content: center;
+        transform: none;
+        transition: none;
+        align-items: center;
+        font-size: 18px;
+        line-height: 1.3;
+    }
 }
 
 .nav-desktop__active {
@@ -178,9 +190,8 @@
 
 .favorite__list {
     position: absolute;
-    visibility: hidden;
+    visibility: visible;
     opacity: 0;
-    position: relative;
     z-index: 2;
     top: 10px;
     left: 30px;
