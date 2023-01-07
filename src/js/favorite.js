@@ -7,11 +7,12 @@ function loadFromLocalStorage() {
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));
   console.log(localStorageArr);
   if (localStorageArr.length === 0) {
-    const create = `
+    const create = ` 
+    <p class="cocktails_text">
+      You haven't added any favorite cocktails yet
+    </p>
   `;
-    document
-      .querySelector('.favorite__flex')
-      .insertAdjacentHTML('beforeend', create);
+    document.querySelector('.favorite').insertAdjacentHTML('beforeend', create);
   } else {
     for (let i = 0; i < localStorageArr.length; i++) {
       const element = localStorageArr[i];
