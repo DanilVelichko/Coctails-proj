@@ -8,7 +8,7 @@ point.galleryUl.addEventListener('click', addToFavorite);
 function addToFavorite(e) {
     localStorageArr.push(e.target.children[1].textContent);
     saveInLocalStorage('CoctailsId', localStorageArr);
-
+    console.log("e.target.children[1].textContent", e.target.children[1].textContent);
 }
 
 function removeFromFavorite(e) {
