@@ -119,7 +119,9 @@ export const formatScreenRender =  (yourFetchFunction) => {
         }
       
     }
-    else if (window.matchMedia("(max-width: 767px)").matches) {
+
+    else if (window.matchMedia("(min-width: 480px)").matches) {
+
         for (let i = 0; i < counter.mobile; i++) {
             yourFetchFunction(i);
         }
@@ -151,7 +153,7 @@ export const getCountForDevice = () => {
   } else if (window.matchMedia("(min-width: 768px)").matches) {
     return counter.tablet;
 
-  } else if (window.matchMedia("(max-width: 480px)").matches) {
+  } else if (window.matchMedia("(min-width: 480px)").matches) {
     return counter.mobile;
   }
 
