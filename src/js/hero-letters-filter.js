@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { refs, fetchEl, point, counter, favorites } from './refs.js';
 import { renderCard, formatScreenRender, cleanHTML, cleanPagination, renderButtonInternals, formatScreenRenderGallery } from './global-functions.js';
-import { createPagination } from './pagination.js';
+import { createPagination, pagRefs } from './pagination.js';
 const heroRefs = {
   searchByAbc: document.querySelector('.hero-search'),
   overlayBtn: document.querySelector('.hero-btn'),
@@ -19,6 +19,7 @@ export let elBtn = '';
     formatScreenRender(galleryMarkup);
 
     // Рендерим Пагинацию под галереей карточек //
+    pagRefs.pagContainer.classList.remove('visually-hidden');
     point.paginationDiv.innerHTML = await createPagination(elBtn);
     console.log(await createPagination(elBtn));
     // doCurrentClass(e);
@@ -56,6 +57,7 @@ function onErrorFind() {
   heroRefs.titleGallery.innerHTML = "Sorry, we didn't find any cocktail for you";
   heroRefs.boxPicture.style.display = "block";
   cleanPagination();
+  pagRefs.pagContainer.classList.add('visually-hidden');
 }
 
 
