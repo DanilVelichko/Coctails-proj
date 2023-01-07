@@ -49,7 +49,7 @@ function cocktailIdMarkup(id) {
       <h2 class="favorite__cocktail-name">${strDrink}</h2>
       <div class="favorite__cocktail-buttons">
         <button class="favorite__learn button__learn">Learn More</button>
-           <div class="coctailsId visually-hidden">${idDrink}</div>
+          <div class="favorite__cocktailsId ">${idDrink}</div>
         <button class="favorite__remove button__remove_mobile  ">
           Remove
                   <svg
@@ -86,7 +86,13 @@ document.querySelector('.favorite').addEventListener('click', event => {
 });
 
 function removeCocktail(event) {
-  console.log(event);
-  const key = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  console.log(key);
+  const KEY = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  console.log(KEY);
+  const clearId = event.path[1].children[1].innerText;
+  console.log(clearId);
+
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(KEY.filter(item => item.clearId !== clearId))
+  );
 }
