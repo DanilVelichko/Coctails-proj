@@ -1,10 +1,11 @@
 .header__section {
     overflow: hidden;
-    background-color: --main-background-color;
+    background-color: var(--main-background-color);
     position: fixed;
     top: 0;
     width: 100%;
-    border-bottom: 1px solid --main-border-color;
+    border-bottom: 1px solid var(--main-border-color);
+    border-radius: 4px;
 }
 
 .header__wrapper {
@@ -59,7 +60,7 @@
     z-index: 2;
     top: 0;
     left: 0;
-    background-color: --main-background-color;
+    background-color: var(--main-background-color);
     transform: translateX(-100%);
     transition: 300ms all ease;
 
@@ -161,22 +162,22 @@
 }
 
 .nav-desktop__item>a {
-    font-family: --base-font-family;
+    font-family: var(--base-font-family);
     font-size: 28px;
     line-height: 1.1;
     letter-spacing: 0.02em;
     padding: 0;
 
-    color: --main-text-color;
+    color: var(--main-text-color);
 
     &:hover,
     &:focus {
-        color: --second-text-color;
+        color: var(--second-text-color);
     }
 }
 
 .nav-desktop__active {
-    color: --second-text-color;
+    color: var(--second-text-color);
 }
 
 .favorite__list {
@@ -189,7 +190,7 @@
     left: 30px;
     transform: scaleX(0);
     border-radius: 5px;
-    background-color: --focus-text-bg-color;
+    background-color: var(--focus-text-bg-color);
 
     overflow: hidden;
     transition: 300ms all ease;
@@ -215,13 +216,13 @@
 }
 
 .nav__icon {
-    color: --main-text-color;
+    color: var(--main-text-color);
     margin-left: 10px;
     fill: currentColor;
 
     &:hover,
     &:focus {
-        color: --filter-text-color;
+        color: var(--filter-text-color);
     }
 
     @include desktop {
@@ -233,18 +234,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: --focus-text-bg-color;
-    font-family: --base-font-family;
+    background-color: var(--focus-text-bg-color);
+    font-family: var(--base-font-family);
     letter-spacing: 0.02em;
     font-size: 18px;
     line-height: 1.3;
-    border: 1px solid --second-text-color;
+    border: 1px solid var(--second-text-color);
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
     border-bottom: 0;
 
     &:hover {
-        background-color: --second-text-color;
+        background-color: var(--second-text-color);
     }
 }
 
@@ -253,7 +254,7 @@
     padding-right: 35px;
 
     &:hover {
-        color: --focus-text-bg-color;
+        color: var(--focus-text-bg-color);
     }
 }
 
@@ -264,7 +265,7 @@
     top: 90px;
     left: -12px;
     width: 100%;
-    // border: 1px solid --btn-border-color;
+    border: 1px solid var(--btn-border-color);
     transform: translateX(-400%);
     transition: 300ms all ease;
 
@@ -317,7 +318,7 @@
     left: 30px;
     background-color: transparent;
     border-left: 0;
-    border-right: 1px solid --btn-border-color;
+    border-right: 1px solid var(--btn-border-color);
     border-top: 0;
     border-bottom: 0;
     z-index: 2;
@@ -338,16 +339,16 @@
 .search__input {
     width: 94%;
     height: 40px;
-    border: 1px solid --btn-border-color;
+    border: 1px solid var(--btn-border-color);
     border-radius: 4px;
     padding-left: 44px;
-    caret-color: --filter-text-color;
+    color: var(--btn-border-color);
 
     &::placeholder {
-        color: --filter-text-color;
+        color: var(--filter-text-color);
     }
 
     &:focus {
-        outline: 1px solid --main-border-color;
+        outline: 1px solid var(--main-border-color);
     }
 }
