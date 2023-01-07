@@ -6,10 +6,20 @@ import { saveInLocalStorage, loadFromLocalStorage } from './global-functions.js'
 point.galleryUl.addEventListener('click', addToFavorite);
 
 function addToFavorite(e) {
-    localStorageArr.push(e.target.children[1].textContent);
-    saveInLocalStorage('CoctailsId', localStorageArr);
-    console.log("e.target.children[1].textContent", e.target.children[1].textContent);
+    const element = e.target.children[1].textContent;
+    if (!localStorageArr.includes(element)) {
+        localStorageArr.push(element);
+        saveInLocalStorage('CoctailsId', localStorageArr);
+        console.log("e.target.children[1].textContent", element);
+    }  else {
+        const index = localStorageArr.indexOf(element);
+        if (index > -1) {
+            localStorageArr.splice(index, 1);
+        }
+        saveInLocalStorage('CoctailsId', localStorageArr);
+    }
 }
+
 
 function removeFromFavorite(e) {
     localStorageArr.filter(coctailId => coctailId !== e.target.children[1].textContent);
