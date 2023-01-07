@@ -15,7 +15,7 @@
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-top: 68px;
@@ -58,7 +58,7 @@
   font-size: 20px;
   line-height: calc(60 / 20);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 523px;
@@ -98,7 +98,7 @@
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-top: 68px;
@@ -140,7 +140,7 @@
   font-size: 20px;
   line-height: calc(60 / 20);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 523px;
@@ -175,7 +175,7 @@
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-top: 68px;
@@ -256,7 +256,7 @@
   font-size: 26px;
   line-height: calc(42 / 26);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 25px;
@@ -390,7 +390,7 @@
   font-size: 22px;
   line-height: calc(42 / 22);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 78px;
@@ -452,7 +452,7 @@
   font-size: 26px;
   line-height: calc(42 / 26);
 
-  color: #202025;
+  color: var(--main-text-color);
 
   @include tablet {
     margin-bottom: 28px;
@@ -471,7 +471,7 @@
     font-size: 32px;
     line-height: calc(38 / 32);
 
-    color: #202025;
+    color: var(--main-text-color);
   }
 }
 

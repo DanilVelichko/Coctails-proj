@@ -1377,7 +1377,7 @@ body {
   font-weight: 600;
   font-size: 22px;
   line-height: 1.9090909091;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .cocktails_title {
@@ -1414,7 +1414,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 3;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .cocktails_text {
@@ -1449,7 +1449,7 @@ body {
   font-weight: 600;
   font-size: 22px;
   line-height: 1.9090909091;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .ingredients_title {
@@ -1485,7 +1485,7 @@ body {
   font-weight: 400;
   font-size: 20px;
   line-height: 3;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .ingredients_text {
@@ -1514,7 +1514,7 @@ body {
   font-weight: 600;
   font-size: 22px;
   line-height: 1.9090909091;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .favorite__title {
@@ -1592,7 +1592,7 @@ body {
   font-weight: 900;
   font-size: 26px;
   line-height: 1.6153846154;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .favorite__cocktail-name {
@@ -1716,7 +1716,7 @@ body {
   font-weight: 600;
   font-size: 22px;
   line-height: 1.9090909091;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .favor-ingredients__title {
@@ -1770,7 +1770,7 @@ body {
   font-weight: 900;
   font-size: 26px;
   line-height: 1.6153846154;
-  color: #202025;
+  color: var(--main-text-color);
 }
 @media screen and (min-width: 768px) {
   .favor-ingredients__cocktail-name {
@@ -1787,7 +1787,7 @@ body {
     margin-bottom: 28px;
     font-size: 32px;
     line-height: 1.1875;
-    color: #202025;
+    color: var(--main-text-color);
   }
 }
 
