@@ -1,23 +1,34 @@
-import * as refs from './refs';
+import { refs } from './refs';
 
-export function headerInit() {
-  refs.refHeaderJSMenu.addEventListener('mouseleave', () => {
-    refs.refHeaderFavBar.classList.remove('active');
+(function headerInit() {
+  refs.backdropMenu.addEventListener('mouseleave', () => {
+    refs.menu.classList.remove('active');
   });
 
-  refs.refHeaderFavLink.addEventListener('mouseenter', () => {
-    refs.refHeaderFavBar.classList.add('active');
+  refs.backdropMenu.addEventListener('mouseenter', () => {
+    refs.menu.classList.add('active');
   });
 
-  refs.refHeaderMenuOpen.addEventListener('click', closeMobileMenu);
+  refs.refHeaderMenuOpen?.addEventListener('click', closeMobileMenu);
 
-  refs.refHeaderMenuClose.addEventListener('click', closeMobileMenu);
-}
+  // Burger menu
+
+  document.querySelector('.nav-mobile__btn').addEventListener('click', () => {
+    document.querySelector('.nav-mobile__burger').classList.add('open');
+  });
+
+  document.querySelector('.burger__close').addEventListener('click', () => {
+    document.querySelector('.nav-mobile__burger').classList.remove('open');
+  });
+
+  // refs.refHeaderMenuClose.addEventListener('click', closeMobileMenu);
+})();
 
 export function closeMobileMenu() {
-  refs.refHeaderMobMenu.classList.toggle('open');
-  refs.refHeaderSwitcher.classList.toggle('open');
-  document.querySelector('.header__search').classList.toggle('open');
-  document.querySelector('.header__nav-desktop').classList.toggle('open');
-  document.body.classList.toggle('overflow');
+  refs.menu?.classList.remove('active');
+  //   refs.refHeaderMobMenu.classList.toggle('open');
+  //   refs.refHeaderSwitcher.classList.toggle('open');
+  //   document.querySelector('.header__search').classList.toggle('open');
+  //   document.querySelector('.header__nav-desktop').classList.toggle('open');
+  //   document.body.classList.toggle('overflow');
 }
