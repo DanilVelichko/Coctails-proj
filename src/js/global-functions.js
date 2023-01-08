@@ -175,7 +175,9 @@ export const formatScreenRender =  (yourFetchFunction) => {
         }
         
     } else {
-        
+         for (let i = 0; i < counter.mobile; i++) {
+           yourFetchFunction(i);
+         }
 
     }
 };
