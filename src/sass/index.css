@@ -2281,6 +2281,7 @@ p {
   width: 100vw;
   height: 100vh;
   background-color: #84a178;
+  background-color: #84a178;
 }
 
 .logo-ice {
@@ -2308,8 +2309,10 @@ p {
   border: none;
   background-color: transparent;
   fill: #fcfcfc;
+  fill: #fcfcfc;
 }
 .mob-menu-close-btn:hover, .mob-menu-close-btn:focus {
+  fill: #f8d24e;
   fill: #f8d24e;
 }
 @media screen and (min-width: 768px) {
@@ -2336,6 +2339,7 @@ p {
   font-size: 32px;
   line-height: 1.2;
   color: #fcfcfc;
+  color: #fcfcfc;
 }
 @media screen and (min-width: 768px) {
   .mob-menu-link {
@@ -2349,6 +2353,7 @@ p {
   left: 50%;
   transform: translateX(-50%);
   bottom: 53px;
+  background-color: #f8d24e;
   background-color: #f8d24e;
   border-radius: 10px;
   font-weight: 600;
