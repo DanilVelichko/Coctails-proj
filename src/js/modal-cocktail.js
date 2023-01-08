@@ -1,16 +1,15 @@
 import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
 import axios from 'axios';
+import { learnId } from './favorite-button.js';
 
 const modalCocktail = document.querySelector('.modal-cocktail');
 const overlayCocktail = document.querySelector('.overlay');
 const btnCloseModalCocktail = document.querySelector('.close-modal-cocktail');
 const btnOpenModalCocktail = document.querySelector('.show-modal-cocktail');
 
-export const openModalCoctail = async (idCocktail) => {
+export const openModalCoctail = async () => {
   modalCocktail.classList.remove('hidden');
   overlayCocktail.classList.remove('hidden');
-
-  await modalMarkupCocktail(idCocktail);
 };
 
 const closeModalCoctail =  () => {
@@ -30,23 +29,20 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
-const modalMarkupCocktail = async (idCocktail) => {
+export const modalMarkupCocktail = async (learnId) => {
   try {
-    const url = await axios.get(`${refs.idApiSearch}${idCocktail}`);
-      console.log(url.data.drinks)
-    point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[i]) );
+    const url = await axios.get(`${refs.idApiSearch}${learnId}`);
+    console.log(url);
+    point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[0]));
     
-    
-
   } catch (error) {
     
+  
   }
-
 };
 
-const renderModalCocktail = ({strMeasure1, idDrink, strDrink, strInstructions, strDrinkThumb }) => {
-  return `
-   <h1 class="Coctails-title">${strDrink}</h1>
+export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstructions, strDrinkThumb }) {
+  let render = `<h1 class="Coctails-title">${strDrink}</h1>
       <h2 class="Coctails-instractions">Instructions:</h2>
       <p class="Coctails-description">
         ${strInstructions}
@@ -60,26 +56,32 @@ const renderModalCocktail = ({strMeasure1, idDrink, strDrink, strInstructions, s
       />
       <h2 class="Coctails-ingredients">INGREDIENTS</h2>
       <p class="Per-cocktail">Per cocktail</p>
-      <ul class="Coctails-list">
+      <ul class="Coctails-list">`; 
+  if (idDrink) { render +=`
         <li class="">
           <a href="" class="Coctails-link"> ✶ Ice </a>
-        </li>
-        <li class="">
+        </li>`;
+}
+  if (idDrink) { render +=
+    `<li class="">
           <a href="" class="Coctails-link"> ✶ 1 ounce gin </a>
-        </li>
-        <li class="">
+        </li>`}
+        if (idDrink) {`<li class="">
           <a href="" class="Coctails-link"> ✶ 1 ounce Campari </a>
-        </li>
-        <li class="">
+        </li>`}
+  if (idDrink) {
+    `<li class="">
           <a href="" class="Coctails-link"> ✶ 1 ounce sweet vermouth </a>
-        </li>
-        <li class="">
+        </li>`}
+  if (idDrink) { render +=
+    `<li class="">
           <a href="" class="Coctails-link"> ✶ Garnish: orange peel </a>
-        </li>
-      </ul>
+        </li>`}
+  render += `</ul>
       <button type="button" class="Add-button">Add to favorite</button>
     </div>
 `;
+return render;
 }
 
-console.log("JS page Modal Cockteil")
+console.log("JS page Modal Cockteil");
