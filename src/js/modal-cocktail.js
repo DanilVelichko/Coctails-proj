@@ -18,6 +18,7 @@ export const openModalCoctail = async () => {
 const closeModalCoctail =  () => {
   modalCocktail.classList.add('hidden');
   overlayCocktail.classList.add('hidden');
+  point.modalRenderBoxCocktail.innerHTML = '';
 };
 
 btnOpenModalCocktail.addEventListener('click', openModalCoctail);
