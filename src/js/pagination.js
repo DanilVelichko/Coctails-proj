@@ -54,7 +54,7 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
           .insertAdjacentHTML('beforeend', pagesArr[(pagRefs.pageCounter + 1)].map(item => renderCard(item)).join(''));
         pagRefs.pageCounter += 1;
         pageNum += pagRefs.pageCounter;
-        console.log('pageCounter после клика на правую кнопку', pagRefs.pageCounter)
+        console.log('pageCounter после клика на правую кнопку', pagRefs.pageCounter);
         // e.target.classList.remove('pagination__button-current');
         // e.target.nextSibling.classList.add("pagination__button-current");
 
@@ -179,12 +179,12 @@ export async function doCurrentClass(e) {
 }  
 }
 
-async function deletePrevClass(e) {
+function deletePrevClass(e) {
       e.target.previousSibling.classList.remove("pagination__button-current");
 }
 
-async function deleteNextClass(e) {
-e.target.nextSibling.classList.remove("pagination__button-current"); 
+ function deleteNextClass(e) {
+e.target.nextSibling.classList.add("pagination__button-current"); 
 }
 
 console.log('Подключена страница Pagination');
