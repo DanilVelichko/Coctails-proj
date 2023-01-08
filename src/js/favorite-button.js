@@ -4,10 +4,12 @@ import { openModalCoctail } from './modal-cocktail.js';
 import { modalMarkupCocktail } from './modal-cocktail.js';
 // ADD To and Remove cards to Favorites //
 point.galleryUl.addEventListener('click', addToFavorite );
+
 export let learnId = 0;
 async function addToFavorite(e) {
     if (e.target.textContent === 'Learn More') {
        learnId = parseInt(e.target.nextSibling.nextSibling.attributes[1].nodeValue.match(/\d+/g));
+
         console.log(learnId);
         openModalCoctail();
         await modalMarkupCocktail();
