@@ -1,4 +1,13 @@
 .footer {
   height: 110px;
   background-color: #fd5103;
+  margin-top: 39px;
+  @include mobile {
+  }
+  @include tablet {
+    margin-top: 60px;
+  }
+  @include desktop {
+    margin-top: 60px;
+  }
 }

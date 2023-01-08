@@ -22,7 +22,7 @@
     font-size: 12px;
     border: 1px solid transparent;
     border-color: var(--main-border-color);
-    margin-bottom: 39px;
+    // margin-bottom: 39px;
     @include mobile {
     }
     @include tablet {
@@ -81,4 +81,8 @@
   &:hover {
     fill: #202025;
   }
+}
+
+.pag-hidden {
+  // height: 60px;
 }

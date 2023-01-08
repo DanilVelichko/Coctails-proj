@@ -3,7 +3,7 @@ import axios from "axios";
 import { elBtn } from './hero-letters-filter.js';
 
 export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
-  if (strDrink.length > 16) {
+  if (strDrink.length > 25) {
     return `
   <li class="gallery__coctail_box">
         <picture class="gallery__coctail_img">
@@ -38,7 +38,7 @@ export const renderCard = ({ strDrinkThumb, strDrink, idDrink }) => {
           />
         </picture>
 
-        <h3 class="gallery__coctail_box-name" style="font-size: 28px; text-align: center;">${strDrink}</h3>
+        <h3 class="gallery__coctail_box-name" style="margin-bottom: 10px; font-size: 28px; text-align: center;">${strDrink}</h3>
         <div class="gallery__coctail_box-buttons">
           <button class="button__learn" id="lm_${idDrink}">Learn More</button>
           <button class="button__add button__fav" id="fb_${idDrink}">
