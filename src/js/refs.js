@@ -1,6 +1,11 @@
 export const STORAGE_KEY = 'CoctailsId';
 
 export const refs = {
+   //header
+  backdropMenu: document.querySelector('.nav-desktop__item--js'),
+  menu: document.querySelector('.favorite__list'),
+  refHeaderMenuOpen: document.querySelector('.active'),
+  //
   apiKey: 1,
   randomCoctailApi: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
   ferstLetterSearch:
