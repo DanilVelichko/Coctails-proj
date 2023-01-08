@@ -5,9 +5,11 @@ import { openModalCoctail } from './modal-cocktail.js';
 // ADD To and Remove cards to Favorites //
 point.galleryUl.addEventListener('click', addToFavorite );
 
+let learnId = 0;
+
 async function addToFavorite(e) {
     if (e.target.textContent === 'Learn More') {
-        const learnId = parseInt(e.target.nextSibling.nextSibling.attributes[1].nodeValue.match(/\d+/g));
+        learnId = parseInt(e.target.nextSibling.nextSibling.attributes[1].nodeValue.match(/\d+/g));
         console.log(learnId);
         await openModalCoctail(learnId);
 

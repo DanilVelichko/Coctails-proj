@@ -1,4 +1,6 @@
+
 import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
+import {learnId} from './favorite-button'
 import axios from 'axios';
 
 const modalCocktail = document.querySelector('.modal-cocktail');
@@ -9,7 +11,7 @@ const btnOpenModalCocktail = document.querySelector('.show-modal-cocktail');
 export const openModalCoctail = async (idCocktail) => {
   modalCocktail.classList.remove('hidden');
   overlayCocktail.classList.remove('hidden');
-
+  console.log(learnId);
   await modalMarkupCocktail(idCocktail);
 };
 
@@ -33,8 +35,8 @@ document.addEventListener('keydown', function (e) {
 const modalMarkupCocktail = async (idCocktail) => {
   try {
     const url = await axios.get(`${refs.idApiSearch}${idCocktail}`);
-      console.log(url.data.drinks)
-    point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[i]) );
+      console.log('url', url.data.drinks)
+    point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[0]) );
     
     
 
