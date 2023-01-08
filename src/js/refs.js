@@ -1,4 +1,4 @@
-// export const STORAGE_KEY = 'CoctailsId';
+export const STORAGE_KEY = 'CoctailsId';
 
 export const refs = {
    //header
