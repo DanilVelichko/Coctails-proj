@@ -3,9 +3,12 @@ import './gallery';
 import './header-search';
 import './header-burger';
 import './hero-letters-filter';
-// import './modal';
+import './modal';
+import './modal-cocktail';
+import './modal-ingredients';
 import './refs';
 import './global-functions';
 import './pagination';
 import './ingredients';
 import './favorite';
+
