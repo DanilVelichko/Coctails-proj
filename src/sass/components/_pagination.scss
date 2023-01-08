@@ -38,6 +38,7 @@
     &:hover {
       color: var(--main-background-color);
       background-color: var(--switch-light-color);
+      cursor: pointer;
     }
     &-current {
       color: var(--main-background-color);
@@ -49,14 +50,15 @@
     font-size: 25px;
   }
   &__arrow-left {
-    // width: 8px;
-    // height: 13px;
+    width: 20px;
+    height: 20px;
     color: var(--switch-light-color);
     border-color: transparent;
     background-color: transparent;
     &:hover {
+      cursor: pointer;
       // color: var(--button-text-color);
-      // background-color: var(--switch-light-color);
+      background-color: var(--switch-light-color);
     }
   }
   &__arrow-right {
@@ -66,8 +68,9 @@
     border-color: transparent;
     background-color: transparent;
     &:hover {
+      cursor: pointer;
       // color: var(--button-text-color);
-      // background-color: var(--switch-light-color);
+      background-color: var(--switch-light-color);
     }
   }
 }
