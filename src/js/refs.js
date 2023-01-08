@@ -9,7 +9,8 @@ export const refs = {
   apiKey: 1,
   randomCoctailApi: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
   ferstLetterSearch:
-    'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=', // после равно ставим букву в ${} для поиска
+    'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',// после равно ставим букву в ${} для поиска
+    idApiSearch: 'www.thecocktaildb.com/api/json/v1/1/lookup.php?i=', 
 };
 
 export const event = {};
@@ -25,6 +26,7 @@ export const point = {
   idCocktailOnCard: document.querySelectorAll('.coctailsId'),
   paginationDiv: document.querySelector('.pagination'),
   removeFavoriteButtons: document.querySelectorAll('.button__remove'),
+modalRenderBoxCocktail: document.querySelector('.cocktail__render-box')
 };
 
 export const counter = {
