@@ -14,7 +14,6 @@ export const refs = {
 };
 
 export const event = {};
-
 export const localStorageArr = [];
 export const fetchEl = {};
 export const favorites = [];
@@ -26,7 +25,7 @@ export const point = {
   idCocktailOnCard: document.querySelectorAll('.coctailsId'),
   paginationDiv: document.querySelector('.pagination'),
   removeFavoriteButtons: document.querySelectorAll('.button__remove'),
-modalRenderBoxCocktail: document.querySelector('.cocktail__render-box')
+  modalRenderBoxCocktail: document.querySelector('.cocktail__render-box')
 };
 
 export const counter = {

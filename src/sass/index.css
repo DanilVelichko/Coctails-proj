@@ -442,7 +442,6 @@ body {
   padding-right: 20px;
   padding-left: 20px;
   margin: 0 auto;
-  border: 2px solid blueviolet;
 }
 @media screen and (min-width: 480px) {
   .container {
@@ -2260,15 +2259,28 @@ p {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: visibility 700ms, opacity 700ms var(--two-time);
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: visibility 700ms, opacity 700ms var(--two-time);
 }
 
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
 }
 
 .backdrop.is-hidden .mob-menu {
+  transform: translate(0%, -100%) scale(0);
   transform: translate(0%, -100%) scale(0);
 }
 
@@ -2281,6 +2293,13 @@ p {
   width: 100vw;
   height: 100vh;
   background-color: #84a178;
+  transition: transform 700ms;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
   background-color: #84a178;
 }
 
@@ -2290,6 +2309,19 @@ p {
   width: 40px;
   height: 37px;
   top: 12px;
+  position: absolute;
+  left: 20px;
+  width: 40px;
+  height: 37px;
+  top: 12px;
+}
+@media screen and (min-width: 768px) {
+  .logo-ice {
+    width: 48px;
+    height: 44px;
+    top: 20px;
+    left: 32px;
+  }
 }
 @media screen and (min-width: 768px) {
   .logo-ice {
@@ -2309,11 +2341,25 @@ p {
   border: none;
   background-color: transparent;
   fill: #fcfcfc;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  display: block;
+  margin: 16px 20px 52px auto;
+  border: none;
+  background-color: transparent;
   fill: #fcfcfc;
 }
 .mob-menu-close-btn:hover, .mob-menu-close-btn:focus {
   fill: #f8d24e;
+}
+.mob-menu-close-btn:hover, .mob-menu-close-btn:focus {
   fill: #f8d24e;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-close-btn {
+    margin: 32px 32px 76px auto;
+  }
 }
 @media screen and (min-width: 768px) {
   .mob-menu-close-btn {
@@ -2323,10 +2369,17 @@ p {
 
 .mob-menu-list {
   text-align: center;
+  text-align: center;
 }
 
 .mob-menu-list:not(:last-child) {
   margin-bottom: 32px;
+  margin-bottom: 32px;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-list:not(:last-child) {
+    margin-bottom: 40px;
+  }
 }
 @media screen and (min-width: 768px) {
   .mob-menu-list:not(:last-child) {
@@ -2339,7 +2392,16 @@ p {
   font-size: 32px;
   line-height: 1.2;
   color: #fcfcfc;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
   color: #fcfcfc;
+}
+@media screen and (min-width: 768px) {
+  .mob-menu-link {
+    font-size: 48px;
+    line-height: 1.2;
+  }
 }
 @media screen and (min-width: 768px) {
   .mob-menu-link {
@@ -2354,6 +2416,22 @@ p {
   transform: translateX(-50%);
   bottom: 53px;
   background-color: #f8d24e;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #131313;
+  padding: 12px 32px 12px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 112px;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 53px;
   background-color: #f8d24e;
   border-radius: 10px;
   font-weight: 600;
@@ -2374,12 +2452,25 @@ p {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+@media screen and (min-width: 768px) {
+  .mob-menu-buy-btn {
+    display: none;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+.mob-menu-buy-btn:hover, .mob-menu-buy-btn:focus {
+  background-color: var(--button-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
 .mob-menu-buy-btn:hover, .mob-menu-buy-btn:focus {
   background-color: var(--button-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .mob-menu-btn-buy {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
   width: 12px;
   height: 12px;
   display: inline-block;

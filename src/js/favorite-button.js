@@ -1,24 +1,22 @@
 import {point, localStorageArr } from './refs.js';
-import {saveInLocalStorage} from './global-functions.js';
+import { saveInLocalStorage } from './global-functions.js'; 
 import { openModalCoctail } from './modal-cocktail.js';
-
+import { modalMarkupCocktail } from './modal-cocktail.js';
 // ADD To and Remove cards to Favorites //
 point.galleryUl.addEventListener('click', addToFavorite );
 
-let learnId = 0;
-
+export let learnId = 0;
 async function addToFavorite(e) {
     if (e.target.textContent === 'Learn More') {
-        learnId = parseInt(e.target.nextSibling.nextSibling.attributes[1].nodeValue.match(/\d+/g));
-        console.log(learnId);
-        await openModalCoctail(learnId);
+       learnId = parseInt(e.target.nextSibling.nextSibling.attributes[1].nodeValue.match(/\d+/g));
 
+        console.log(learnId);
+        openModalCoctail();
+        await modalMarkupCocktail();
 
     } else {
         const element = e.target.children[1].textContent;
-    
-
-    
+      
 
         if (/^\d{5}$/.test(element) || /^\d{6}$/.test(element)) {
             if (!localStorageArr.includes(element)) {
