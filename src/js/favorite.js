@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { STORAGE_KEY } from './refs';
 
-let STORAGE_KEY = [];
+// let STORAGE_KEY = [];
 
 function loadFromLocalStorage() {
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
