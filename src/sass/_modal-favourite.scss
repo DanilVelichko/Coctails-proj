@@ -8,7 +8,7 @@
 //     text-decoration: none;
 //     cursor: pointer;
 // }
-.show-modal {
+.show-modal-cocktail {
   font-size: 2rem;
   font-weight: 600;
   padding: 1.75rem 3.5rem;
@@ -19,7 +19,7 @@
   border-radius: 10rem;
   cursor: pointer;
 }
-.close-modal {
+.close-modal-cocktail {
   position: absolute;
   top: 1.2rem;
   right: 2rem;
@@ -68,6 +68,7 @@ p {
   }
 }
 .Coctails-title {
+  width: 100%;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 900;
@@ -75,9 +76,10 @@ p {
   line-height: 38px;
   /* Black */
   color: #202025;
+  margin-bottom: 28px;
   @media screen and (min-width: 768px) {
     position: absolute;
-    width: 129px;
+    width: 100%;
     height: 37px;
     left: 320px;
     top: 40px;
@@ -127,7 +129,8 @@ p {
   /* identical to box height */
   /* Main black */
   color: #000917;
-  margin-top: 20px;
+  // margin-top: 20px;
+  margin-bottom: 8px;
 
   @media screen and (min-width: 768px) {
     position: absolute;
@@ -144,7 +147,7 @@ p {
   font-size: 14px;
   line-height: 21px;
   color: #202025;
-  margin-top: 8px;
+  margin-bottom: 8px;
   @media screen and (min-width: 768px) {
     position: absolute;
     width: 80px;

@@ -2,7 +2,7 @@
 import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
 import {learnId} from './favorite-button'
 import axios from 'axios';
-import { learnId } from './favorite-button.js';
+
 
 const modalCocktail = document.querySelector('.modal-cocktail');
 const overlayCocktail = document.querySelector('.overlay');
@@ -28,15 +28,17 @@ document.addEventListener('keydown', function (e) {
   console.log(e.key);
 
   if (e.key === 'Escape' && !modalCocktail.classList.contains('hidden')) {
-    closeModal();
+    closeModalCoctail();
+    point.modalRenderBoxCocktail.innerHTML = '';
   }
 });
 
-export const modalMarkupCocktail = async (learnId) => {
+export const modalMarkupCocktail = async () => {
   try {
-
+console.log(learnId);
     const url = await axios.get(`${refs.idApiSearch}${learnId}`);
     console.log(url);
+    
     point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[0]));
 
     
@@ -47,7 +49,8 @@ export const modalMarkupCocktail = async (learnId) => {
 };
 
 export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstructions, strDrinkThumb }) {
-  let render = `<h1 class="Coctails-title">${strDrink}</h1>
+  if (strDrink.length > 25) {
+    let render = `<h1 class="Coctails-title" style="font-size: 30px">${strDrink}</h1>
       <h2 class="Coctails-instractions">Instructions:</h2>
       <p class="Coctails-description">
         ${strInstructions}
@@ -71,21 +74,76 @@ export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstruc
     `<li class="">
           <a href="" class="Coctails-link"> ✶ 1 ounce gin </a>
         </li>`}
-        if (idDrink) {`<li class="">
+  if (idDrink) {
+    `<li class="">
           <a href="" class="Coctails-link"> ✶ 1 ounce Campari </a>
-        </li>`}
+        </li>`;
+}
   if (idDrink) {
     `<li class="">
           <a href="" class="Coctails-link"> ✶ 1 ounce sweet vermouth </a>
-        </li>`}
-  if (idDrink) { render +=
+        </li>`;
+}
+  if (idDrink) {
+    render +=
     `<li class="">
           <a href="" class="Coctails-link"> ✶ Garnish: orange peel </a>
-        </li>`}
+        </li>`;
+}
   render += `</ul>
       <button type="button" class="Add-button">Add to favorite</button>
     </div>
 `;
+   } else {
+    render = `<h1 class="Coctails-title">${strDrink}</h1>
+      <h2 class="Coctails-instractions">Instructions:</h2>
+      <p class="Coctails-description">
+        ${strInstructions}
+      </p>
+      <img
+        src="${strDrinkThumb}"
+        alt="${strDrink}"
+        width="280px"
+        height="280px"
+        class="Coctails-pic"
+      />
+      <h2 class="Coctails-ingredients">INGREDIENTS</h2>
+      <p class="Per-cocktail">Per cocktail</p>
+      <ul class="Coctails-list">`;
+    if (idDrink) {
+      render += `
+        <li class="">
+          <a href="" class="Coctails-link"> ✶ Ice </a>
+        </li>`;
+    }
+    if (idDrink) {
+      render +=
+      `<li class="">
+          <a href="" class="Coctails-link"> ✶ 1 ounce gin </a>
+        </li>`}
+    if (idDrink) {
+      `<li class="">
+          <a href="" class="Coctails-link"> ✶ 1 ounce Campari </a>
+        </li>`;
+    }
+    if (idDrink) {
+      `<li class="">
+          <a href="" class="Coctails-link"> ✶ 1 ounce sweet vermouth </a>
+        </li>`;
+    }
+    if (idDrink) {
+      render +=
+        `<li class="">
+          <a href="" class="Coctails-link"> ✶ Garnish: orange peel </a>
+        </li>`;
+    }
+    render += `</ul>
+      <button type="button" class="Add-button">Add to favorite</button>
+    </div>
+`;
+  }
+  
+  console.log(render);
 return render;
 }
 
