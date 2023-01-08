@@ -50,27 +50,27 @@
     font-size: 25px;
   }
   &__arrow-left {
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     color: var(--switch-light-color);
     border-color: transparent;
     background-color: transparent;
     &:hover {
       cursor: pointer;
       // color: var(--button-text-color);
-      background-color: var(--switch-light-color);
+      // background-color: var(--switch-light-color);
     }
   }
   &__arrow-right {
-    // width: 8px;
-    // height: 13px;
+    width: 40px;
+    height: 40px;
     color: var(--switch-light-color);
     border-color: transparent;
     background-color: transparent;
     &:hover {
       cursor: pointer;
       // color: var(--button-text-color);
-      background-color: var(--switch-light-color);
+      // background-color: var(--switch-light-color);
     }
   }
 }
