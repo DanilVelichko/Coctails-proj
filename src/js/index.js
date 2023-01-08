@@ -11,4 +11,3 @@ import './global-functions';
 import './pagination';
 import './ingredients';
 import './favorite';
-
