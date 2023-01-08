@@ -21,13 +21,16 @@
 }
 .close-modal-cocktail {
   position: absolute;
-  top: 1.2rem;
-  right: 2rem;
+  top: -1rem;
+  right: 3rem;
   font-size: 5rem;
   color: #333;
   cursor: pointer;
   border: none;
   background: none;
+  z-index: 11;
+  width: 18px;
+  // height: 18px;
 }
 h1 {
   font-size: 2.5rem;
@@ -42,7 +45,7 @@ p {
   display: none;
 }
 .modal-cocktail {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -53,6 +56,9 @@ p {
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   @media screen and (min-width: 768px) {
     width: 822px;
     height: 598px;
@@ -214,4 +220,7 @@ p {
   background-color: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(3px);
   z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
