@@ -126,15 +126,19 @@
     overflow: hidden;
 }
 
-.nav-desktop__list {
-    display: flex;
-    // flex-direction: column;
-    // gap: 32px;
+.header__nav-desktop {
+    display: none;
+}
+
+.nav-desktop__list ul {
+    display: none;
+    flex-direction: column;
+    gap: 32px;
     opacity: 0;
     transform: translateX(-300%);
     transition: 300ms transform ease;
 
-    &.open {
+    &.open ul {
         display: flex;
         transform: translateX(0);
         flex-direction: column;
@@ -433,7 +437,12 @@
         display: none;
     }
 
+    .header__nav-desktop {
+        display: flex;
+    }
+
     .nav-desktop__list {
+        display: flex;
         opacity: 1;
         position: relative;
         flex-direction: row;
