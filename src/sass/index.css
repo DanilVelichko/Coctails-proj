@@ -2053,7 +2053,7 @@ p {
   display: none;
 }
 
-.modal {
+.modal-cocktail {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -2067,7 +2067,7 @@ p {
   z-index: 10;
 }
 @media screen and (min-width: 768px) {
-  .modal {
+  .modal-cocktail {
     width: 822px;
     height: 598px;
   }

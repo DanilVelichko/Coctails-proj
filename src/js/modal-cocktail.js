@@ -1,5 +1,5 @@
 const modalCocktail = document.querySelector('.modal-cocktail');
-const overlayCocktail = document.querySelector('.overlay-cocktail');
+const overlayCocktail = document.querySelector('.overlay');
 const btnCloseModalCocktail = document.querySelector('.close-modal-cocktail');
 const btnOpenModalCocktail = document.querySelector('.show-modal-cocktail');
 
@@ -25,3 +25,5 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+console.log("JS page Modal Cockteil")
