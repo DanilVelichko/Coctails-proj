@@ -3,7 +3,7 @@ console.log('hello');
 // import axios from 'axios';
 // import { STORAGE_KEY, localStorageArr } from './refs';
 
-// let localStorageArr = [];
+// 
 // console.log(localStorageArr);
 
 // function loadFromLocalStorage() {
