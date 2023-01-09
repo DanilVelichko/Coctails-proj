@@ -11,4 +11,4 @@ import './js/hero-letters-filter';
 
 
 // import './js/ingredients';
-// import './js/favorite';
+import './js/favorite';

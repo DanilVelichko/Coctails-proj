@@ -1,7 +1,23 @@
 import axios from 'axios';
 import { STORAGE_KEY } from './refs';
 
+const favPoints = {
+  buttonStart: document.querySelector('.favorite__link__cocktails'),
+  heroSection: document.querySelector('.hero-view'),
+  gallerySection: document.querySelector('.gallery-view'),
+  favoriteSection: document.querySelector('.favorite-coctails-view'),
+};
+
+console.log("favPoints", favPoints)
+
+favPoints.buttonStart.addEventListener('click', loadFromLocalStorage)
+
 function loadFromLocalStorage() {
+  favPoints.heroSection.classList.add('visually-hidden');
+  favPoints.gallerySection.classList.add('visually-hidden');
+
+  favPoints.favoriteSection.classList.remove('visually-hidden');
+
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
   console.log(1111, serializedState);
   if (serializedState.length === 0) {
@@ -20,7 +36,7 @@ function loadFromLocalStorage() {
   }
 }
 
-loadFromLocalStorage();
+// loadFromLocalStorage();
 
 async function firstSearchId(ele) {
   try {
