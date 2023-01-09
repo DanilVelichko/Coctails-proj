@@ -3,7 +3,7 @@ import { STORAGE_KEY } from './refs';
 
 function loadFromLocalStorage() {
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-
+  console.log(1111, serializedState);
   if (serializedState.length === 0) {
     const create = ` 
     <p class="cocktails_text">
@@ -37,18 +37,43 @@ function cocktailIdMarkup(id) {
   const drinks = id.data.drinks[0];
   console.log();
   const { strDrinkThumb, strDrink, idDrink } = drinks;
-  const create = `<ul class="favorite__border">
-    <li>
-      <img
-        class="favorite__img"
-        src=${strDrinkThumb}
-        alt=${strDrink}
-      />
+  const create = `
+    <li class="favorite__border">
+    <picture class="favorite__img">
+          <source
+            srcset="
+              ${strDrinkThumb} 1x,
+              ${strDrinkThumb} 2x
+            "
+            media="(max-width: 1280px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ${strDrinkThumb} 1x,
+              ${strDrinkThumb} 2x
+            "
+            media="(max-width: 768px)"
+            type="image/png"
+          />
+          <source
+            srcset="
+              ${strDrinkThumb} 1x,
+              ${strDrinkThumb} 2x
+            "
+            media="(max-width: 480px)"
+            type="image/png"
+          />
+          <img
+            src="${strDrinkThumb}"
+            alt="${strDrink}"
+          />
+        </picture>
       <h2 class="favorite__cocktail-name">${strDrink}</h2>
       <div class="favorite__cocktail-buttons">
         <button class="favorite__learn button__learn">Learn More</button>
-           <div class="coctailsId visually-hidden">${idDrink}</div>
-        <button class="favorite__remove button__remove_mobile  ">
+        
+        <button class="favorite__remove button__remove_mobile" data-id =${idDrink}>
           Remove
                   <svg
                 width="21"
@@ -68,23 +93,33 @@ function cocktailIdMarkup(id) {
         </button>
       </div>
     </li>
-  </ul>
+  
   `;
   document
     .querySelector('.favorite__flex')
     .insertAdjacentHTML('beforeend', create);
 }
 
-document.querySelector('.favorite').addEventListener('click', event => {
-  if (event.target.innerText === 'Remove') {
-    removeCocktail(event);
-  } else if (event.target.innerText === 'Learn More') {
-    console.log('Для вызова Modal!');
-  }
-});
+const listFavorites = document.querySelector('.favorite');
+console.log(listFavorites);
 
-function removeCocktail(event) {
-  console.log(event);
-  const key = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  console.log(key);
-}
+// document.querySelector('.favorite').addEventListener('click', event => {
+//   if (event.target.innerText === 'Remove') {
+//     removeCocktail(event);
+//   } else if (event.target.innerText === 'Learn More') {
+//     console.log('Для вызова Modal!');
+//   }
+// });
+
+// function removeCocktail(event) {
+//   console.log(event);
+//   // const KEY = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+//   // console.log(KEY);
+//   // const clearId = event.path[1].children[1].innerText;
+//   // console.log(clearId);
+
+//   // localStorage.setItem(
+//   //   STORAGE_KEY,
+//   //   JSON.stringify(KEY.filter(item => item.clearId !== clearId))
+//   // );
+// }
