@@ -1,4 +1,5 @@
 export const STORAGE_KEY = 'CoctailsId';
+export const STORAGE_KEY_INGREDIENT = 'IngredientsId';
 
 export const refs = {
    //header
@@ -9,10 +10,12 @@ export const refs = {
   randomCoctailApi: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
   ferstLetterSearch: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',
   idApiSearch: 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=', 
+  ingredientApi: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?i=',
 };
 
 export const event = {};
 export const localStorageArr = [];
+export const ingredientsLocalStorageArr = [];
 export const fetchEl = {};
 export const favorites = [];
 
@@ -32,5 +35,5 @@ export const counter = {
   desktop: 9,
 };
 
-console.log('Refs js');
-console.log(point.paginationDiv);
+// console.log('Refs js');
+// console.log(point.paginationDiv);

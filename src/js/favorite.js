@@ -8,7 +8,7 @@ const favPoints = {
   favoriteSection: document.querySelector('.favorite-coctails-view'),
 };
 
-console.log("favPoints", favPoints)
+// console.log("favPoints", favPoints)
 
 favPoints.buttonStart.addEventListener('click', loadFromLocalStorage)
 
@@ -19,7 +19,7 @@ function loadFromLocalStorage() {
   favPoints.favoriteSection.classList.remove('visually-hidden');
 
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  console.log(1111, serializedState);
+  // console.log(1111, serializedState);
   if (serializedState.length === 0) {
     const create = ` 
     <p class="cocktails_text">
@@ -51,7 +51,7 @@ async function firstSearchId(ele) {
 
 function cocktailIdMarkup(id) {
   const drinks = id.data.drinks[0];
-  console.log();
+  // console.log();
   const { strDrinkThumb, strDrink, idDrink } = drinks;
   const create = `
     <li class="favorite__border">
@@ -117,7 +117,7 @@ function cocktailIdMarkup(id) {
 }
 
 const listFavorites = document.querySelector('.favorite');
-console.log(listFavorites);
+// console.log(listFavorites);
 
 // document.querySelector('.favorite').addEventListener('click', event => {
 //   if (event.target.innerText === 'Remove') {
