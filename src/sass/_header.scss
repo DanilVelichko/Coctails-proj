@@ -52,6 +52,7 @@
 .nav-mobile__icon {
     cursor: pointer;
     color: var(--main-text-color);
+    fill: currentColor;
 
     &:hover,
     &:focus {
@@ -123,6 +124,7 @@
 
 .close__icon {
     color: var(--main-text-color);
+    fill: currentColor;
 }
 
 .overflow {
