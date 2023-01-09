@@ -56,6 +56,7 @@
 .nav-mobile__icon {
   cursor: pointer;
   color: var(--main-text-color);
+  fill: currentColor;
 }
 .nav-mobile__icon:hover, .nav-mobile__icon:focus {
   color: var(--second-text-color);
@@ -108,6 +109,7 @@
 
 .close__icon {
   color: var(--main-text-color);
+  fill: currentColor;
 }
 
 .overflow {
