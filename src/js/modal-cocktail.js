@@ -1,6 +1,6 @@
-
 import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
-import {learnId} from './favorite-button'
+import { learnId } from './favorite-button';
+import { saveInLocalStorage } from './global-functions.js';
 import axios from 'axios';
 
 
@@ -8,6 +8,7 @@ const modalCocktail = document.querySelector('.modal-cocktail');
 const overlayCocktail = document.querySelector('.overlay');
 const btnCloseModalCocktail = document.querySelector('.close-modal-cocktail');
 const btnOpenModalCocktail = document.querySelector('.show-modal-cocktail');
+let idDrinkModal = 0;
 
 export const openModalCoctail = async () => {
   modalCocktail.classList.remove('hidden');
@@ -38,13 +39,14 @@ export const modalMarkupCocktail = async () => {
   try {
     const url = await axios.get(`${refs.idApiSearch}${learnId}`);
     point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[0]));
-
+    document.addEventListener("click", onFavoriteModal);
   } catch (error) {
     
   }
 };
 
 export function renderModalCocktail ({strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, idDrink, strDrink, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5 }) {
+  idDrinkModal = idDrink;
   if (strDrink.length > 25) {
     let render = `<h1 class="Coctails-title" style="font-size: 30px">${strDrink}</h1>
       <h2 class="Coctails-instractions">Instructions:</h2>
@@ -141,4 +143,24 @@ export function renderModalCocktail ({strMeasure1, strMeasure2, strMeasure3, str
 return render;
 }
 
+const onFavoriteModal = (e) => {
+  const element = idDrinkModal;
+  if (e.target.textContent === 'Add to favorite' || e.target.textContent === 'Remove from favorite') {
+
+    if (/^\d{5}$/.test(element) || /^\d{6}$/.test(element)) {
+            if (!localStorageArr.includes(element)) {
+                localStorageArr.push(element);
+              e.target.textContent = 'Remove from favorite';
+            } else {
+                const index = localStorageArr.indexOf(element);
+                if (index > -1) {
+                    localStorageArr.splice(index, 1);
+              }
+              e.target.textContent = 'Add to favorite';
+            }
+            saveInLocalStorage('CoctailsId', localStorageArr);
+        }
+    console.log("Click FavIdDrink", idDrinkModal);
+  }
+};
 console.log("JS page Modal Cockteil");
