@@ -6,6 +6,12 @@ export const refs = {
   backdropMenu: document.querySelector('.nav-desktop__item--js'),
   menu: document.querySelector('.favorite__list'),
   refHeaderMenuOpen: document.querySelector('.active'),
+  refBurgerIcon: document.querySelector('.nav-mobile__btn'),
+  refBurgerClose: document.querySelector('.burger__close'),
+  refBurgerNav: document.querySelector('.nav-mobile__burger'),
+  refSearchForm: document.querySelector('.js-form-search'),
+  refBackdropMobile: document.querySelector('.nav-desktop__list'),
+  
   apiKey: 1,
   randomCoctailApi: 'https://www.thecocktaildb.com/api/json/v1/1/random.php',
   ferstLetterSearch: 'https://www.thecocktaildb.com/api/json/v1/1/search.php?f=',
