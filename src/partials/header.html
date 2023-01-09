@@ -37,13 +37,13 @@
           </li>
         </ul>
       </nav>
-      <form class="header__search js-form-search">
+      <form class="header__search js-form-search js-form-search-mob">
         <button class="search__btn js-search-btn" type="submit"></button>
         <svg class="search__icon" width="24" height="24">
           <use href="/src/images/header__icons.svg#icon-search"></use>
         </svg>
-        <input type="text" id="coctail-search" name="search" class="search__input js-input-search"
-          placeholder="Search" />
+        <input type="text" id="coctail-search" class="search__input js-input-search" name="searchQuery"
+          autocomplete="off" placeholder=" Search |" />
       </form>
       <div class="switcher">
         <span class="switcher__light">Light</span>
