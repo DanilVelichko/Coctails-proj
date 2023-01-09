@@ -264,4 +264,4 @@ itemsPerPage = counter.mobile;
   }
   return itemsPerPage;
 }
-console.log('Global functions');
+// console.log('Global functions');
