@@ -28,14 +28,6 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
       const pagesArr = await paginate(responseArr, itemsPerPage);
       console.log('Здесь страницы с коктейлями на каждой:', pagesArr);
 
-      // console.log('e.target log', e.target);
-      // console.dir('e.target dir', e.target);
-      // console.log('e.target.elements log', e.target.elements);
-      // console.dir('e.target.elements dir', e.target.elements);
-      // console.log('e.target.attributes', e.target.attributes);
-      // console.log('e.target.attributes[1]', e.target.attributes[1]); //?
-      // console.log('e.target.attributes.length', e.target.attributes.length);
-
       // Рендерим на страницу по клику на соответсвующую кнопку//
       if (e.target.attributes.length == 1) {
         cleanHTML();
@@ -55,9 +47,7 @@ point.paginationDiv.addEventListener('click', async function goToPage(e) {
         pagRefs.pageCounter += 1;
         pageNum += pagRefs.pageCounter;
         console.log('pageCounter после клика на правую кнопку', pagRefs.pageCounter);
-        // e.target.classList.remove('pagination__button-current');
-        // e.target.nextSibling.classList.add("pagination__button-current");
-
+      
       }
 // Рендерим по клику на левую стрелку
       else if (e.target.getAttribute('data-custom-attribute') === 'left' && pagRefs.pageCounter != 0) {
