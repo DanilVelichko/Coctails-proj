@@ -1,24 +1,25 @@
 import axios from 'axios';
 import { STORAGE_KEY } from './refs';
 
-const refs = {
+const favPoints = {
   buttonStart: document.querySelector('.favorite__link__cocktails'),
   heroSection: document.querySelector('.hero-view'),
   gallerySection: document.querySelector('.gallery-view'),
   favoriteSection: document.querySelector('.favorite-coctails-view'),
 };
 
-refs.buttonStart.addEventListener('click', loadFromLocalStorage);
+// console.log("favPoints", favPoints)
 
-function loadFromLocalStorage(event) {
-  event.preventDefault();
+favPoints.buttonStart.addEventListener('click', loadFromLocalStorage)
 
-  refs.heroSection.classList.add('visually-hidden');
-  refs.gallerySection.classList.add('visually-hidden');
-  refs.favoriteSection.classList.remove('visually-hidden');
+function loadFromLocalStorage() {
+  favPoints.heroSection.classList.add('visually-hidden');
+  favPoints.gallerySection.classList.add('visually-hidden');
+
+  favPoints.favoriteSection.classList.remove('visually-hidden');
 
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-
+  // console.log(1111, serializedState);
   if (serializedState.length === 0) {
     const create = ` 
     <p class="cocktails_text">
@@ -35,6 +36,8 @@ function loadFromLocalStorage(event) {
   }
 }
 
+// loadFromLocalStorage();
+
 async function firstSearchId(ele) {
   try {
     const result = await axios.get(
@@ -48,7 +51,7 @@ async function firstSearchId(ele) {
 
 function cocktailIdMarkup(id) {
   const drinks = id.data.drinks[0];
-  console.log();
+  // console.log();
   const { strDrinkThumb, strDrink, idDrink } = drinks;
   const create = `
     <li class="favorite__border">
@@ -113,27 +116,26 @@ function cocktailIdMarkup(id) {
     .insertAdjacentHTML('beforeend', create);
 }
 
-const listFavorites = document.querySelector('.favorite__flex');
-console.log(listFavorites);
+const listFavorites = document.querySelector('.favorite');
+// console.log(listFavorites);
 
-listFavorites.addEventListener('click', event => {
-  if (event.target.innerText === 'Remove') {
-    removeCocktail(event);
-  } else if (event.target.innerText === 'Learn More') {
-    console.log('Для вызова Modal!');
-  }
-});
+// document.querySelector('.favorite').addEventListener('click', event => {
+//   if (event.target.innerText === 'Remove') {
+//     removeCocktail(event);
+//   } else if (event.target.innerText === 'Learn More') {
+//     console.log('Для вызова Modal!');
+//   }
+// });
 
-function removeCocktail(event) {
-  const allStorageId = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  // console.log(allStorageId);
-  const clearId = event.target.dataset.id;
-  // console.log(clearId);
+// function removeCocktail(event) {
+//   console.log(event);
+//   // const KEY = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+//   // console.log(KEY);
+//   // const clearId = event.path[1].children[1].innerText;
+//   // console.log(clearId);
 
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(
-      allStorageId.filter(data => console.log(data.event.target.dataset.id))
-    )
-  );
-}
+//   // localStorage.setItem(
+//   //   STORAGE_KEY,
+//   //   JSON.stringify(KEY.filter(item => item.clearId !== clearId))
+//   // );
+// }

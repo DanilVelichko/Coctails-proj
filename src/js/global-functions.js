@@ -264,4 +264,5 @@ export function itemsPerScreen() {
   }
   return itemsPerPage;
 }
+
 console.log('Global functions');
