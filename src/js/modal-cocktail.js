@@ -36,16 +36,11 @@ document.addEventListener('keydown', function (e) {
 
 export const modalMarkupCocktail = async () => {
   try {
-console.log(learnId);
     const url = await axios.get(`${refs.idApiSearch}${learnId}`);
-    console.log(url);
-    
     point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[0]));
 
-    
   } catch (error) {
     
-  
   }
 };
 

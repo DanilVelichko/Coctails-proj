@@ -158,18 +158,15 @@ export const formatScreenRender =  (yourFetchFunction) => {
         for (let i = 0; i < counter.desktop; i++) {
             yourFetchFunction(i);
         }
-        
     }
 
     else if (window.matchMedia("(min-width: 768px)").matches) {
         for (let i = 0; i < counter.tablet; i++) {
             yourFetchFunction(i);
         }
-      
     }
 
     else if (window.matchMedia("(min-width: 480px)").matches) {
-
         for (let i = 0; i < counter.mobile; i++) {
             yourFetchFunction(i);
         }
@@ -178,7 +175,6 @@ export const formatScreenRender =  (yourFetchFunction) => {
          for (let i = 0; i < counter.mobile; i++) {
            yourFetchFunction(i);
          }
-
     }
 };
 
