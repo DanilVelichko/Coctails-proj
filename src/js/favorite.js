@@ -100,26 +100,27 @@ function cocktailIdMarkup(id) {
     .insertAdjacentHTML('beforeend', create);
 }
 
-const listFavorites = document.querySelector('.favorite');
+const listFavorites = document.querySelector('.favorite__flex');
 console.log(listFavorites);
 
-// document.querySelector('.favorite').addEventListener('click', event => {
-//   if (event.target.innerText === 'Remove') {
-//     removeCocktail(event);
-//   } else if (event.target.innerText === 'Learn More') {
-//     console.log('Для вызова Modal!');
-//   }
-// });
+listFavorites.addEventListener('click', event => {
+  if (event.target.innerText === 'Remove') {
+    removeCocktail(event);
+  } else if (event.target.innerText === 'Learn More') {
+    console.log('Для вызова Modal!');
+  }
+});
 
-// function removeCocktail(event) {
-//   console.log(event);
-//   // const KEY = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-//   // console.log(KEY);
-//   // const clearId = event.path[1].children[1].innerText;
-//   // console.log(clearId);
+function removeCocktail(event) {
+  console.log(event);
+  console.log(event.target.dataset.id);
+  const KEY = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  console.log(KEY);
+  const clearId = event.path[1].children[1].innerText;
+  console.log(clearId);
 
-//   // localStorage.setItem(
-//   //   STORAGE_KEY,
-//   //   JSON.stringify(KEY.filter(item => item.clearId !== clearId))
-//   // );
-// }
+  localStorage.setItem(
+    STORAGE_KEY,
+    JSON.stringify(KEY.filter(item => item.clearId !== clearId))
+  );
+}
