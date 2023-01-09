@@ -11,15 +11,21 @@ import { refs } from './refs';
   document.querySelector('.nav-mobile__btn').addEventListener('click', () => {
     document.querySelector('.nav-mobile__burger').classList.add('open');
   });
-document.querySelector('.nav-mobile__btn').addEventListener('click', () => {
+  document.querySelector('.nav-mobile__btn').addEventListener('click', () => {
     document.querySelector('.nav-desktop__list').classList.add('open');
   });
+  // document.querySelector('.nav-mobile__btn').addEventListener('click', () => {
+  //   document.querySelector('.header__search').classList.add('open');
+  // });
   document.querySelector('.burger__close').addEventListener('click', () => {
     document.querySelector('.nav-mobile__burger').classList.remove('open');
   });
   document.querySelector('.burger__close').addEventListener('click', () => {
     document.querySelector('.nav-desktop__list').classList.remove('open');
   });
+  // document.querySelector('.burger__close').addEventListener('click', () => {
+  //   document.querySelector('.header__search').classList.remove('open');
+  // });
   // refs.refHeaderMenuClose.addEventListener('click', closeMobileMenu);
 })();
 export function closeMobileMenu() {
