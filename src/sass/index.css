@@ -105,6 +105,11 @@
   cursor: pointer;
   margin-left: auto;
   margin-top: 12px;
+  color: var(--main-text-color);
+}
+
+.close__icon {
+  color: var(--main-text-color);
 }
 
 .overflow {
@@ -112,7 +117,7 @@
 }
 
 .nav-desktop__list {
-  display: flex;
+  display: inline;
   opacity: 0;
   transform: translateX(-300%);
   transition: 300ms transform ease;
@@ -149,8 +154,8 @@
   position: absolute;
   opacity: 0;
   z-index: 2;
-  top: 0;
-  left: 30px;
+  top: 60px;
+  left: 0px;
   transform: scaleX(0);
   border-radius: 5px;
   background-color: var(--main-background-color);
@@ -181,7 +186,6 @@
   border: 1px solid var(--second-text-color);
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  border-bottom: 0;
 }
 .favorite__item:hover {
   background-color: var(--second-text-color);
@@ -306,6 +310,7 @@
     display: none;
   }
   .nav-desktop__list {
+    display: flex;
     opacity: 1;
     position: relative;
     flex-direction: row;
@@ -878,7 +883,7 @@ body {
 }
 
 .switcher {
-  display: flex;
+  display: none;
 }
 .switcher__light {
   color: var(--switch-light-color);
@@ -935,6 +940,123 @@ body {
   color: var(--focus-text-bg-color);
 }
 
+.switcher-mob {
+  display: flex;
+}
+.switcher-mob__light {
+  color: var(--switch-light-color);
+}
+.switcher-mob__dark {
+  color: var(--switch-dark-color);
+}
+.switcher-mob__label {
+  display: inline-block;
+  margin: 0 12px;
+  position: relative;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.switcher-mob__switch {
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 40px;
+  height: 20px;
+  border: 1px solid var(--second-background-color);
+  border-radius: 25%/50%;
+  vertical-align: top;
+  background: var(--focus-text-bg-color);
+  transition: 0.2s;
+}
+.switcher-mob__switch:before {
+  content: "";
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--second-background-color);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+  transition: 0.15s;
+}
+.switcher-mob__input {
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.switcher-mob__input:checked + .switcher-mob__switch {
+  border-color: var(--focus-text-bg-color);
+  background: var(--second-background-color);
+}
+.switcher-mob__input:checked + .switcher-mob__switch:before {
+  background-color: var(--focus-text-bg-color);
+  transform: translateX(20px);
+}
+.switcher-mob__input:checked + .switcher-mob__light {
+  color: var(--focus-text-bg-color);
+}
+
+@media screen and (min-width: 1280px) {
+  .switcher {
+    display: flex;
+  }
+  .switcher__light {
+    color: var(--switch-light-color);
+  }
+  .switcher__dark {
+    color: var(--switch-dark-color);
+  }
+  .switcher__label {
+    display: inline-block;
+    margin: 0 12px;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .switcher__switch {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 40px;
+    height: 20px;
+    border: 1px solid var(--second-background-color);
+    border-radius: 25%/50%;
+    vertical-align: top;
+    background: var(--focus-text-bg-color);
+    transition: 0.2s;
+  }
+  .switcher__switch:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--second-background-color);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    transition: 0.15s;
+  }
+  .switcher__input {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  .switcher__input:checked + .switcher__switch {
+    border-color: var(--focus-text-bg-color);
+    background: var(--second-background-color);
+  }
+  .switcher__input:checked + .switcher__switch:before {
+    background-color: var(--focus-text-bg-color);
+    transform: translateX(20px);
+  }
+  .switcher__input:checked + .switcher__light {
+    color: var(--focus-text-bg-color);
+  }
+}
 .hero__container {
   display: flex;
   flex-direction: column;
