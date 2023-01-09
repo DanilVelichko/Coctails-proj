@@ -49,7 +49,7 @@ console.log(learnId);
   }
 };
 
-export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstructions, strDrinkThumb }) {
+export function renderModalCocktail ({strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, idDrink, strDrink, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5 }) {
   if (strDrink.length > 25) {
     let render = `<h1 class="Coctails-title" style="font-size: 30px">${strDrink}</h1>
       <h2 class="Coctails-instractions">Instructions:</h2>
@@ -66,29 +66,29 @@ export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstruc
       <h2 class="Coctails-ingredients">INGREDIENTS</h2>
       <p class="Per-cocktail">Per cocktail</p>
       <ul class="Coctails-list">`; 
-  if (idDrink) { render +=`
+  if (strIngredient1) { render +=`
         <li class="">
-          <a href="" class="Coctails-link"> ✶ Ice </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure1} ${strIngredient1} </a>
         </li>`;
 }
-  if (idDrink) { render +=
+  if (strIngredient2) { render +=
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce gin </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure2} ${strIngredient2}</a>
         </li>`}
-  if (idDrink) {
+  if (strIngredient3) {
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce Campari </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure3} ${strIngredient3} </a>
         </li>`;
 }
-  if (idDrink) {
+  if (strIngredient4) {
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce sweet vermouth </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure4} ${strIngredient4} </a>
         </li>`;
 }
-  if (idDrink) {
+  if (strIngredient5) {
     render +=
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ Garnish: orange peel </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure5} ${strIngredient5} </a>
         </li>`;
 }
   render += `</ul>
@@ -111,34 +111,32 @@ export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstruc
       <h2 class="Coctails-ingredients">INGREDIENTS</h2>
       <p class="Per-cocktail">Per cocktail</p>
       <ul class="Coctails-list">`;
-    if (idDrink) {
-      render += `
+    if (strIngredient1) { render +=`
         <li class="">
-          <a href="" class="Coctails-link"> ✶ Ice </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure1} ${strIngredient1} </a>
         </li>`;
-    }
-    if (idDrink) {
-      render +=
-      `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce gin </a>
+}
+  if (strIngredient2) { render +=
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure2} ${strIngredient2}</a>
         </li>`}
-    if (idDrink) {
-      `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce Campari </a>
+  if (strIngredient3) {
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure3} ${strIngredient3} </a>
         </li>`;
-    }
-    if (idDrink) {
-      `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce sweet vermouth </a>
+}
+  if (strIngredient4) {
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure4} ${strIngredient4} </a>
         </li>`;
-    }
-    if (idDrink) {
-      render +=
-        `<li class="">
-          <a href="" class="Coctails-link"> ✶ Garnish: orange peel </a>
+}
+  if (strIngredient5) {
+    render +=
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure5} ${strIngredient5} </a>
         </li>`;
-    }
-    render += `</ul>
+}
+  render += `</ul>
       <button type="button" class="Add-button">Add to favorite</button>
     </div>
 `;
