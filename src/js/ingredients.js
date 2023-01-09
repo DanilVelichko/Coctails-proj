@@ -3,8 +3,8 @@ console.log('hello');
 import axios from 'axios';
 import { STORAGE_KEY, localStorageArr } from './refs';
 
-let localStorageArr = [];
-console.log(localStorageArr);
+// 
+// console.log(localStorageArr);
 
 function loadFromLocalStorage() {
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY));

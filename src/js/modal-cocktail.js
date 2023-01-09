@@ -1,6 +1,6 @@
-
 import { refs, fetchEl, point, counter, localStorageArr, favorites } from './refs.js';
-import {learnId} from './favorite-button'
+import { learnId } from './favorite-button';
+import { saveInLocalStorage } from './global-functions.js';
 import axios from 'axios';
 
 
@@ -8,6 +8,7 @@ const modalCocktail = document.querySelector('.modal-cocktail');
 const overlayCocktail = document.querySelector('.overlay');
 const btnCloseModalCocktail = document.querySelector('.close-modal-cocktail');
 const btnOpenModalCocktail = document.querySelector('.show-modal-cocktail');
+let idDrinkModal = 0;
 
 export const openModalCoctail = async () => {
   modalCocktail.classList.remove('hidden');
@@ -36,20 +37,16 @@ document.addEventListener('keydown', function (e) {
 
 export const modalMarkupCocktail = async () => {
   try {
-console.log(learnId);
     const url = await axios.get(`${refs.idApiSearch}${learnId}`);
-    console.log(url);
-    
     point.modalRenderBoxCocktail.insertAdjacentHTML('beforeend', renderModalCocktail(url.data.drinks[0]));
-
-    
+    document.addEventListener("click", onFavoriteModal);
   } catch (error) {
     
-  
   }
 };
 
-export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstructions, strDrinkThumb }) {
+export function renderModalCocktail ({strMeasure1, strMeasure2, strMeasure3, strMeasure4, strMeasure5, idDrink, strDrink, strInstructions, strDrinkThumb, strIngredient1, strIngredient2, strIngredient3, strIngredient4, strIngredient5 }) {
+  idDrinkModal = idDrink;
   if (strDrink.length > 25) {
     let render = `<h1 class="Coctails-title" style="font-size: 30px">${strDrink}</h1>
       <h2 class="Coctails-instractions">Instructions:</h2>
@@ -66,29 +63,29 @@ export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstruc
       <h2 class="Coctails-ingredients">INGREDIENTS</h2>
       <p class="Per-cocktail">Per cocktail</p>
       <ul class="Coctails-list">`; 
-  if (idDrink) { render +=`
+  if (strIngredient1) { render +=`
         <li class="">
-          <a href="" class="Coctails-link"> ✶ Ice </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure1} ${strIngredient1} </a>
         </li>`;
 }
-  if (idDrink) { render +=
+  if (strIngredient2) { render +=
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce gin </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure2} ${strIngredient2}</a>
         </li>`}
-  if (idDrink) {
+  if (strIngredient3) {
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce Campari </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure3} ${strIngredient3} </a>
         </li>`;
 }
-  if (idDrink) {
+  if (strIngredient4) {
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce sweet vermouth </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure4} ${strIngredient4} </a>
         </li>`;
 }
-  if (idDrink) {
+  if (strIngredient5) {
     render +=
     `<li class="">
-          <a href="" class="Coctails-link"> ✶ Garnish: orange peel </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure5} ${strIngredient5} </a>
         </li>`;
 }
   render += `</ul>
@@ -111,34 +108,32 @@ export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstruc
       <h2 class="Coctails-ingredients">INGREDIENTS</h2>
       <p class="Per-cocktail">Per cocktail</p>
       <ul class="Coctails-list">`;
-    if (idDrink) {
-      render += `
+    if (strIngredient1) { render +=`
         <li class="">
-          <a href="" class="Coctails-link"> ✶ Ice </a>
+          <a href="" class="Coctails-link"> ✶ ${strMeasure1} ${strIngredient1} </a>
         </li>`;
-    }
-    if (idDrink) {
-      render +=
-      `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce gin </a>
+}
+  if (strIngredient2) { render +=
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure2} ${strIngredient2}</a>
         </li>`}
-    if (idDrink) {
-      `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce Campari </a>
+  if (strIngredient3) {
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure3} ${strIngredient3} </a>
         </li>`;
-    }
-    if (idDrink) {
-      `<li class="">
-          <a href="" class="Coctails-link"> ✶ 1 ounce sweet vermouth </a>
+}
+  if (strIngredient4) {
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure4} ${strIngredient4} </a>
         </li>`;
-    }
-    if (idDrink) {
-      render +=
-        `<li class="">
-          <a href="" class="Coctails-link"> ✶ Garnish: orange peel </a>
+}
+  if (strIngredient5) {
+    render +=
+    `<li class="">
+          <a href="" class="Coctails-link"> ✶ ${strMeasure5} ${strIngredient5} </a>
         </li>`;
-    }
-    render += `</ul>
+}
+  render += `</ul>
       <button type="button" class="Add-button">Add to favorite</button>
     </div>
 `;
@@ -148,4 +143,24 @@ export function renderModalCocktail ({strMeasure1, idDrink, strDrink, strInstruc
 return render;
 }
 
+const onFavoriteModal = (e) => {
+  const element = idDrinkModal;
+  if (e.target.textContent === 'Add to favorite' || e.target.textContent === 'Remove from favorite') {
+
+    if (/^\d{5}$/.test(element) || /^\d{6}$/.test(element)) {
+            if (!localStorageArr.includes(element)) {
+                localStorageArr.push(element);
+              e.target.textContent = 'Remove from favorite';
+            } else {
+                const index = localStorageArr.indexOf(element);
+                if (index > -1) {
+                    localStorageArr.splice(index, 1);
+              }
+              e.target.textContent = 'Add to favorite';
+            }
+            saveInLocalStorage('CoctailsId', localStorageArr);
+        }
+    console.log("Click FavIdDrink", idDrinkModal);
+  }
+};
 console.log("JS page Modal Cockteil");

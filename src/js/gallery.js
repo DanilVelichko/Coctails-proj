@@ -9,7 +9,7 @@ import {
 } from './global-functions.js';
 import { refs, fetchEl, point, counter, localStorageArr } from './refs.js';
 
-const debouncedRender = debounce(formatScreenRenderGallery(galleryMarkup), 1000);
+const debouncedRender = debounce(() => formatScreenRenderGallery(galleryMarkup), 1000);
 
 export async function galleryMarkup() {
   cleanHTML();
@@ -24,7 +24,7 @@ export async function galleryMarkup() {
   }
 }
 
-debouncedRender();
+formatScreenRenderGallery(galleryMarkup)
 window.addEventListener('resize', debouncedRender);
 
 console.log('Подключена страница  Gallery js');

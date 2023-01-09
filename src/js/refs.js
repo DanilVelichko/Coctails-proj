@@ -33,3 +33,4 @@ export const counter = {
 };
 
 console.log('Refs js');
+console.log(point.paginationDiv);

@@ -2,14 +2,17 @@ import axios from 'axios';
 import { refs, point } from './refs.js';
 import { renderCard, formatScreenRender, cleanHTML, cleanPagination} from './global-functions.js';
 import { createPagination, pagRefs } from './pagination.js';
+
+// document.addEventListener('DOMContentLoaded', () => {
 const heroRefs = {
   searchByAbc: document.querySelector('.hero-search'),
   overlayBtn: document.querySelector('.hero-btn'),
   overlayArrow: document.querySelector('.hero-btn--arrow'),
   titleGallery: document.querySelector('.gallery__title'),
   boxPicture: document.querySelector('.gallery__no-find-box'),
-};
-heroRefs.searchByAbc.addEventListener('click', onSearch);
+}; 
+ // },false )
+  heroRefs.searchByAbc.addEventListener('click', onSearch);
 
 export let elBtn = '';
 
