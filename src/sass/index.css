@@ -558,6 +558,21 @@ body {
   background-color: #f5f5f5;
   border: 1px solid #fd5103;
 }
+@media screen and (min-width: 480px) {
+  .button__add:hover {
+    border: 2px solid #fd5103;
+  }
+}
+@media screen and (min-width: 768px) {
+  .button__add:hover {
+    border: 2px solid #fd5103;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .button__add:hover {
+    border: 4px solid #fd5103;
+  }
+}
 .button__add-pressed {
   background: #fd5103;
 }
@@ -2154,6 +2169,10 @@ body {
   align-items: center;
 }
 
+.Coctails-link {
+  text-decoration: none;
+}
+
 .show-modal-cocktail {
   font-size: 2rem;
   font-weight: 600;
@@ -2168,8 +2187,8 @@ body {
 
 .close-modal-cocktail {
   position: absolute;
-  top: -1rem;
-  right: 3rem;
+  top: -2.8rem;
+  right: 1.5rem;
   font-size: 5rem;
   color: #333;
   cursor: pointer;
@@ -2397,6 +2416,15 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.cocktails-link {
+  font-size: 16px;
+  font-family: "Poppins";
+  line-height: 26px;
+}
+.cocktails-link:hover {
+  color: var(--switch-light-color);
 }
 
 .backdrop {
@@ -2648,8 +2676,8 @@ p {
 
 .close-modal-ingredients {
   position: absolute;
-  top: 1.2rem;
-  right: 2rem;
+  top: -1.8rem;
+  right: 1.8rem;
   font-size: 5rem;
   color: #333;
   cursor: pointer;
@@ -2673,7 +2701,7 @@ p {
 }
 
 .modal-ingredients {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -2762,8 +2790,8 @@ p {
 
 .Ingredients-description {
   position: absolute;
-  width: 280px;
-  height: 280px;
+  width: 300px;
+  height: 300px;
   left: 20px;
   top: 140px;
   font-family: "Poppins";
@@ -2777,7 +2805,7 @@ p {
   .Ingredients-description {
     position: absolute;
     width: 654px;
-    height: 112px;
+    height: 262px;
     left: 28px;
     top: 197px;
   }
@@ -2801,7 +2829,7 @@ p {
     width: 266px;
     height: 104px;
     left: 28px;
-    top: 337px;
+    top: 480px;
   }
 }
 
