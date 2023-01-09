@@ -24,7 +24,7 @@ export async function galleryMarkup() {
   }
 }
 
-formatScreenRenderGallery(galleryMarkup)
+formatScreenRenderGallery(galleryMarkup);
 window.addEventListener('resize', debouncedRender);
 
 console.log('Подключена страница  Gallery js');
