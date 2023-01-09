@@ -1,34 +1,33 @@
 import { refs } from './refs';
 
-(function headerInit() {
+headerInit();
+
+function headerInit() {
   refs.backdropMenu.addEventListener('mouseleave', () => {
     refs.menu.classList.remove('active');
   });
-
   refs.backdropMenu.addEventListener('mouseenter', () => {
     refs.menu.classList.add('active');
   });
-
-  refs.refHeaderMenuOpen?.addEventListener('click', closeMobileMenu);
-
-  // Burger menu
-
-  document.querySelector('.nav-mobile__btn').addEventListener('click', () => {
-    document.querySelector('.nav-mobile__burger').classList.add('open');
+  
+  refs.refBurgerIcon.addEventListener('click', () => {
+    mobileToggle();
+    refs.refBurgerClose.addEventListener('click', closeAndClear);
   });
+}
 
-  document.querySelector('.burger__close').addEventListener('click', () => {
-    document.querySelector('.nav-mobile__burger').classList.remove('open');
-  });
+// Burger menu
+function mobileToggle() {
+  refs.refBurgerNav.classList.toggle('open');
+  refs.refSearchForm.classList.toggle('open');
+  refs.refBackdropMobile.classList.toggle('open');
+}
 
-  // refs.refHeaderMenuClose.addEventListener('click', closeMobileMenu);
-})();
+function closeAndClear() {
+  mobileToggle();
+  refs.refBurgerClose.removeEventListener('click', closeAndClear);
+}
 
 export function closeMobileMenu() {
   refs.menu?.classList.remove('active');
-  //   refs.refHeaderMobMenu.classList.toggle('open');
-  //   refs.refHeaderSwitcher.classList.toggle('open');
-  //   document.querySelector('.header__search').classList.toggle('open');
-  //   document.querySelector('.header__nav-desktop').classList.toggle('open');
-  //   document.body.classList.toggle('overflow');
 }

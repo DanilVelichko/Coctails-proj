@@ -3,23 +3,14 @@
     <div class="header__wrapper">
       <div class="header__logo">
         <a class="logo__link" href="./index.html">
-          <img
-            class="logo__img"
-            src="./images/header__logo.svg"
-            alt="logo__icon"
-            width="123"
-            height="34"
-          />
+          <img class="logo__img" src="./images/header__logo.svg" alt="logo__icon" width="123" height="34" />
         </a>
       </div>
 
       <nav class="header__nav-desktop">
         <ul class="nav-desktop__list">
           <li class="nav-desktop__item">
-            <a
-              class="nav-desktop__home nav-desktop__active"
-              href="./index.html"
-            >
+            <a class="nav-desktop__home nav-desktop__active" href="./index.html">
               Home
             </a>
           </li>
@@ -37,10 +28,7 @@
                 </a>
               </li>
               <li class="favorite__item">
-                <a
-                  class="favorite__link"
-                  href="./partials/favourite-ingredients.html"
-                >
+                <a class="favorite__link" href="./partials/favourite-ingredients.html">
                   Favorite ingredients
                 </a>
               </li>
@@ -48,27 +36,18 @@
           </li>
         </ul>
       </nav>
-      <form class="header__search js-form-search">
+      <form class="header__search js-form-search js-form-search-mob">
         <button class="search__btn js-search-btn" type="submit"></button>
         <svg class="search__icon" width="24" height="24">
           <use href="/src/images/header__icons.svg#icon-search"></use>
         </svg>
-        <input
-          type="text"
-          id="coctail-search"
-          name="search"
-          class="search__input js-input-search"
-          placeholder="Search"
-        />
+        <input type="text" id="coctail-search" name="search" class="search__input js-input-search"
+          placeholder="Search" />
       </form>
       <div class="switcher">
         <span class="switcher__light">Light</span>
         <label class="switcher__label">
-          <input
-            class="switcher__input"
-            type="checkbox"
-            onchange="handleChange(this.checked)"
-          />
+          <input class="switcher__input" type="checkbox" onchange="handleChange(this.checked)" />
           <span class="switcher__switch"></span>
         </label>
         <span class="switcher__dark">Dark</span>
@@ -82,21 +61,12 @@
         <div class="nav-mobile__burger">
           <div class="burger__box">
             <div class="menu__logo">
-              <img
-                src="./images/header__logo.svg"
-                width="123"
-                height="34"
-                alt="logo img"
-              />
+              <img src="./images/header__logo.svg" width="123" height="34" alt="logo img" />
             </div>
             <div class="switcher-mob">
               <span class="switcher-mob__light">Light</span>
               <label class="switcher-mob__label">
-                <input
-                  class="switcher-mob__input"
-                  type="checkbox"
-                  onchange="handleChange(this.checked)"
-                />
+                <input class="switcher-mob__input" type="checkbox" onchange="handleChange(this.checked)" />
                 <span class="switcher-mob__switch"></span>
               </label>
               <span class="switcher-mob__dark">Dark</span>
