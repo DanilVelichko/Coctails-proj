@@ -2167,6 +2167,10 @@ body {
   align-items: center;
 }
 
+.Coctails-link {
+  text-decoration: none;
+}
+
 .show-modal-cocktail {
   font-size: 2rem;
   font-weight: 600;
