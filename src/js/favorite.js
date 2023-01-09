@@ -1,25 +1,24 @@
 import axios from 'axios';
 import { STORAGE_KEY } from './refs';
 
-const favPoints = {
+const refs = {
   buttonStart: document.querySelector('.favorite__link__cocktails'),
   heroSection: document.querySelector('.hero-view'),
   gallerySection: document.querySelector('.gallery-view'),
   favoriteSection: document.querySelector('.favorite-coctails-view'),
 };
 
-console.log("favPoints", favPoints)
+refs.buttonStart.addEventListener('click', loadFromLocalStorage);
 
-favPoints.buttonStart.addEventListener('click', loadFromLocalStorage)
+function loadFromLocalStorage(event) {
+  event.preventDefault();
 
-function loadFromLocalStorage() {
-  favPoints.heroSection.classList.add('visually-hidden');
-  favPoints.gallerySection.classList.add('visually-hidden');
-
-  favPoints.favoriteSection.classList.remove('visually-hidden');
+  refs.heroSection.classList.add('visually-hidden');
+  refs.gallerySection.classList.add('visually-hidden');
+  refs.favoriteSection.classList.remove('visually-hidden');
 
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  console.log(1111, serializedState);
+
   if (serializedState.length === 0) {
     const create = ` 
     <p class="cocktails_text">
@@ -35,8 +34,6 @@ function loadFromLocalStorage() {
     }
   }
 }
-
-// loadFromLocalStorage();
 
 async function firstSearchId(ele) {
   try {
@@ -128,15 +125,15 @@ listFavorites.addEventListener('click', event => {
 });
 
 function removeCocktail(event) {
-  console.log(event);
-  console.log(event.target.dataset.id);
-  const KEY = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  console.log(KEY);
-  const clearId = event.path[1].children[1].innerText;
-  console.log(clearId);
+  const allStorageId = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  // console.log(allStorageId);
+  const clearId = event.target.dataset.id;
+  // console.log(clearId);
 
   localStorage.setItem(
     STORAGE_KEY,
-    JSON.stringify(KEY.filter(item => item.clearId !== clearId))
+    JSON.stringify(
+      allStorageId.filter(data => console.log(data.event.target.dataset.id))
+    )
   );
 }

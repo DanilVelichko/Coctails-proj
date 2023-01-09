@@ -9,6 +9,5 @@ import './js/hero-letters-filter';
 // import './js/modal-cocktail';
 // import './js/modal-ingredients';
 
-
 // import './js/ingredients';
 import './js/favorite';
