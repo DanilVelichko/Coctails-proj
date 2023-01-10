@@ -8,7 +8,10 @@ const refs = {
   favoriteSection: document.querySelector('.favorite-coctails-view'),
   favorite: document.querySelector('.favorite'),
   ulFlex: document.querySelector('.favorite__flex'),
+  // removeId: document.querySelector('.favorite__border removeId'),
 };
+
+console.log(refs.ulFlex);
 
 refs.buttonStart.addEventListener('click', loadFromLocalStorage);
 
@@ -37,7 +40,6 @@ function getStorage() {
 }
 
 async function firstSearchId(ele) {
-  console.log(ele);
   try {
     const result = await axios.get(
       `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${ele}`
@@ -52,7 +54,7 @@ function cocktailIdMarkup(id) {
   const drinks = id.data.drinks[0];
   const { strDrinkThumb, strDrink, idDrink } = drinks;
   const create = `
-    <li class="favorite__border">
+    <li class="favorite__border removeId">
     <picture class="favorite__img">
           <source
             srcset="
@@ -121,10 +123,25 @@ refs.ulFlex.addEventListener('click', event => {
 
 function removeCocktail(event) {
   const allCardId = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  allCardId.forEach(element => {
-    console.dir(element);
-  });
+  // allCardId.forEach(element => {
+  //   // console.dir(element);
+  // });
   const cardId = event.target.dataset.id;
+  const newFav = allCardId.filter(ele => ele !== cardId);
+  removeCocktailId(newFav, cardId);
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(newFav));
+}
 
-  // localStorage.setItem(STORAGE_KEY, JSON.stringify(console.log(allCardId)));
+function removeCocktailId(element, id) {
+  console.log(element.length !== localStorage.getItem(STORAGE_KEY).length);
+  if (element.length !== localStorage.getItem(STORAGE_KEY).length) {
+    const btn = document.querySelector(`[data-id="${id}"`);
+    const liEl = btn.closest('li');
+
+    // const arr = Array.from(liEl);
+    // arr.find(el => console.log('el :>> ', el.dataset.id));
+    // liEl.classList.add('visually-hidden');
+    liEl.remove();
+    // getStorage();
+  }
 }
