@@ -10,6 +10,7 @@ export const ingredPoints = {
   btnOpenModal: document.querySelector('.show-modal-ingredients'),
 
 };
+console.log(ingredPoints.btnCloseModal)
 export const ingr = {
   one: '',
   two: '',

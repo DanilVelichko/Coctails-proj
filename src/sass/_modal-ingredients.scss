@@ -238,13 +238,15 @@
 
 .close-modal-ingredients {
   position: absolute;
-  top: -1.8rem;
-  right: 1.8rem;
-  font-size: 5rem;
+  top: 1.2rem;
+  right: 1.2rem;
+  // font-size: 5rem;
   color: #333;
   cursor: pointer;
   border: none;
   background: none;
+  z-index: 12;
+  // width: 18px;
 }
 
 h1 {
@@ -351,7 +353,7 @@ p {
   //  transform: translate(-50%, -50%);
   width: 300px;
   height: 300px;
-  
+
   left: 20px;
   top: 140px;
   font-family: 'Poppins';
