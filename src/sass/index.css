@@ -2189,9 +2189,8 @@ body {
 
 .close-modal-cocktail {
   position: absolute;
-  top: -2.8rem;
-  right: 1.5rem;
-  font-size: 5rem;
+  top: 1.2rem;
+  right: 1.2rem;
   color: #333;
   cursor: pointer;
   border: none;
@@ -2678,13 +2677,13 @@ p {
 
 .close-modal-ingredients {
   position: absolute;
-  top: -1.8rem;
-  right: 1.8rem;
-  font-size: 5rem;
+  top: 1.2rem;
+  right: 1.2rem;
   color: #333;
   cursor: pointer;
   border: none;
   background: none;
+  z-index: 12;
 }
 
 h1 {
