@@ -1,44 +1,43 @@
 import axios from 'axios';
 import { STORAGE_KEY } from './refs';
 
-const favPoints = {
+const refs = {
   buttonStart: document.querySelector('.favorite__link__cocktails'),
   heroSection: document.querySelector('.hero-view'),
   gallerySection: document.querySelector('.gallery-view'),
   favoriteSection: document.querySelector('.favorite-coctails-view'),
+  favorite: document.querySelector('.favorite'),
+  ulFlex: document.querySelector('.favorite__flex'),
 };
 
-// console.log("favPoints", favPoints)
-
-favPoints.buttonStart.addEventListener('click', loadFromLocalStorage)
+refs.buttonStart.addEventListener('click', loadFromLocalStorage);
 
 function loadFromLocalStorage() {
-  favPoints.heroSection.classList.add('visually-hidden');
-  favPoints.gallerySection.classList.add('visually-hidden');
+  refs.heroSection.classList.add('visually-hidden');
+  refs.gallerySection.classList.add('visually-hidden');
+  refs.favoriteSection.classList.remove('visually-hidden');
+  getStorage();
+}
 
-  favPoints.favoriteSection.classList.remove('visually-hidden');
-
+function getStorage() {
   const serializedState = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-  // console.log(1111, serializedState);
+
   if (serializedState.length === 0) {
-    const create = ` 
+    const create = `
     <p class="cocktails_text">
       You haven't added any favorite cocktails yet
     </p>
   `;
-    document.querySelector('.favorite').insertAdjacentHTML('beforeend', create);
+    refs.favorite.insertAdjacentHTML('beforeend', create);
   } else {
-    for (let i = 0; i < serializedState.length; i += 1) {
-      const element = serializedState[i];
-
+    serializedState.forEach(element => {
       firstSearchId(element);
-    }
+    });
   }
 }
 
-// loadFromLocalStorage();
-
 async function firstSearchId(ele) {
+  console.log(ele);
   try {
     const result = await axios.get(
       `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${ele}`
@@ -51,7 +50,6 @@ async function firstSearchId(ele) {
 
 function cocktailIdMarkup(id) {
   const drinks = id.data.drinks[0];
-  // console.log();
   const { strDrinkThumb, strDrink, idDrink } = drinks;
   const create = `
     <li class="favorite__border">
@@ -109,33 +107,24 @@ function cocktailIdMarkup(id) {
         </button>
       </div>
     </li>
-  
   `;
-  document
-    .querySelector('.favorite__flex')
-    .insertAdjacentHTML('beforeend', create);
+  refs.ulFlex.insertAdjacentHTML('beforeend', create);
 }
 
-const listFavorites = document.querySelector('.favorite');
-// console.log(listFavorites);
+refs.ulFlex.addEventListener('click', event => {
+  if (event.target.innerText === 'Remove') {
+    removeCocktail(event);
+  } else if (event.target.innerText === 'Learn More') {
+    console.log('Для вызова Modal!');
+  }
+});
 
-// document.querySelector('.favorite').addEventListener('click', event => {
-//   if (event.target.innerText === 'Remove') {
-//     removeCocktail(event);
-//   } else if (event.target.innerText === 'Learn More') {
-//     console.log('Для вызова Modal!');
-//   }
-// });
+function removeCocktail(event) {
+  const allCardId = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  allCardId.forEach(element => {
+    console.dir(element);
+  });
+  const cardId = event.target.dataset.id;
 
-// function removeCocktail(event) {
-//   console.log(event);
-//   // const KEY = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-//   // console.log(KEY);
-//   // const clearId = event.path[1].children[1].innerText;
-//   // console.log(clearId);
-
-//   // localStorage.setItem(
-//   //   STORAGE_KEY,
-//   //   JSON.stringify(KEY.filter(item => item.clearId !== clearId))
-//   // );
-// }
+  // localStorage.setItem(STORAGE_KEY, JSON.stringify(console.log(allCardId)));
+}
